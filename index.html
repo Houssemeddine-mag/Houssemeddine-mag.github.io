@@ -1,484 +1,2133 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" data-theme="ledger" data-mode="recruiter">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Houssem Eddine Magra — Software Engineer &amp; Data Science Researcher</title>
+<meta name="description" content="Portfolio of Houssem Eddine Magra — Software Engineer (Génie Logiciel), Master 2 Data Science &amp; Intelligent Systems researcher at Université Constantine 2, Web Developer at Ooredoo Algérie, and founder of El Moultaqa. 23 catalogued projects and studies, with a dedicated lens for recruiters and researchers.">
+<meta property="og:title" content="Houssem Eddine Magra — Software Engineer &amp; Data Science Researcher">
+<meta property="og:description" content="Production SaaS, telecom tooling for 2G–5G radio planning, and applied ML research — 23 catalogued projects with public repositories.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://houssemeddine-mag.github.io/">
+<meta name="theme-color" content="#F7F4ED">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#131211">
+<link rel="canonical" href="https://houssemeddine-mag.github.io/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23131211'/%3E%3Cpath d='M19 34.4c0 15 26 15 26 0' stroke='%2345A693' stroke-width='3.4' fill='none' stroke-linecap='round'/%3E%3Cpath d='M19 19.6v29.2M45 19.6v29.2' stroke='%23EDE9E1' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M12.8 34.4h38.4' stroke='%23EDE9E1' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='12.4' r='3.6' fill='%2345A693'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Houssem Eddine Magra",
+  "jobTitle": "Software Engineer · Data Science Researcher",
+  "worksFor": { "@type": "Organization", "name": "Ooredoo Algérie" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Université Constantine 2 — Abdelhamid Mehri" },
+  "address": { "@type": "PostalAddress", "addressLocality": "El Khroub, Constantine", "addressCountry": "DZ" },
+  "email": "mailto:houssemeddinemagra@gmail.com",
+  "url": "https://houssemeddine-mag.github.io/",
+  "sameAs": [
+    "https://github.com/Houssemeddine-mag",
+    "https://www.linkedin.com/in/houssem-eddine-magra-880241343"
+  ],
+  "knowsAbout": ["Software Engineering", "Data Science", "Machine Learning", "NLP", "Computer Vision", "Flutter", "React", "FastAPI", "Telecommunications"],
+  "knowsLanguage": ["ar", "en", "fr"]
+}
+</script>
+<style>
+  /* ─────────────────────────────────────────────────────────────
+     Houssem Eddine Magra — portfolio
+     Design language: "Constantine Ledger" — editorial ink on
+     warm paper, a bridge arc as the mark, signal-teal & copper
+     as the two lens accents. No gradients, no glow, no confetti.
+     ───────────────────────────────────────────────────────────── */
 
-    <meta name="description" content="HoussemOS 2.0 — Interactive portfolio of Houssem Eddine Magra, Software Engineer and Master 2 Data Science & Intelligent Systems student. 19 projects across AI, mobile, web and distributed systems.">
-    <meta name="theme-color" content="#eaf2fc">
+  html[data-theme="ledger"] {
+    --paper: #F7F4ED;
+    --paper-2: #FCFAF4;
+    --raised: #FFFFFF;
+    --ink: #1B1E22;
+    --ink-2: #4C545C;
+    --ink-3: #82898F;
+    --rule: rgba(27, 30, 34, 0.13);
+    --rule-2: rgba(27, 30, 34, 0.26);
+    --accent: #0D7A6E;
+    --accent-soft: rgba(13, 122, 110, 0.10);
+    --accent-ink: #FFFFFF;
+    --copper: #A0522A;
+    --copper-soft: rgba(160, 82, 42, 0.10);
+    --shadow: 0 1px 2px rgba(20, 22, 24, 0.04), 0 14px 34px -22px rgba(20, 22, 24, 0.28);
+  }
 
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234e8ed3'/%3E%3Ctext x='32' y='45' font-family='Arial' font-size='36' font-weight='700' fill='%23fff' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E">
+  html[data-theme="carbon"] {
+    --paper: #131211;
+    --paper-2: #181716;
+    --raised: #1E1C1A;
+    --ink: #EDE9E1;
+    --ink-2: #A29B90;
+    --ink-3: #6E6961;
+    --rule: rgba(237, 233, 225, 0.10);
+    --rule-2: rgba(237, 233, 225, 0.24);
+    --accent: #45A693;
+    --accent-soft: rgba(69, 166, 147, 0.13);
+    --accent-ink: #0F1512;
+    --copper: #CE8D5B;
+    --copper-soft: rgba(206, 141, 91, 0.13);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 16px 40px -24px rgba(0, 0, 0, 0.6);
+  }
 
-    <title>HoussemOS 2.0 — Houssem Eddine Magra</title>
+  /* The lens switch: the entire accent system shifts
+     teal (recruiter) ↔ copper (researcher) with a soft crossfade. */
+  html[data-mode="researcher"] {
+    --accent: var(--copper);
+    --accent-soft: var(--copper-soft);
+  }
 
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/desktop.css">
-    <link rel="stylesheet" href="css/windows.css">
-    <link rel="stylesheet" href="css/taskbar.css">
+  /* Font system is theme-independent — it MUST live here, not inside a
+     [data-theme] block, or the dark theme loses it and falls back to
+     the OS default serif. Light & night now share identical type. */
+  html {
+    scroll-behavior: smooth;
+    --font-display: 'Instrument Sans', 'Segoe UI', sans-serif;
+    --font-body: 'Instrument Sans', 'Segoe UI', sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+  ::selection { background: var(--accent-soft); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 
-    <script src="js/main.js" defer></script>
-    <script src="js/applications.js" defer></script>
+  .wrap { max-width: 76rem; margin-inline: auto; padding-inline: 1.25rem; }
+  @media (min-width: 640px) { .wrap { padding-inline: 2rem; } }
+
+  .font-display { font-family: var(--font-display); }
+  .mono { font-family: var(--font-mono); }
+
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+
+  /* Smooth accent crossfade when the lens or theme changes */
+  body, .site-header, .card, .tile, .btn, .btn-icon, .chip, .pill, .seg, .seg-btn,
+  .langseg, .langbtn, .input, .nav-link, .kicker, .stat-num, .tl-dot, .lede,
+  .prose, .spec-row, .status-dot, .menu-card {
+    transition: background-color .45s ease, color .45s ease, border-color .45s ease, box-shadow .3s ease;
+  }
+
+  /* ── Header ── */
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-link { position: relative; font-size: 13px; font-weight: 500; color: var(--ink-2); padding: 4px 2px; }
+  .nav-link::after { content: ""; position: absolute; left: 2px; right: 100%; bottom: 0; height: 1.5px; background: var(--accent); transition: right .3s cubic-bezier(.2, .7, .2, 1); }
+  .nav-link:hover { color: var(--ink); }
+  .nav-link:hover::after { right: 2px; }
+
+  .seg { display: inline-flex; align-items: stretch; gap: 2px; padding: 3px; background: var(--paper-2); border: 1px solid var(--rule); border-radius: 10px; }
+  .seg-btn { font-size: 12px; font-weight: 600; letter-spacing: 0.01em; padding: 5px 12px; border-radius: 8px; color: var(--ink-2); cursor: pointer; white-space: nowrap; }
+  .seg-btn[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+  .seg-btn:not([aria-pressed="true"]):hover { color: var(--ink); }
+
+  .langseg { display: inline-flex; gap: 2px; padding: 3px; background: var(--paper-2); border: 1px solid var(--rule); border-radius: 10px; }
+  .langbtn { font-family: var(--font-mono); font-size: 11px; font-weight: 600; padding: 5px 9px; border-radius: 7px; color: var(--ink-2); cursor: pointer; }
+  .langbtn[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+  .langbtn:not([aria-pressed="true"]):hover { color: var(--ink); }
+
+  /* ── Buttons ── */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    font-size: 13px; font-weight: 600; padding: 9px 16px; border-radius: 10px;
+    background: var(--raised); color: var(--ink); border: 1px solid var(--rule-2);
+    cursor: pointer; white-space: nowrap;
+    transition: background-color .45s ease, color .45s ease, border-color .45s ease,
+                box-shadow .3s ease, transform .18s ease;
+  }
+  .btn:hover { border-color: var(--ink-3); transform: translateY(-1px); }
+  .btn:active { transform: translateY(0); }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
+  .btn-primary:hover { border-color: transparent; filter: brightness(1.07); }
+  .btn-icon { width: 34px; height: 34px; padding: 0; border-radius: 10px; }
+  .btn-ghost { background: transparent; border-color: transparent; color: var(--ink-2); padding-inline: 8px; }
+  .btn-ghost:hover { color: var(--ink); border-color: transparent; transform: translateY(-1px); }
+
+  /* ── Typography helpers ── */
+  .kicker {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent);
+  }
+  .h-display { font-weight: 600; font-size: clamp(2.4rem, 5.2vw, 3.9rem); line-height: 1.04; }
+  h2.section-title { font-weight: 600; font-size: clamp(1.7rem, 3vw, 2.3rem); line-height: 1.15; }
+  .lede { font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: clamp(1.05rem, 2vw, 1.25rem); line-height: 1.5; color: var(--ink-2); }
+  .prose { color: var(--ink-2); line-height: 1.7; font-size: 15px; }
+  .prose strong { color: var(--ink); font-weight: 600; }
+  .prose-serif { font-family: var(--font-display); font-size: 16px; }
+  .stat-num { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.7rem, 3vw, 2.05rem); line-height: 1; color: var(--ink); }
+  .microlabel { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); }
+
+  .status-dot { display: inline-block; width: 7px; height: 7px; border-radius: 999px; background: var(--accent); margin-right: 7px; transform: translateY(-1px); }
+
+  /* ── Logo: draw-in choreography + quiet hover bloom ── */
+  .logo-link { display: inline-flex; }
+  .logo-mark .lm-pier, .logo-mark .lm-arch, .logo-mark .lm-deck {
+    stroke-dasharray: 100; stroke-dashoffset: 100;
+    animation: logoDraw .8s cubic-bezier(.2, .7, .2, 1) forwards;
+  }
+  .logo-mark .lm-pier { animation-delay: .2s; }
+  .logo-mark .lm-deck { animation-delay: .38s; }
+  .logo-mark .lm-arch { animation-delay: .52s; }
+  .lm-dot { transform-origin: center; transform-box: fill-box; animation: dotPulse 3.4s ease-in-out 1.8s infinite; transition: transform .25s cubic-bezier(.2, .7, .2, 1); }
+  .lm-tile { transition: stroke .3s ease, transform .35s cubic-bezier(.2, .7, .2, 1); }
+  .lm-arch { transition: stroke-width .25s ease; }
+  .logo-link:hover .lm-tile { stroke: var(--accent); transform: translateY(-1px); }
+  .logo-link:hover .lm-arch { stroke-width: 2.1; }
+  .logo-link:hover .lm-dot { transform: scale(1.3); }
+  @keyframes logoDraw { to { stroke-dashoffset: 0; } }
+  @keyframes dotPulse { 0%, 100% { opacity: 1; } 50% { opacity: .45; } }
+
+  /* ── Cards, tiles, pills ── */
+  .card { background: var(--raised); border: 1px solid var(--rule); border-radius: 14px; }
+  .card-hover { transition: border-color .3s ease, box-shadow .3s ease, translate .25s cubic-bezier(.2, .7, .2, 1); }
+  .card-hover:hover { border-color: var(--rule-2); box-shadow: var(--shadow); translate: 0 -2px; }
+
+  /* ── Certificate gallery ── */
+  .cert-thumb { position: relative; height: 210px; background: #FFFFFF; border-bottom: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .cert-thumb img { width: 100%; height: 100%; object-fit: contain; padding: 10px; transition: scale .45s cubic-bezier(.2, .7, .2, 1); }
+  .cert-card:hover .cert-thumb img { scale: 1.04; }
+  .cert-doc { display: flex; flex-direction: column; align-items: center; gap: 8px; color: #131211; }
+  .cert-doc svg { opacity: .85; }
+  .cert-card { display: flex; flex-direction: column; text-align: left; cursor: pointer; }
+  .cert-view { transition: letter-spacing .25s ease, color .25s ease; }
+  .cert-card:hover .cert-view { letter-spacing: .08em; }
+
+  /* Certificate lightbox */
+  .cert-frame { background: #FFFFFF; border-radius: 14px; box-shadow: var(--shadow); animation: modalIn .3s cubic-bezier(.2, .7, .2, 1) both; }
+  .cert-frame img { max-height: 76vh; max-width: 92vw; width: auto; height: auto; border-radius: 8px; }
+  .tile { display: block; background: var(--paper-2); border: 1px solid var(--rule); border-radius: 12px; padding: 14px 16px; }
+  .tile:hover { border-color: var(--rule-2); }
+
+  .pill {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+    padding: 2px 9px; border-radius: 6px; display: inline-flex; align-items: center; white-space: nowrap;
+    background: var(--paper-2); border: 1px solid var(--rule); color: var(--ink-2);
+  }
+  .pill:hover { border-color: var(--rule-2); color: var(--ink); }
+
+  /* Hairline dividers that follow the palette */
+  .divide-f > * + * { border-top: 1px solid var(--rule); }
+  .pill-accent { background: var(--accent-soft); color: var(--accent); border-color: transparent; font-weight: 600; }
+
+  .chip {
+    font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 9px;
+    background: var(--raised); border: 1px solid var(--rule); color: var(--ink-2); cursor: pointer; white-space: nowrap;
+    transition: background-color .45s ease, color .45s ease, border-color .45s ease, transform .18s ease;
+  }
+  .chip:hover { color: var(--ink); border-color: var(--rule-2); transform: translateY(-1px); }
+  .chip[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
+
+  .input {
+    width: 100%; background: var(--raised); border: 1px solid var(--rule); border-radius: 10px;
+    padding: 8px 12px; font-size: 13px; color: var(--ink); font-family: var(--font-body);
+  }
+  .input::placeholder { color: var(--ink-3); }
+  .input:focus { outline: none; border-color: var(--accent); }
+
+  /* ── Timeline ── */
+  .tl { position: relative; padding-left: 30px; display: flex; flex-direction: column; gap: 22px; }
+  .tl::before { content: ""; position: absolute; left: 7px; top: 14px; bottom: 14px; width: 1px; background: var(--rule-2); }
+  .tl-item { position: relative; }
+  .tl-dot { position: absolute; left: -26.5px; top: 30px; width: 9px; height: 9px; border-radius: 999px; background: var(--accent); border: 2px solid var(--paper); }
+  .tl-item + .tl-item .tl-dot { background: var(--ink-3); }
+
+  /* ── Spec table ── */
+  .spec-table th {
+    font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-3); background: var(--paper-2); text-align: left; padding: 10px 16px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .spec-table td { padding: 13px 16px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  .spec-row { cursor: pointer; }
+  .spec-row:hover { background: var(--paper-2); }
+
+  /* ── Scroll reveal (subtle, translation-only) ── */
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .reveal.in-view { opacity: 1; transform: none; }
+
+  /* ── Motion suite (restrained; all disabled under prefers-reduced-motion) ── */
+  @keyframes riseSoft { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: none; } }
+  @keyframes riseIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: none; } }
+  @keyframes modalIn { from { opacity: 0; transform: translateY(12px) scale(.985); } to { opacity: 1; transform: none; } }
+
+  /* Hero entrance choreography — once, on load */
+  .hero-rise > *, .hero-aside > * { animation: riseIn .8s cubic-bezier(.2, .7, .2, 1) both; }
+  .hero-rise > *:nth-child(1) { animation-delay: .05s; }
+  .hero-rise > *:nth-child(2) { animation-delay: .13s; }
+  .hero-rise > *:nth-child(3) { animation-delay: .2s; }
+  .hero-rise > *:nth-child(4) { animation-delay: .28s; }
+  .hero-rise > *:nth-child(5) { animation-delay: .36s; }
+  .hero-rise > *:nth-child(6) { animation-delay: .44s; }
+  .hero-rise > *:nth-child(7) { animation-delay: .5s; }
+  .hero-rise > *:nth-child(8) { animation-delay: .56s; }
+  .hero-aside > *:nth-child(1) { animation-delay: .42s; }
+  .hero-aside > *:nth-child(2) { animation-delay: .54s; }
+
+  /* Lens & venture-panel swaps: the display toggle restarts these entrances */
+  [data-when] { animation: riseSoft .5s cubic-bezier(.2, .7, .2, 1) both; }
+  .venture-panel { animation: riseSoft .5s cubic-bezier(.2, .7, .2, 1) both; }
+
+  /* Modals & overlays enter softly */
+  #projectModal .card { animation: modalIn .34s cubic-bezier(.2, .7, .2, 1) both; }
+
+  /* Lens switch choreography */
+  #pageMain { transition: opacity .22s ease, transform .22s ease; }
+  #pageMain.mode-switching { opacity: .45; transform: translateY(5px); }
+  html[data-mode="recruiter"]  [data-when="researcher"],
+  html[data-mode="researcher"] [data-when="recruiter"] { display: none !important; }
+
+  /* ── Modals & toast ── */
+  .modal-backdrop { background: color-mix(in srgb, var(--ink) 38%, transparent); backdrop-filter: blur(6px); }
+  #toast {
+    position: fixed; bottom: 22px; left: 50%; transform: translate(-50%, 16px);
+    background: var(--ink); color: var(--paper); font-size: 12.5px; font-weight: 600;
+    padding: 9px 16px; border-radius: 10px; z-index: 90; opacity: 0; pointer-events: none;
+    transition: opacity .25s ease, transform .25s ease;
+  }
+  #toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+    .reveal { opacity: 1; transform: none; }
+    [data-when], .venture-panel, .hero-rise > *, .hero-aside > * { opacity: 1; }
+    #projectModal .card { opacity: 1; }
+    .logo-mark .lm-pier, .logo-mark .lm-arch, .logo-mark .lm-deck { stroke-dashoffset: 0 !important; }
+  }
+
+  .no-print {}
+  @media print {
+    body { background: #FFFFFF !important; color: #000 !important; }
+    .no-print, .site-header { display: none !important; }
+  }
+</style>
+<script>
+/* Restore saved theme & lens before first paint (prevents flicker). */
+try {
+  var _t = localStorage.getItem('hm_theme');
+  if (_t === 'carbon' || _t === 'ledger') document.documentElement.dataset.theme = _t;
+  var _m = localStorage.getItem('hm_mode');
+  if (_m === 'recruiter' || _m === 'researcher') document.documentElement.dataset.mode = _m;
+} catch (e) {}
+</script>
 </head>
-
 <body>
 
-<!-- SVG ICON LIBRARY -->
-<svg xmlns="http://www.w3.org/2000/svg"
-     class="icon-library"
-     aria-hidden="true">
+<a href="#top" class="no-print sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] btn">Skip to content</a>
 
-    <symbol id="icon-user" viewBox="0 0 24 24">
-        <circle cx="12" cy="8" r="4"/>
-        <path d="M4 21v-2a8 8 0 0 1 16 0v2"/>
-    </symbol>
+<!-- ══════════ HEADER ══════════ -->
+<header class="site-header no-print">
+  <div class="wrap flex h-16 items-center justify-between gap-3">
 
-    <symbol id="icon-folder" viewBox="0 0 24 24">
-        <path d="M3 6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-    </symbol>
+    <a href="#top" class="logo-link flex items-center gap-2.5 shrink-0" aria-label="Back to top">
+      <!-- The Magra bridge mark — two piers and a deck read as H (Houssem · Magra),
+           the suspension arch nods to Constantine's bridges & El Moultaqa, and the
+           dot above the deck is the telecom signal. -->
+      <svg class="logo-mark" width="31" height="31" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect class="lm-tile" x="1.25" y="1.25" width="29.5" height="29.5" rx="9" stroke="var(--rule-2)" stroke-width="1.5"/>
+        <path class="lm-pier" pathLength="100" d="M9.5 9.8v14.9M22.5 9.8v14.9" stroke="var(--ink)" stroke-width="1.8" stroke-linecap="round"/>
+        <path class="lm-arch" pathLength="100" d="M9.5 17.2c0 6.6 13 6.6 13 0" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+        <path class="lm-deck" pathLength="100" d="M6.9 17.2h18.2" stroke="var(--ink)" stroke-width="1.8" stroke-linecap="round"/>
+        <circle class="lm-dot" cx="16" cy="6.2" r="1.8" fill="var(--accent)"/>
+      </svg>
+      <span class="hidden sm:block leading-tight">
+        <span class="block font-display text-[15px] font-semibold tracking-tight" style="color:var(--ink)">Houssem Eddine Magra</span>
+        <span class="mono block text-[10px] tracking-[0.16em] uppercase" style="color:var(--ink-3)">Software Engineering · Data Science</span>
+      </span>
+    </a>
 
-    <symbol id="icon-code" viewBox="0 0 24 24">
-        <path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/>
-    </symbol>
+    <nav class="hidden lg:flex items-center gap-6" aria-label="Primary">
+      <a class="nav-link" href="#work" data-i18n="navWork">Work</a>
+      <a class="nav-link" href="#experience" data-i18n="navExperience">Experience</a>
+      <a class="nav-link" href="#venture" data-i18n="navVenture">El Moultaqa</a>
+      <a class="nav-link" href="#skills" data-i18n="navSkills">Skills</a>
+      <a class="nav-link" href="#contact" data-i18n="navContact">Contact</a>
+    </nav>
 
-    <symbol id="icon-briefcase" viewBox="0 0 24 24">
-        <rect x="3" y="7" width="18" height="14" rx="2"/>
-        <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2"/>
-    </symbol>
+    <div class="flex items-center gap-2">
+      <!-- The lens switch: recruiter ↔ researcher -->
+      <div class="seg" role="group" aria-label="Viewing lens">
+        <button type="button" class="seg-btn" data-mode-btn="recruiter" aria-pressed="true">
+          <span class="md:hidden">Rec</span><span class="hidden md:inline">Recruiter</span>
+        </button>
+        <button type="button" class="seg-btn" data-mode-btn="researcher" aria-pressed="false">
+          <span class="md:hidden">Res</span><span class="hidden md:inline">Researcher</span>
+        </button>
+      </div>
 
-    <symbol id="icon-graduation" viewBox="0 0 24 24">
-        <path d="m2 10 10-5 10 5-10 5z"/>
-        <path d="M6 12v5c4 3 8 3 12 0v-5M22 10v6"/>
-    </symbol>
+      <button type="button" id="themeToggle" class="btn btn-icon" title="Toggle light / dark" aria-label="Toggle light or dark theme">
+        <svg id="iconMoon" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg id="iconSun" class="w-4 h-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
 
-    <symbol id="icon-terminal" viewBox="0 0 24 24">
-        <rect x="2" y="3" width="20" height="18" rx="3"/>
-        <path d="m7 9 3 3-3 3M13 15h4"/>
-    </symbol>
+      <div class="langseg hidden sm:flex" role="group" aria-label="Language">
+        <button type="button" class="langbtn" data-lang-btn="en" aria-pressed="true">EN</button>
+        <button type="button" class="langbtn" data-lang-btn="fr" aria-pressed="false">FR</button>
+        <button type="button" class="langbtn" data-lang-btn="ar" aria-pressed="false">AR</button>
+      </div>
 
-    <symbol id="icon-mail" viewBox="0 0 24 24">
-        <rect x="3" y="5" width="18" height="14" rx="2"/>
-        <path d="m3 7 9 6 9-6"/>
-    </symbol>
+      <a href="Houssem_Eddine_Magra_Academic_CV.pdf" target="_blank" rel="noopener" class="btn btn-primary hidden sm:inline-flex" data-i18n="ctaCv">CV ↗</a>
 
-    <symbol id="icon-wifi" viewBox="0 0 24 24">
-        <path d="M5 9a11 11 0 0 1 14 0M8 12a7 7 0 0 1 8 0M11 15a3 3 0 0 1 2 0M12 19h.01"/>
-    </symbol>
-
-    <symbol id="icon-volume" viewBox="0 0 24 24">
-        <path d="M11 5 6 9H3v6h3l5 4z"/>
-        <path d="M15 9a5 5 0 0 1 0 6M18 6a9 9 0 0 1 0 12"/>
-    </symbol>
-
-    <symbol id="icon-bell" viewBox="0 0 24 24">
-        <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/>
-    </symbol>
-
-    <symbol id="icon-calendar" viewBox="0 0 24 24">
-        <rect x="3" y="5" width="18" height="16" rx="2"/>
-        <path d="M16 3v4M8 3v4M3 10h18"/>
-    </symbol>
-
-    <symbol id="icon-monitor" viewBox="0 0 24 24">
-        <rect x="2" y="3" width="20" height="15" rx="2"/>
-        <path d="M8 21h8M12 18v3"/>
-    </symbol>
-
-    <symbol id="icon-power" viewBox="0 0 24 24">
-        <path d="M12 2v10M6 5a9 9 0 1 0 12 0"/>
-    </symbol>
-
-    <symbol id="icon-settings" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="3"/>
-        <path d="M19.4 15 21 16.5l-2 3-2-.7a8 8 0 0 1-2 1L14.5 22h-5L9 19.8a8 8 0 0 1-2-1l-2 .7-2-3L4.6 15a8 8 0 0 1 0-2L3 11.5l2-3 2 .7a8 8 0 0 1 2-1L9.5 6h5l.5 2.2a8 8 0 0 1 2 1l2-.7 2 3-1.6 1.5a8 8 0 0 1 0 2z"/>
-    </symbol>
-
-    <symbol id="icon-search" viewBox="0 0 24 24">
-        <circle cx="11" cy="11" r="7"/>
-        <path d="m16 16 5 5"/>
-    </symbol>
-
-    <symbol id="icon-chevron" viewBox="0 0 24 24">
-        <path d="m9 18 6-6-6-6"/>
-    </symbol>
-
-    <symbol id="icon-sun" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="4"/>
-        <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
-    </symbol>
-
-    <symbol id="icon-rocket" viewBox="0 0 24 24">
-        <path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2 0-2.8-.8-.8-2-.8-3-.2z"/>
-        <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
-        <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
-        <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
-    </symbol>
-
-    <symbol id="icon-medal" viewBox="0 0 24 24">
-        <circle cx="12" cy="9" r="6"/>
-        <path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/>
-    </symbol>
-
-    <symbol id="icon-phone" viewBox="0 0 24 24">
-        <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/>
-    </symbol>
-
-    <symbol id="icon-globe" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10"/>
-        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-    </symbol>
-
-    <symbol id="icon-github" viewBox="0 0 24 24">
-        <path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>
-    </symbol>
-
-    <symbol id="icon-linkedin" viewBox="0 0 24 24">
-        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A6 6 0 0 1 16 8z"/>
-        <rect x="2" y="9" width="4" height="12"/>
-        <circle cx="4" cy="4" r="2"/>
-    </symbol>
-
-</svg>
-
-<main id="operating-system">
-
-    <!-- DESKTOP -->
-    <section id="desktop">
-
-        <!-- ANIMATED WALLPAPER -->
-        <div class="wallpaper">
-
-            <canvas id="wallpaper-canvas"></canvas>
-
-            <div class="aurora aurora-one"></div>
-            <div class="aurora aurora-two"></div>
-            <div class="aurora aurora-three"></div>
-
-            <div class="wallpaper-overlay"></div>
-
+      <details class="relative sm:hidden">
+        <summary class="btn btn-icon" aria-label="Menu">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h12"/></svg>
+        </summary>
+        <div class="menu-card card absolute right-0 top-11 w-48 p-2 z-50 shadow-xl">
+          <a class="block px-3 py-2 text-[13px] font-medium rounded-lg hover:bg-[var(--paper-2)]" href="#work" data-i18n="navWork">Work</a>
+          <a class="block px-3 py-2 text-[13px] font-medium rounded-lg hover:bg-[var(--paper-2)]" href="#experience" data-i18n="navExperience">Experience</a>
+          <a class="block px-3 py-2 text-[13px] font-medium rounded-lg hover:bg-[var(--paper-2)]" href="#venture" data-i18n="navVenture">El Moultaqa</a>
+          <a class="block px-3 py-2 text-[13px] font-medium rounded-lg hover:bg-[var(--paper-2)]" href="#skills" data-i18n="navSkills">Skills</a>
+          <a class="block px-3 py-2 text-[13px] font-medium rounded-lg hover:bg-[var(--paper-2)]" href="#contact" data-i18n="navContact">Contact</a>
+          <div class="flex gap-2 px-1 pt-2 mt-1 border-t" style="border-color:var(--rule)">
+            <button type="button" class="langbtn" data-lang-btn="en" aria-pressed="true">EN</button>
+            <button type="button" class="langbtn" data-lang-btn="fr" aria-pressed="false">FR</button>
+            <button type="button" class="langbtn" data-lang-btn="ar" aria-pressed="false">AR</button>
+          </div>
         </div>
+      </details>
+    </div>
+  </div>
+</header>
 
-        <!-- DESKTOP HEADER -->
-        <header class="desktop-header">
+<main id="pageMain">
+  <span id="top"></span>
 
-            <div class="os-brand">
-                <span class="brand-icon">H</span>
-                <span>HoussemOS</span>
-                <span class="os-version">2.0</span>
-            </div>
+  <!-- ══════════ HERO ══════════ -->
+  <section class="wrap grid lg:grid-cols-12 gap-10 lg:gap-12 pt-12 sm:pt-20 pb-14">
+    <div class="lg:col-span-7 hero-rise">
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+        <span class="kicker">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span data-when="recruiter" data-i18n="statusRec">Open to engineering roles</span>
+          <span data-when="researcher" data-i18n="statusRes">Open to research collaboration</span>
+        </span>
+        <span class="mono text-[11px]" style="color:var(--ink-3)">Constantine, Algeria</span>
+      </div>
 
-            <div class="desktop-status">
-                <span class="status-indicator"></span>
-                <span>System Online</span>
-            </div>
+      <h1 class="h-display mt-4">Houssem Eddine Magra</h1>
 
-        </header>
+      <p class="lede mt-3 max-w-xl">Software engineer &amp; data-science researcher — production SaaS, telecom tooling, applied machine learning.</p>
 
-        <!-- DESKTOP SHORTCUTS -->
-        <div id="desktop-icons">
-
-            <button class="desktop-icon" data-app="about">
-                <svg><use href="#icon-user"/></svg>
-                <span>About Me</span>
-            </button>
-
-            <button class="desktop-icon" data-app="projects">
-                <svg><use href="#icon-folder"/></svg>
-                <span>My Projects</span>
-            </button>
-
-            <button class="desktop-icon" data-app="skills">
-                <svg><use href="#icon-code"/></svg>
-                <span>Technical Skills</span>
-            </button>
-
-            <button class="desktop-icon" data-app="experience">
-                <svg><use href="#icon-briefcase"/></svg>
-                <span>Experience</span>
-            </button>
-
-            <button class="desktop-icon" data-app="startup">
-                <svg><use href="#icon-rocket"/></svg>
-                <span>El Moultaqa</span>
-            </button>
-
-            <button class="desktop-icon" data-app="education">
-                <svg><use href="#icon-graduation"/></svg>
-                <span>Education</span>
-            </button>
-
-            <button class="desktop-icon" data-app="certifications">
-                <svg><use href="#icon-medal"/></svg>
-                <span>Certifications</span>
-            </button>
-
-            <button class="desktop-icon" data-app="terminal">
-                <svg><use href="#icon-terminal"/></svg>
-                <span>Terminal</span>
-            </button>
-
-            <button class="desktop-icon" data-app="contact">
-                <svg><use href="#icon-mail"/></svg>
-                <span>Contact</span>
-            </button>
-
+      <div class="mt-6 max-w-xl space-y-3">
+        <div data-when="recruiter" class="prose space-y-3">
+          <p data-i18n="heroRec1">Software engineer (Licence in Génie Logiciel) and Master&nbsp;2 Data Science &amp; Intelligent Systems researcher at <strong>Université Constantine 2</strong>. I ship end-to-end: a multi-tenant conference SaaS (<strong>El Moultaqa</strong>) with an automated Android CI/CD pipeline, and web-automation tooling for <strong>2G–5G radio planning</strong> at <strong>Ooredoo Algérie</strong>.</p>
+          <p data-i18n="heroRec2">Everything below links to real repositories — filter by domain, open a case study, or jump straight to the code.</p>
         </div>
-
-        <!-- WINDOWS -->
-        <div id="window-container"></div>
-
-        <!-- START MENU -->
-        <div id="start-menu" class="start-menu hidden">
-
-            <div class="start-menu-header">
-
-                <div class="user-avatar">H</div>
-
-                <div>
-                    <strong>Houssem Eddine</strong>
-                    <small>Portfolio Workspace</small>
-                </div>
-
-            </div>
-
-            <div class="start-menu-search">
-
-                <svg><use href="#icon-search"/></svg>
-
-                <input
-                    type="text"
-                    id="app-search"
-                    placeholder="Search applications..."
-                >
-
-            </div>
-
-            <div class="start-menu-section">
-
-                <div class="section-heading">
-                    <span>Applications</span>
-                    <span>All apps</span>
-                </div>
-
-                <div class="start-apps">
-
-                    <button data-app="about">
-                        <svg><use href="#icon-user"/></svg>
-                        About Me
-                    </button>
-
-                    <button data-app="projects">
-                        <svg><use href="#icon-folder"/></svg>
-                        Projects
-                    </button>
-
-                    <button data-app="skills">
-                        <svg><use href="#icon-code"/></svg>
-                        Skills
-                    </button>
-
-                    <button data-app="experience">
-                        <svg><use href="#icon-briefcase"/></svg>
-                        Experience
-                    </button>
-
-                    <button data-app="startup">
-                        <svg><use href="#icon-rocket"/></svg>
-                        El Moultaqa
-                    </button>
-
-                    <button data-app="education">
-                        <svg><use href="#icon-graduation"/></svg>
-                        Education
-                    </button>
-
-                    <button data-app="certifications">
-                        <svg><use href="#icon-medal"/></svg>
-                        Certificates
-                    </button>
-
-                    <button data-app="terminal">
-                        <svg><use href="#icon-terminal"/></svg>
-                        Terminal
-                    </button>
-
-                    <button data-app="contact">
-                        <svg><use href="#icon-mail"/></svg>
-                        Contact
-                    </button>
-
-                </div>
-
-            </div>
-
-            <div class="start-menu-footer">
-                <span>HoussemOS 2.0</span>
-                <span>Designed by Houssem</span>
-            </div>
-
+        <div data-when="researcher" class="prose space-y-3">
+          <p data-i18n="heroRes1">My research sits where applied machine learning meets deployed systems: <strong>Transformer fine-tuning for Arabic NLP</strong> (TRIA), <strong>interpretable clinical risk modeling</strong> with SHAP, and <strong>prognostics for wireless power transfer</strong> (ChargeOps&nbsp;AI).</p>
+          <p data-i18n="heroRes2">Supervised at Université Constantine 2 by Prof. F. Benchikha Magra, Prof. D. Benmerzoug, Dr. N. Boudjlel, Dr. W. Ghammaz and Dr. F. Lezaar — with public methods, notebooks and reports.</p>
         </div>
+      </div>
 
-    </section>
-
-    <!-- TASKBAR -->
-    <footer id="taskbar">
-
-        <div class="taskbar-left">
-
-            <button id="start-button"
-                    class="taskbar-button start-button"
-                    aria-label="Open Start Menu"
-                    title="Start">
-
-                <span class="start-logo">H</span>
-
-            </button>
-
+      <div class="grid grid-cols-2 sm:grid-cols-4 mt-9 border-t border-b" style="border-color:var(--rule)">
+        <div class="py-4">
+          <div class="stat-num" data-count="23">23</div>
+          <div class="microlabel mt-1.5">Projects &amp; studies</div>
         </div>
-
-        <div class="taskbar-center">
-
-            <button class="taskbar-button pinned-app"
-                    data-app="about"
-                    title="About Me">
-                <svg><use href="#icon-user"/></svg>
-            </button>
-
-            <button class="taskbar-button pinned-app"
-                    data-app="projects"
-                    title="Projects">
-                <svg><use href="#icon-folder"/></svg>
-            </button>
-
-            <button class="taskbar-button pinned-app"
-                    data-app="terminal"
-                    title="Terminal">
-                <svg><use href="#icon-terminal"/></svg>
-            </button>
-
-            <div id="taskbar-apps"></div>
-
+        <div class="py-4 sm:border-l sm:pl-5" style="border-color:var(--rule)">
+          <div class="stat-num" data-count="16">16</div>
+          <div class="microlabel mt-1.5">Public repositories</div>
         </div>
-
-        <div class="taskbar-right">
-
-            <button class="tray-button"
-                    id="quick-settings-button"
-                    title="Quick Settings">
-
-                <svg><use href="#icon-wifi"/></svg>
-                <svg><use href="#icon-volume"/></svg>
-
-            </button>
-
-            <button class="tray-button notification-button"
-                    id="notification-button"
-                    title="Notifications">
-
-                <svg><use href="#icon-bell"/></svg>
-
-            </button>
-
-            <button class="clock-button" id="calendar-button">
-
-                <span id="clock">00:00</span>
-                <span id="date">Loading...</span>
-
-            </button>
-
-            <button id="show-desktop"
-                    class="show-desktop"
-                    title="Show Desktop">
-
-            </button>
-
+        <div class="py-4 sm:border-l sm:pl-5" style="border-color:var(--rule)">
+          <div class="stat-num" data-count="4">4</div>
+          <div class="microlabel mt-1.5">Production web apps</div>
         </div>
-
-    </footer>
-
-    <!-- QUICK SETTINGS -->
-    <div id="quick-settings" class="system-panel hidden">
-
-        <div class="panel-heading">
-            <strong>Quick Settings</strong>
-            <span>HoussemOS</span>
+        <div class="py-4 sm:border-l sm:pl-5" style="border-color:var(--rule)">
+          <div class="stat-num" data-count="10">10</div>
+          <div class="microlabel mt-1.5">Certifications — verified scans</div>
         </div>
+      </div>
 
-        <div class="quick-grid">
+      <div class="mt-7 flex flex-wrap items-center gap-2.5">
+        <a href="#work" class="btn btn-primary">
+          <span data-i18n="ctaView">View selected work</span>
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14m-7-7 7 7 7-7"/></svg>
+        </a>
+        <a href="Houssem_Eddine_Magra_Academic_CV.pdf" target="_blank" rel="noopener" class="btn" data-i18n="ctaCvFull">Curriculum Vitæ (PDF)</a>
+        <a href="mailto:houssemeddinemagra@gmail.com" class="btn" data-i18n="ctaEmail">Email</a>
+        <a href="https://github.com/Houssemeddine-mag" target="_blank" rel="noopener noreferrer" class="btn btn-ghost mono text-[12px]">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/houssem-eddine-magra-880241343" target="_blank" rel="noopener noreferrer" class="btn btn-ghost mono text-[12px]">LinkedIn ↗</a>
+        <a href="houssemos.html" class="btn btn-ghost mono text-[12px] hidden sm:inline-flex">HoussemOS ↗</a>
+      </div>
 
-            <button class="quick-tile active" id="wifi-toggle">
-                <svg><use href="#icon-wifi"/></svg>
-                <span>Wi-Fi</span>
-                <small id="wifi-status">On</small>
-            </button>
-
-            <button class="quick-tile active" id="volume-toggle">
-                <svg><use href="#icon-volume"/></svg>
-                <span>Sound</span>
-                <small id="volume-status">On</small>
-            </button>
-
-            <button class="quick-tile active" id="theme-toggle">
-                <svg><use href="#icon-sun"/></svg>
-                <span>Appearance</span>
-                <small id="theme-status">Frost</small>
-            </button>
-
-            <button class="quick-tile" id="fullscreen-toggle">
-                <svg><use href="#icon-monitor"/></svg>
-                <span>Display</span>
-                <small>Fullscreen</small>
-            </button>
-
+      <!-- HoussemOS standalone component -->
+      <a href="houssemos.html" class="mt-5 inline-flex items-center gap-3.5 rounded-2xl px-5 py-4 border shadow-md hover:shadow-xl transition-all duration-300 group" style="background:linear-gradient(150deg,#0D7A6E 0%,#131211 100%);border-color:rgba(13,122,110,0.45);color:#F7F4ED;" aria-label="Open HoussemOS fun CV">
+        <span class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center shrink-0 shadow-inner ring-1 ring-white/10">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7F4ED" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="9" height="9" rx="2" fill="#1D9E75" fill-opacity="0.95"/><rect x="13" y="2" width="9" height="9" rx="2" fill="#F7F4ED" fill-opacity="0.95"/><rect x="2" y="13" width="9" height="9" rx="2" fill="#F7F4ED" fill-opacity="0.95"/><rect x="13" y="13" width="9" height="9" rx="2" fill="#F7F4ED" fill-opacity="0.95"/></svg>
+        </span>
+        <div class="min-w-0">
+          <div class="text-base font-bold leading-snug">HoussemOS</div>
+          <div class="text-xs opacity-80 leading-snug">Operating-system CV — explore 23 projects, 10 certifications &amp; terminal</div>
         </div>
+        <span class="ml-auto text-sm font-semibold opacity-60 group-hover:translate-x-1 transition-transform shrink-0">↗</span>
+      </a>
 
-        <div class="panel-footer">
-            <span>System controls</span>
-            <span>HoussemOS 2.0</span>
-        </div>
-
+      <div class="mono mt-9 pt-5 border-t text-[11px] tracking-[0.08em] leading-[1.9]" style="border-color:var(--rule); color:var(--ink-3)">
+        PYTHON · PYTORCH &amp; TRANSFORMERS · MEDIAPIPE · FLUTTER &amp; DART · REACT &amp; ELECTRON · FASTAPI · DJANGO REST · DOCKER · SUPABASE · POSTGRESQL · KAFKA · GRPC · POWER BI
+      </div>
     </div>
 
-    <!-- CALENDAR -->
-    <div id="calendar-panel"
-         class="system-panel calendar-panel hidden">
-
-        <div class="calendar-clock" id="calendar-clock">00:00</div>
-
-        <div class="calendar-full-date" id="calendar-full-date">
-            Loading date...
+    <aside class="lg:col-span-5 space-y-4 hero-aside">
+      <!-- Focus card — content swaps with the active lens -->
+      <div class="card card-hover p-5 sm:p-6">
+        <div class="flex items-center justify-between gap-2 border-b pb-3" style="border-color:var(--rule)">
+          <span class="microlabel" style="color:var(--ink)">At a glance</span>
+          <span class="mono text-[10px] font-semibold uppercase tracking-[0.16em]" style="color:var(--accent)">
+            <span data-when="recruiter" data-i18n="lensRec">Recruiter lens</span>
+            <span data-when="researcher" data-i18n="lensRes">Researcher lens</span>
+          </span>
         </div>
 
-        <div id="calendar-content"></div>
+        <div data-when="recruiter" class="divide-f">
+          <div class="py-3.5">
+            <div class="microlabel" style="color:var(--accent)">Production &amp; delivery</div>
+            <div class="text-[13.5px] font-semibold mt-1" style="color:var(--ink)">El Moultaqa SaaS + Rif Connect 2.0</div>
+            <p class="text-[13px] leading-relaxed mt-0.5" style="color:var(--ink-2)">Four React 18/19 web apps in production, an automated Flutter→APK GitHub Actions pipeline, and the official RIF 2025 conference app for Université Constantine 2.</p>
+          </div>
+          <div class="py-3.5">
+            <div class="microlabel" style="color:var(--accent)">Current role</div>
+            <p class="text-[13px] leading-relaxed mt-1" style="color:var(--ink-2)"><strong class="text-[13.5px]" style="color:var(--ink)">Ooredoo Algérie — Radio Planning.</strong> Web interfaces and KPI-automation routines for 2G–5G cellular engineering, working directly with senior radio engineers.</p>
+          </div>
+          <div class="py-3.5">
+            <div class="microlabel" style="color:var(--accent)">Core stack</div>
+            <p class="text-[13px] leading-relaxed mt-1" style="color:var(--ink-2)">Python (PyTorch · FastAPI · Django REST) — Flutter &amp; Dart — React, Three.js &amp; Electron — Docker, Supabase, PostgreSQL, Kafka. Languages: Arabic, English (B2), French.</p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-4">
+            <button type="button" data-jump="featured" class="chip text-[11.5px]">Flagship builds · 8</button>
+            <button type="button" data-jump="fullstack-cloud" class="chip text-[11.5px]">Full-stack &amp; cloud · 8</button>
+          </div>
+        </div>
 
+        <div data-when="researcher" class="divide-f">
+          <div class="py-3.5">
+            <div class="microlabel" style="color:var(--accent)">NLP · Transformers</div>
+            <div class="text-[13.5px] font-semibold mt-1" style="color:var(--ink)">TRIA — Arabic &amp; multilingual hate-speech detection</div>
+            <p class="text-[13px] leading-relaxed mt-0.5" style="color:var(--ink-2)">Comparative fine-tuning of QARiB, AraBERT and mBERT across MSA, Tunisian/Egyptian dialects and tweets — layer-wise LR decay, label smoothing, early stopping.</p>
+          </div>
+          <div class="py-3.5">
+            <div class="microlabel" style="color:var(--accent)">Interpretable ML</div>
+            <p class="text-[13px] leading-relaxed mt-1" style="color:var(--ink-2)"><strong class="text-[13.5px]" style="color:var(--ink)">Clinical risk modeling + ChargeOps AI.</strong> Heart-failure mortality stratification with SHAP and a 3-tier triage protocol; Transformer-based RUL estimation for WPT EV charging.</p>
+          </div>
+          <div class="py-3.5">
+            <div class="microlabel" style="color:var(--accent)">Supervision · UC2</div>
+            <p class="text-[13px] leading-relaxed mt-1" style="color:var(--ink-2)">Prof. Benchikha Magra Fouzia — Prof. Benmerzoug Djamel — Dr. Boudjlel Nada — Dr. Ghammaz Wafa — Dr. Lezaar Fouzi.</p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-4">
+            <button type="button" data-jump="research" class="chip text-[11.5px]">Research studies · 6</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Currently card -->
+      <div class="card card-hover p-5 sm:p-6">
+        <div class="microlabel">Currently</div>
+        <div class="mt-3 space-y-3">
+          <div class="flex gap-3">
+            <span class="mono text-[10px] font-semibold uppercase tracking-[0.14em] shrink-0 mt-1" style="color:var(--accent); width:64px">Now</span>
+            <p class="text-[13px] leading-relaxed" style="color:var(--ink-2)">Web developer &amp; problem solver — Radio Planning, <strong style="color:var(--ink)">Ooredoo Algérie</strong></p>
+          </div>
+          <div class="flex gap-3">
+            <span class="mono text-[10px] font-semibold uppercase tracking-[0.14em] shrink-0 mt-1" style="color:var(--ink-3); width:64px">Reading</span>
+            <p class="text-[13px] leading-relaxed" style="color:var(--ink-2)">M2 Data Science &amp; Intelligent Systems, <strong style="color:var(--ink)">Université Constantine 2</strong> (2025–2026)</p>
+          </div>
+          <div class="flex gap-3">
+            <span class="mono text-[10px] font-semibold uppercase tracking-[0.14em] shrink-0 mt-1" style="color:var(--ink-3); width:64px">Building</span>
+            <p class="text-[13px] leading-relaxed" style="color:var(--ink-2)"><strong style="color:var(--ink)">El Moultaqa</strong> — a multi-tenant conference SaaS, in production</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- Bridge arc divider -->
+  <div class="wrap" aria-hidden="true">
+    <svg viewBox="0 0 1200 44" fill="none" preserveAspectRatio="none" class="w-full h-9">
+      <path d="M0 42 Q 600 -18 1200 42" stroke="var(--rule-2)" stroke-width="1"/>
+      <circle cx="600" cy="11.5" r="2.5" fill="var(--accent)"/>
+    </svg>
+  </div>
+
+  <!-- ══════════ 01 · WORK ══════════ -->
+  <section id="work" class="wrap pt-14 sm:pt-20 scroll-mt-24">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5 border-b pb-6" style="border-color:var(--rule)">
+      <div class="max-w-2xl">
+        <div class="kicker">01 · Selected work</div>
+        <h2 class="section-title mt-2">
+          <span data-when="recruiter" data-i18n="workTitleRec">Builds &amp; production systems</span>
+          <span data-when="researcher" data-i18n="workTitleRes">Research catalog &amp; studies</span>
+        </h2>
+        <p class="mt-2 text-sm" style="color:var(--ink-2)">
+          <span data-when="recruiter" data-i18n="workSubRec">Filter by domain or search the stack. Open any card for architecture notes, then jump straight to the repository.</span>
+          <span data-when="researcher" data-i18n="workSubRes">Grouped by domain, with supervision and methods noted — every repository and notebook below is public.</span>
+        </p>
+      </div>
+      <div class="seg shrink-0 self-start" role="group" aria-label="Catalog layout">
+        <button type="button" id="viewCardsBtn" class="seg-btn" aria-pressed="true" data-i18n="viewCards">Cards</button>
+        <button type="button" id="viewTableBtn" class="seg-btn" aria-pressed="false" data-i18n="viewTable">Table</button>
+      </div>
     </div>
 
-    <!-- NOTIFICATIONS -->
-    <div id="notification-panel"
-         class="system-panel notification-panel hidden">
+    <div class="mt-5 flex flex-col lg:flex-row lg:items-center gap-3">
+      <div id="filterBar" class="flex flex-wrap items-center gap-2">
+        <button type="button" data-filter="all" class="chip" aria-pressed="true" data-i18n="filterAll">All · 23</button>
+        <button type="button" data-filter="featured" class="chip" aria-pressed="false" data-i18n="filterFlagship">Flagship · 8</button>
+        <span data-when="researcher" class="inline-flex">
+          <button type="button" data-filter="research" class="chip" aria-pressed="false" data-i18n="filterResearch">Research studies · 6</button>
+        </span>
+        <button type="button" data-filter="ai-ml" class="chip" aria-pressed="false" data-i18n="filterAi">AI, NLP &amp; data · 6</button>
+        <button type="button" data-filter="vision" class="chip" aria-pressed="false" data-i18n="filterVision">Vision &amp; 3D · 4</button>
+        <button type="button" data-filter="mobile-desktop" class="chip" aria-pressed="false" data-i18n="filterMobile">Mobile &amp; desktop · 5</button>
+        <button type="button" data-filter="fullstack-cloud" class="chip" aria-pressed="false" data-i18n="filterFull">Full-stack &amp; distributed · 8</button>
+      </div>
+      <div class="relative lg:ml-auto lg:w-64 shrink-0">
+        <svg class="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style="color:var(--ink-3)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input id="searchInput" type="search" class="input pl-9" placeholder="Search stack, title, supervisor…" aria-label="Search projects">
+      </div>
+    </div>
 
-        <div class="panel-heading">
-            <strong>Notifications</strong>
-            <button id="clear-notifications">Clear all</button>
-        </div>
+    <div class="mt-4 flex items-center justify-between">
+      <span id="countLine" class="mono text-[11px]" style="color:var(--ink-3)">Showing all 23</span>
+      <button type="button" id="resetFiltersBtn" class="hidden text-[12px] underline underline-offset-2" style="color:var(--accent)" data-i18n="resetFilters">Reset filters</button>
+    </div>
 
-        <div id="notification-content">
+    <div id="workGrid" class="mt-5 grid md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
-            <div class="empty-notifications">
+    <div id="workTableWrap" class="card hidden mt-6 overflow-x-auto">
+      <table class="spec-table w-full border-collapse text-[13px]">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th data-i18n="thProject">Project</th>
+            <th data-i18n="thDomain">Domain</th>
+            <th data-i18n="thStack">Stack</th>
+            <th data-i18n="thContext">Supervision / context</th>
+            <th class="text-right" data-i18n="thLinks">Links</th>
+          </tr>
+        </thead>
+        <tbody id="workTableBody"></tbody>
+      </table>
+    </div>
+  </section>
 
-                <svg><use href="#icon-bell"/></svg>
+  <!-- ══════════ 02 · EXPERIENCE & EDUCATION ══════════ -->
+  <section id="experience" class="wrap pt-14 sm:pt-20 grid lg:grid-cols-12 gap-10 scroll-mt-24">
+    <div class="lg:col-span-7 reveal">
+      <div class="kicker">02 · Experience</div>
+      <h2 class="section-title mt-2" data-i18n="expHeading">Experience &amp; education</h2>
 
-                <strong>You're all caught up</strong>
-
-                <span>No new notifications</span>
-
+      <div class="tl mt-8">
+        <div class="tl-item">
+          <span class="tl-dot" aria-hidden="true"></span>
+          <div class="card card-hover p-5 sm:p-6 space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="pill pill-accent">2026 — present</span>
+              <span class="mono text-[11px]" style="color:var(--ink-3)">Constantine, Algeria</span>
             </div>
-
+            <div>
+              <h3 class="text-lg sm:text-xl font-semibold">Web developer &amp; problem solver — Radio Planning</h3>
+              <p class="text-[13px] font-semibold mt-0.5" style="color:var(--accent)">Ooredoo Algérie</p>
+            </div>
+            <ul class="prose text-[13.5px] space-y-2">
+              <li class="flex gap-2.5"><span class="mt-2.5 h-px w-3.5 shrink-0" style="background:var(--ink-3)"></span><span>Internal automation tools and responsive web interfaces for cellular data processing and site-parameter management, built directly with senior radio-planning engineers.</span></li>
+              <li class="flex gap-2.5"><span class="mt-2.5 h-px w-3.5 shrink-0" style="background:var(--ink-3)"></span><span>Automated validation routines that accelerated daily operational KPI analysis — less manual calculation, faster cross-team handover.</span></li>
+            </ul>
+          </div>
         </div>
 
+        <div class="tl-item">
+          <span class="tl-dot" aria-hidden="true"></span>
+          <div class="card card-hover p-5 sm:p-6 space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="pill">2026 · internship</span>
+              <span class="mono text-[11px]" style="color:var(--ink-3)">Radio Engineering Dept.</span>
+            </div>
+            <div>
+              <h3 class="text-lg sm:text-xl font-semibold">Radio engineering intern — 2G → 5G mobile networks</h3>
+              <p class="text-[13px] font-semibold mt-0.5" style="color:var(--accent)">Ooredoo Algérie</p>
+            </div>
+            <ul class="prose text-[13.5px] space-y-2">
+              <li class="flex gap-2.5"><span class="mt-2.5 h-px w-3.5 shrink-0" style="background:var(--ink-3)"></span><span>End-to-end architecture analysis from 2G to 5G (n78): RAN (BSC, BTS, NodeB, eNodeB) and NSS core operations.</span></li>
+              <li class="flex gap-2.5"><span class="mt-2.5 h-px w-3.5 shrink-0" style="background:var(--ink-3)"></span><span>Greenfield and rooftop site planning, sectorization, frequency-band allocation (GSM900/1800, U2100, LTE, 5G n78) and radio-parameter optimization (BCCH, BSIC, MIMO).</span></li>
+              <li class="flex gap-2.5"><span class="mt-2.5 h-px w-3.5 shrink-0" style="background:var(--ink-3)"></span><span>Multiple-access schemes (FDMA, TDMA, CDMA, OFDMA) with FDD/TDD duplexing, plus IP/MPLS routing and microwave transmission.</span></li>
+            </ul>
+            <div class="pt-3 border-t flex flex-wrap items-center gap-1.5" style="border-color:var(--rule)">
+              <span class="microlabel mr-1">Mentors</span>
+              <span class="pill">Billel Boukarboua</span>
+              <span class="pill">Mohamed Alkassab</span>
+              <span class="pill">Badreddine Bouraiou</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <div class="lg:col-span-5 space-y-4 reveal">
+      <div class="card p-5 sm:p-6">
+        <div class="flex items-center justify-between pb-3 border-b" style="border-color:var(--rule)">
+          <h3 class="text-lg font-semibold" data-i18n="eduUc2">Université Constantine 2</h3>
+          <span class="mono text-[11px]" style="color:var(--ink-3)">2021 — 2026</span>
+        </div>
+        <div class="mt-4 space-y-4 border-l-2 pl-4" style="border-color:var(--accent)">
+          <div>
+            <div class="mono text-[11px] font-semibold" style="color:var(--accent)">2025 — 2026 · in progress</div>
+            <h4 class="text-[14.5px] font-semibold mt-0.5">Master 2 — Data Science &amp; Intelligent Systems</h4>
+          </div>
+          <div>
+            <div class="mono text-[11px]" style="color:var(--ink-3)">2024 — 2025 · completed</div>
+            <h4 class="text-[14.5px] font-semibold mt-0.5" style="color:var(--ink-2)">Master 1 — Data Science (SDSI)</h4>
+          </div>
+          <div>
+            <div class="mono text-[11px]" style="color:var(--ink-3)">2021 — 2024 · completed</div>
+            <h4 class="text-[14.5px] font-semibold mt-0.5" style="color:var(--ink-2)">Licence — Software Engineering (Génie Logiciel)</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="card p-5 sm:p-6">
+        <h3 class="text-lg font-semibold pb-3 border-b" style="border-color:var(--rule)" data-i18n="langHeading">Languages</h3>
+        <div class="mt-1">
+          <div class="flex items-center justify-between py-2.5 border-b" style="border-color:var(--rule)">
+            <span class="text-[13.5px] font-medium">Arabic — العربية</span>
+            <span class="mono text-[11px] font-semibold" style="color:var(--accent)">Native</span>
+          </div>
+          <div class="flex items-center justify-between py-2.5 border-b" style="border-color:var(--rule)">
+            <span class="text-[13.5px] font-medium">English</span>
+            <span class="mono text-[11px]" style="color:var(--ink-2)">B2 certified · ULC School</span>
+          </div>
+          <div class="flex items-center justify-between py-2.5">
+            <span class="text-[13.5px] font-medium">French — Français</span>
+            <span class="mono text-[11px]" style="color:var(--ink-2)">Professional</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 03 · EL MOULTAQA ══════════ -->
+  <section id="venture" class="wrap pt-14 sm:pt-20 scroll-mt-24 reveal">
+    <div class="card p-6 sm:p-9">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 border-b pb-6" style="border-color:var(--rule)">
+        <div class="max-w-2xl">
+          <div class="kicker">03 · Venture</div>
+          <h2 class="section-title mt-2">El Moultaqa — <span class="italic" style="color:var(--ink-2)">الملتقى</span></h2>
+          <p class="mt-3 text-sm leading-relaxed" style="color:var(--ink-2)">An all-in-one, multi-tenant conference SaaS. Organizers launch a complete digital presence — branded web portals plus a signed Android app — within minutes. Four interconnected React 18/19 + Vite web applications and an automated GitHub Actions mobile build factory.</p>
+        </div>
+        <div class="mono text-[11px] space-y-1.5 shrink-0 lg:text-right" style="color:var(--ink-3)">
+          <div><span class="status-dot"></span>In production · hardened across ~68 fixes</div>
+          <div>4 web apps · Flutter analyze: 0 errors, 0 warnings</div>
+          <div>Supabase RLS · Clerk · HLS streaming</div>
+        </div>
+      </div>
+
+      <div class="mt-5 flex flex-wrap gap-2">
+        <button type="button" data-venture-btn="organizers" class="chip" aria-pressed="true" data-i18n="ventureOrganizers">For organizers</button>
+        <button type="button" data-venture-btn="attendees" class="chip" aria-pressed="false" data-i18n="ventureAttendees">For attendees</button>
+        <button type="button" data-venture-btn="architecture" class="chip" aria-pressed="false" data-i18n="ventureArchitecture">Architecture &amp; CI/CD</button>
+      </div>
+
+      <div id="venture-panel-organizers" class="venture-panel mt-5 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="tile">
+          <div class="microlabel" style="color:var(--accent)">01 · Launch</div>
+          <h3 class="text-[14px] font-semibold mt-1.5">Conference-builder wizard</h3>
+          <p class="text-[12.5px] leading-relaxed mt-1" style="color:var(--ink-2)">Guided setup plus a full admin panel for tracks, daily sessions, keynote speakers, sponsors and custom branding.</p>
+        </div>
+        <div class="tile">
+          <div class="microlabel" style="color:var(--accent)">02 · One-click APK</div>
+          <h3 class="text-[14px] font-semibold mt-1.5">Automated GitHub Actions build</h3>
+          <p class="text-[12.5px] leading-relaxed mt-1" style="color:var(--ink-2)">A CI/CD pipeline that compiles, signs and packages a native Android APK injected with the conference's logo and palette.</p>
+        </div>
+        <div class="tile">
+          <div class="microlabel" style="color:var(--accent)">03 · Live</div>
+          <h3 class="text-[14px] font-semibold mt-1.5">HLS streaming &amp; live Q&amp;A</h3>
+          <p class="text-[12.5px] leading-relaxed mt-1" style="color:var(--ink-2)">Per-session HLS broadcasts with live audience Q&amp;A, 5-star session ratings, push notifications and direct messaging.</p>
+        </div>
+        <div class="tile">
+          <div class="microlabel" style="color:var(--accent)">04 · Data</div>
+          <h3 class="text-[14px] font-semibold mt-1.5">Analytics &amp; discovery</h3>
+          <p class="text-[12.5px] leading-relaxed mt-1" style="color:var(--ink-2)">Attendee lists, session telemetry, CSV/JSON reporting exports and a public discovery page for new audiences.</p>
+        </div>
+      </div>
+
+      <div id="venture-panel-attendees" class="venture-panel hidden mt-5 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="tile">
+          <div class="microlabel" style="color:var(--accent)">01 · One app</div>
+          <h3 class="text-[14px] font-semibold mt-1.5">Unified attendee passport</h3>
+          <p class="text-[12.5px] leading-relaxed mt-1" style="color:var(--ink-2)">Log in once; schedule, bookmarked talks and streams follow from one conference to the next — no separate apps.</p>
+        </div>
+        <div class="tile">
+          <div class="microlabel" style="color:var(--accent)">02 · Program</div>
+          <h3 class="text-[14px] font-semibold mt-1.5">Interactive daily program</h3>
+          <p class="text-[12.5px] leading-relaxed mt-1" style="color:var(--ink-2)">The full program by day, live HLS streams with Q&amp;A, speaker profiles, instant notifications and messaging.</p>
+        </div>
+        <div class="tile">
+          <div class="microlabel" style="color:var(--accent)">03 · Feedback</div>
+          <h3 class="text-[14px] font-semibold mt-1.5">Real-time speaker ratings</h3>
+          <p class="text-[12.5px] leading-relaxed mt-1" style="color:var(--ink-2)">Rate talks and presenters immediately after each session to help organizers improve future editions.</p>
+        </div>
+        <div class="tile">
+          <div class="microlabel" style="color:var(--accent)">04 · Zero friction</div>
+          <h3 class="text-[14px] font-semibold mt-1.5">Instant guest mode</h3>
+          <p class="text-[12.5px] leading-relaxed mt-1" style="color:var(--ink-2)">Browse schedules, watch streams and explore sessions without an account — or sign in via Clerk to sync preferences.</p>
+        </div>
+      </div>
+
+      <div id="venture-panel-architecture" class="venture-panel hidden mt-5 grid md:grid-cols-3 gap-4">
+        <div class="tile">
+          <div class="microlabel" style="color:var(--accent)">4 web portals · React 18/19 + Vite</div>
+          <p class="text-[12.5px] leading-relaxed mt-1.5" style="color:var(--ink-2)">1. Public discovery &amp; onboarding landing<br>2. Attendee web app — streams, Q&amp;A, agenda<br>3. Organizer admin dashboard<br>4. Platform super-admin control plane</p>
+        </div>
+        <div class="tile">
+          <div class="microlabel" style="color:var(--accent)">APK factory · GitHub Actions</div>
+          <p class="text-[12.5px] leading-relaxed mt-1.5" style="color:var(--ink-2)">A webhook-triggered workflow that injects tenant branding, compiles Flutter, signs the release APK and publishes the artifact link.</p>
+        </div>
+        <div class="tile">
+          <div class="microlabel" style="color:var(--accent)">Supabase + Clerk + HLS</div>
+          <p class="text-[12.5px] leading-relaxed mt-1.5" style="color:var(--ink-2)">PostgreSQL with row-level security isolating tenant data; Supabase Realtime for live Q&amp;A; Clerk authentication; adaptive HLS streaming.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 04 · SKILLS & CERTIFICATIONS ══════════ -->
+  <section id="skills" class="wrap pt-14 sm:pt-20 space-y-6 scroll-mt-24 reveal">
+    <div class="border-b pb-6" style="border-color:var(--rule)">
+      <div class="kicker">04 · Assets</div>
+      <h2 class="section-title mt-2" data-i18n="skillsHeading">Stack, certifications &amp; teaching</h2>
+      <p class="mt-2 text-sm" style="color:var(--ink-2)" data-i18n="skillsSub">Click any technology to filter the catalog above.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="card p-5 space-y-3">
+        <div class="microlabel" data-i18n="skLang">Languages</div>
+        <div class="flex flex-wrap gap-1.5">
+          <button type="button" data-skill="Python" class="pill hover:!border-[var(--rule-2)] hover:!text-[var(--ink)] cursor-pointer">Python</button>
+          <button type="button" data-skill="Dart" class="pill hover:!border-[var(--rule-2)] cursor-pointer">Dart</button>
+          <button type="button" data-skill="JavaScript" class="pill cursor-pointer">JavaScript (ES6+)</button>
+          <button type="button" data-skill="Java" class="pill cursor-pointer">Java</button>
+          <button type="button" data-skill="Kotlin" class="pill cursor-pointer">Kotlin</button>
+          <button type="button" data-skill="SQL" class="pill cursor-pointer">SQL</button>
+          <button type="button" data-skill="C++" class="pill cursor-pointer">C++ / Bash</button>
+        </div>
+      </div>
+      <div class="card p-5 space-y-3">
+        <div class="microlabel" data-i18n="skAi">AI &amp; data</div>
+        <div class="flex flex-wrap gap-1.5">
+          <button type="button" data-skill="PyTorch" class="pill pill-accent cursor-pointer">PyTorch</button>
+          <button type="button" data-skill="Transformers" class="pill pill-accent cursor-pointer">Transformers · AraBERT / QARiB</button>
+          <button type="button" data-skill="MediaPipe" class="pill pill-accent cursor-pointer">Google MediaPipe</button>
+          <button type="button" data-skill="OpenCV" class="pill pill-accent cursor-pointer">OpenCV</button>
+          <button type="button" data-skill="Scikit-Learn" class="pill pill-accent cursor-pointer">Scikit-learn &amp; LightGBM</button>
+          <button type="button" data-skill="SHAP" class="pill pill-accent cursor-pointer">SHAP explainability</button>
+          <button type="button" data-skill="Pandas" class="pill pill-accent cursor-pointer">Pandas &amp; NumPy</button>
+        </div>
+      </div>
+      <div class="card p-5 space-y-3">
+        <div class="microlabel" data-i18n="skWeb">Web &amp; mobile</div>
+        <div class="flex flex-wrap gap-1.5">
+          <button type="button" data-skill="Flutter" class="pill cursor-pointer">Flutter &amp; Riverpod</button>
+          <button type="button" data-skill="React" class="pill cursor-pointer">React 18/19 + Vite</button>
+          <button type="button" data-skill="FastAPI" class="pill cursor-pointer">FastAPI</button>
+          <button type="button" data-skill="Django" class="pill cursor-pointer">Django REST</button>
+          <button type="button" data-skill="Electron" class="pill cursor-pointer">Electron &amp; Monaco</button>
+          <button type="button" data-skill="Three.js" class="pill cursor-pointer">Three.js / WebGL</button>
+          <button type="button" data-skill="Tailwind" class="pill cursor-pointer">Tailwind &amp; SCSS</button>
+        </div>
+      </div>
+      <div class="card p-5 space-y-3">
+        <div class="microlabel" data-i18n="skCloud">Cloud &amp; infra</div>
+        <div class="flex flex-wrap gap-1.5">
+          <button type="button" data-skill="Docker" class="pill cursor-pointer">Docker &amp; Compose</button>
+          <button type="button" data-skill="Supabase" class="pill cursor-pointer">Supabase &amp; Clerk</button>
+          <button type="button" data-skill="Firebase" class="pill cursor-pointer">Firebase</button>
+          <button type="button" data-skill="PostgreSQL" class="pill cursor-pointer">PostgreSQL &amp; SQLite</button>
+          <button type="button" data-skill="Kafka" class="pill cursor-pointer">Apache Kafka</button>
+          <button type="button" data-skill="gRPC" class="pill cursor-pointer">gRPC &amp; Protobuf</button>
+          <button type="button" data-skill="Consul" class="pill cursor-pointer">Consul &amp; NGINX</button>
+          <button type="button" data-skill="Power BI" class="pill cursor-pointer">Power BI (.pbix)</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div class="flex items-center gap-3 mono text-[12.5px] min-w-0">
+        <span class="pill pill-accent shrink-0">PyPI</span>
+        <code class="font-semibold truncate" style="color:var(--ink)">pip install samcode-cli</code>
+      </div>
+      <p class="text-[12px] hidden md:block" style="color:var(--ink-3)">Sam Code — an Electron code editor with an AI agent, published as an installable CLI.</p>
+      <button type="button" id="copyCliBtn" class="btn text-[12px] shrink-0 self-start sm:self-auto">Copy</button>
+    </div>
+
+    <div class="pt-4 flex items-center justify-between gap-4 border-t" style="border-color:var(--rule)">
+      <div class="microlabel pt-4" data-i18n="certLabel">Certificates · verified scans</div>
+      <div class="microlabel pt-4 text-right" style="color:var(--ink-3)">10</div>
+    </div>
+    <p class="text-sm" style="color:var(--ink-2)" data-i18n="certSub">Click any certificate to open the actual document.</p>
+    <div id="certGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+  </section>
+
+  <!-- ══════════ 05 · CONTACT ══════════ -->
+  <section id="contact" class="wrap pt-14 sm:pt-20 scroll-mt-24 reveal">
+    <div class="kicker">05 · Contact</div>
+    <h2 class="section-title mt-2">
+      <span data-when="recruiter" data-i18n="contactTitleRec">Ready when you are.</span>
+      <span data-when="researcher" data-i18n="contactTitleRes">Open to collaboration.</span>
+    </h2>
+    <p class="mt-3 max-w-2xl text-sm leading-relaxed" style="color:var(--ink-2)">
+      <span data-when="recruiter" data-i18n="contactSubRec">Hiring for software engineering, data science or telecom-adjacent roles? Or evaluating El Moultaqa for your event? Reach out directly — replies within a day.</span>
+      <span data-when="researcher" data-i18n="contactSubRes">Interested in Arabic NLP, interpretable clinical ML, prognostics — or supervision for the next stage of my Master's? Write to either address; both reach me directly.</span>
+    </p>
+
+    <div class="mt-6 flex flex-wrap items-center gap-2.5">
+      <a href="mailto:houssemeddinemagra@gmail.com" class="btn btn-primary">houssemeddinemagra@gmail.com ↗</a>
+      <button type="button" id="copyEmailBtn" class="btn" data-i18n="copyEmail">Copy email</button>
+      <a href="mailto:houssem.magra@univ-constantine2.dz" class="btn">houssem.magra@univ-constantine2.dz</a>
+    </div>
+
+    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+      <a class="tile space-y-1" href="https://github.com/Houssemeddine-mag" target="_blank" rel="noopener noreferrer">
+        <div class="microlabel">GitHub</div>
+        <div class="text-[13.5px] font-semibold">@Houssemeddine-mag</div>
+        <div class="mono text-[11px]" style="color:var(--accent)">16 public repos ↗</div>
+      </a>
+      <a class="tile space-y-1" href="https://www.linkedin.com/in/houssem-eddine-magra-880241343" target="_blank" rel="noopener noreferrer">
+        <div class="microlabel">LinkedIn</div>
+        <div class="text-[13.5px] font-semibold">Houssem Eddine Magra</div>
+        <div class="mono text-[11px]" style="color:var(--accent)">Connect ↗</div>
+      </a>
+      <a class="tile space-y-1" href="tel:+213541529890">
+        <div class="microlabel">Phone · WhatsApp</div>
+        <div class="mono text-[13.5px] font-semibold">+213 541 529 890</div>
+        <div class="mono text-[11px]" style="color:var(--ink-3)">El Khroub, Constantine</div>
+      </a>
+      <a class="tile space-y-1" href="mailto:houssem.magra@univ-constantine2.dz">
+        <div class="microlabel">Academic email</div>
+        <div class="text-[13.5px] font-semibold">université constantine 2</div>
+        <div class="mono text-[11px]" style="color:var(--accent)">univ-constantine2.dz ↗</div>
+      </a>
+    </div>
+
+    <div class="mt-14 mb-10 pt-6 border-t flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mono text-[11px]" style="border-color:var(--rule); color:var(--ink-3)">
+      <span>© 2026 Houssem Eddine Magra — Cité El Chourouk, 64 Log. N°26, El Khroub, Constantine, Algeria</span>
+      <span data-i18n="footnote">Designed &amp; written by hand — no template.</span>
+    </div>
+  </section>
 </main>
 
+<!-- ══════════ PROJECT MODAL ══════════ -->
+<div id="projectModal" class="hidden fixed inset-0 z-50 modal-backdrop flex items-center justify-center p-4 no-print" role="dialog" aria-modal="true" aria-labelledby="modalProjTitle">
+  <div class="card w-full max-w-2xl max-h-[88vh] flex flex-col overflow-hidden">
+    <div class="px-6 py-4 border-b flex items-center justify-between gap-4" style="border-color:var(--rule)">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <span id="modalProjBadge" class="pill pill-accent shrink-0">Project</span>
+        <span id="modalProjMeta" class="mono text-[11px] truncate" style="color:var(--ink-3)"></span>
+      </div>
+      <button type="button" id="closeProjectModalBtn" class="btn btn-icon shrink-0" aria-label="Close">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="p-6 overflow-y-auto space-y-4">
+      <div>
+        <h3 id="modalProjTitle" class="text-2xl sm:text-[1.7rem] font-semibold"></h3>
+        <div id="modalProjStack" class="mono text-[12px] mt-1.5" style="color:var(--accent)"></div>
+      </div>
+      <p id="modalProjDesc" class="prose prose-serif"></p>
+      <div>
+        <div class="microlabel">
+          <span data-when="recruiter" data-i18n="modalHiEng">Engineering &amp; architecture highlights</span>
+          <span data-when="researcher" data-i18n="modalHiRes">Methods &amp; contributions</span>
+        </div>
+        <ul id="modalProjHighlights" class="mt-2 space-y-2 text-[13px]" style="color:var(--ink-2)"></ul>
+      </div>
+      <div id="modalProjSup" class="hidden tile text-[12.5px] mono" style="color:var(--accent)"></div>
+      <div id="modalProjLinks" class="flex flex-wrap items-center gap-2.5 pt-1"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ CERTIFICATE LIGHTBOX ══════════ -->
+<div id="certLightbox" class="hidden fixed inset-0 z-[70] modal-backdrop flex items-center justify-center p-4 no-print" role="dialog" aria-modal="true" aria-label="Certificate viewer">
+  <figure class="cert-frame relative flex flex-col max-h-[92vh]">
+    <div id="certViewImgWrap" class="flex items-center justify-center p-3 overflow-hidden">
+      <img id="certViewImg" alt="">
+    </div>
+    <figcaption class="border-t px-4 py-3 flex items-center justify-between gap-4" style="border-color:var(--rule)">
+      <div class="min-w-0">
+        <div class="text-[13px] font-semibold truncate" style="color:var(--ink)" id="certViewTitle"></div>
+        <div class="mono text-[10.5px]" style="color:var(--ink-3)" id="certViewMeta"></div>
+      </div>
+      <div class="mono text-[11px] shrink-0" style="color:var(--ink-3)" id="certViewCount"></div>
+    </figcaption>
+    <button type="button" id="certPrevBtn" class="btn btn-icon absolute left-2 top-1/2 -translate-y-1/2" aria-label="Previous certificate">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    </button>
+    <button type="button" id="certNextBtn" class="btn btn-icon absolute right-2 top-1/2 -translate-y-1/2" aria-label="Next certificate">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+    <button type="button" id="closeCertLightboxBtn" class="btn btn-icon absolute top-2 right-2" aria-label="Close certificate viewer">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </figure>
+</div>
+
+<div id="toast" class="no-print" role="status" aria-live="polite"></div>
+
+<noscript>
+  <div class="wrap pb-16">
+    <div class="tile text-[13px]">JavaScript is disabled, so the interactive project catalog and certificate gallery are unavailable. Certificates are also available as files under /assets — email me for any of them. Contact details remain reachable directly: houssemeddinemagra@gmail.com · +213 541 529 890.</div>
+  </div>
+</noscript>
+
+<script>
+/* ════════════════════════════════════════════════════════════════
+   CATALOG — 23 projects & studies
+   research: true → prioritized in the researcher lens
+   ════════════════════════════════════════════════════════════════ */
+const PROJECTS = [
+  {
+    id: 'chargeops-ai',
+    name: 'ChargeOps AI',
+    year: '2026',
+    category: 'ai-ml',
+    categoryLabel: 'AI & Predictive Maintenance',
+    research: true,
+    isNewGithub: false,
+    featured: true,
+    stack: ['Python', 'PyTorch', 'FastAPI', 'Docker', 'Chart.js', 'PyWebView'],
+    shortDesc: 'AI diagnostic & prognostic platform for Wireless Power Transfer (WPT) EV charging infrastructure with Transformer RUL estimation.',
+    fullDesc: 'AI-powered diagnostic and prognostic platform for Wireless Power Transfer (WPT) EV charging infrastructure. Features an autonomous edge node simulator generating physics-based telemetry (voltages, currents, coil temperatures, Q-factor). A Transformer neural network estimates Remaining Useful Life (RUL) and detects real-time faults such as resonance frequency drift. Deployed as a containerized web service with a live Chart.js dashboard; also runs as a native desktop app via PyWebView.',
+    highlights: [
+      'Physics-based autonomous WPT edge telemetry simulator (coil temperature, Q-factor, voltage/current harmonics)',
+      'Transformer deep learning architecture estimating Remaining Useful Life (RUL) and resonance drift anomalies',
+      'Multi-stage Dockerized FastAPI inference service + live Chart.js dashboard & PyWebView native desktop wrapper'
+    ],
+    links: [
+      { label: 'GitHub Repo', url: 'https://github.com/Houssemeddine-mag/ChargeOps-AI' }
+    ]
+  },
+  {
+    id: 'chargeops-sys',
+    name: 'ChargeOps Sys',
+    year: '2026',
+    category: 'vision',
+    categoryLabel: '3D Simulation & Diagnostics',
+    research: false,
+    isNewGithub: false,
+    featured: true,
+    stack: ['React', 'Three.js', 'React Three Fiber', 'Electron', 'Vite', 'jsPDF'],
+    shortDesc: 'Real-time 3D wireless EV charging diagnostic simulator modeling the 11-stage power-transfer chain and 8 fault modes.',
+    fullDesc: 'Real-time wireless EV charging diagnostic simulator. Models the complete 11-stage power-transfer chain (AC grid → PFC → Inverter → Tx/Rx compensation & coils → Rectifier → Battery), auto-detects 8 fault types (FOD, coil misalignment, capacitor degradation, inverter fault, thermal runaway, component aging), walks through step-by-step resolution procedures, and visualizes everything in immersive 3D — magnetic field lines, power flow, live waveforms, and alignment controls — then generates a comprehensive PDF diagnostic report via jsPDF.',
+    highlights: [
+      'Interactive 3D magnetic flux & coil alignment visualization powered by Three.js / React Three Fiber',
+      '11-stage power electronics simulation with automatic detection and guided remediation for 8 fault categories',
+      'Dual deployment target: runs in-browser via Vite or as a standalone Electron desktop engineering suite'
+    ],
+    links: [
+      { label: 'GitHub Repo', url: 'https://github.com/Houssemeddine-mag/ChargeOps-Sys' }
+    ]
+  },
+  {
+    id: 'sam-code',
+    name: 'Sam Code & samcode-cli',
+    year: '2026',
+    category: 'mobile-desktop',
+    categoryLabel: 'Desktop IDE & AI CLI Agent',
+    research: false,
+    isNewGithub: false,
+    featured: true,
+    stack: ['Electron', 'React', 'Monaco Editor', 'Node.js', 'Python', 'OpenAI API'],
+    shortDesc: 'Cross-platform desktop code editor built on Monaco Editor with integrated terminal, AI coding assistant, Jupyter support, and PyPI CLI agent.',
+    fullDesc: 'Open-source cross-platform desktop code editor built with Electron, React, and Monaco Editor (the engine powering VS Code). Features syntax highlighting for 100+ languages, an integrated terminal (xterm.js + node-pty), an AI-powered coding assistant via OpenAI, a plugin marketplace, Jupyter notebook support, and automated CI/CD builds for Windows, macOS, and Linux. Accompanied by samcode-cli, an installable Python CLI coding agent (pip install samcode-cli).',
+    highlights: [
+      'Monaco Editor core supporting 100+ languages, multi-tab editing, and native terminal emulation via xterm.js & node-pty',
+      'Built-in AI coding assistant, plugin extension marketplace, and interactive Jupyter notebook rendering',
+      'Published companion CLI agent (pip install samcode-cli) plus Firebase/Render web landing & release distribution'
+    ],
+    links: [
+      { label: 'GitHub Repo', url: 'https://github.com/Houssemeddine-mag/Sam-Code' },
+      { label: 'Live Site', url: 'https://samcode-26.web.app/#' }
+    ]
+  },
+  {
+    id: 'itfits',
+    name: 'ItFits — 360° AI Interior Studio',
+    year: '2026',
+    category: 'mobile-desktop',
+    categoryLabel: 'Mobile AI & 360° Spatial Capture',
+    research: false,
+    isNewGithub: false,
+    featured: true,
+    stack: ['Flutter 3.47', 'Dart 3.13', 'Riverpod', 'Firebase', 'OpenRouter', 'Pollinations.ai'],
+    shortDesc: 'AI interior design mobile app with guided 12-stop 360° room capture, IMU panorama stitching, isometric 3D floor-plan editor, and AI restyling.',
+    fullDesc: 'AI-powered interior design mobile application that captures rooms as 360° photo spheres, generates floor plans, applies curated architectural styles, and renders photorealistic AI redesign panoramas. Includes a guided 12-stop viewfinder using on-device IMU orientation sensors with GPano XMP metadata, an interactive gyroscope + touch panorama viewer, a 2D/isometric 3D floor-plan editor (walls, doors, windows, dimensions), and Cloud Firestore project history.',
+    highlights: [
+      'Guided 12-stop 360° room capture with IMU sensor orientation tracking and on-device panorama stitching (GPano XMP)',
+      'Interactive 2D floor-plan editor with real-time isometric 3D room preview and architectural dimensioning',
+      'Style Studio generating AI room redesign panoramas via OpenRouter & Pollinations.ai with Firebase Auth & Firestore sync'
+    ],
+    links: [
+      { label: 'GitHub Repo', url: 'https://github.com/Houssemeddine-mag/ItFits' }
+    ]
+  },
+  {
+    id: 'tria-hate-speech',
+    name: 'TRIA — Transformer Hate Speech Detection',
+    year: '2026',
+    category: 'ai-ml',
+    categoryLabel: 'NLP & Transformer Fine-Tuning',
+    research: true,
+    isNewGithub: true,
+    featured: true,
+    stack: ['Python', 'PyTorch', 'Hugging Face Transformers', 'AraBERT', 'QARiB', 'mBERT'],
+    shortDesc: 'Comparative fine-tuning of QARiB, AraBERT, and mBERT Transformer models for Arabic (MSA & dialects) and multilingual hate speech detection.',
+    fullDesc: 'TRIA fine-tunes pre-trained Transformer language models for binary hate speech detection (0 = non-hate, 1 = hate) across Modern Standard Arabic (MSA), Classical Arabic, dialectal Arabic (Tunisian, Egyptian), and multilingual social media tweets. Evaluates QARiB, AraBERT, and multilingual BERT (bert-base-multilingual-cased) with rigorous anti-overfitting techniques including layer-wise learning rate decay, label smoothing, and early stopping.',
+    highlights: [
+      'Comparative benchmarking across QARiB, AraBERT, and mBERT on multi-dialect Arabic and multilingual tweet corpora',
+      'Implemented layer-wise learning rate decay, label smoothing, and early stopping for robust generalization',
+      'End-to-end tokenization, preprocessing, and precision/recall/F1 evaluation notebooks'
+    ],
+    links: [
+      { label: 'GitHub Repo', url: 'https://github.com/Houssemeddine-mag/Hate-Speech-Detection-using-transformer-models' }
+    ]
+  },
+  {
+    id: 'clinical-risk-modeling',
+    name: 'Clinical Risk Modeling — Heart Failure ML',
+    year: '2026',
+    category: 'ai-ml',
+    categoryLabel: 'Clinical ML & SHAP',
+    research: true,
+    isNewGithub: true,
+    featured: true,
+    stack: ['Python', 'Scikit-Learn', 'SHAP', 'Pandas', 'Jupyter', 'Biostatistics'],
+    shortDesc: 'Early mortality risk stratification in heart failure patients using clinically-motivated feature engineering, 3-tier risk scoring, and SHAP explainability.',
+    fullDesc: 'Machine learning study exploring early mortality risk stratification in patients with heart failure using the UCI Heart Failure Clinical Records dataset (299 clinical profiles). Compares baseline models against clinically-motivated feature engineering strategies, establishes a 3-tier clinical risk stratification framework (Low < 0.35, Moderate 0.35–0.60, High ≥ 0.60) to support triage decisions, and provides transparent model explainability using SHAP values.',
+    highlights: [
+      'Supervised binary mortality classification (DEATH_EVENT) across 299 patient records with clinical feature interactions',
+      'Actionable 3-tier clinical risk stratification protocol (Low <0.35, Moderate 0.35–0.60, High ≥0.60)',
+      'SHAP (SHapley Additive exPlanations) global and local attribution plots for clinical interpretability'
+    ],
+    links: [
+      { label: 'GitHub Repo', url: 'https://github.com/Houssemeddine-mag/Clinical-Risk-Modeling-' }
+    ]
+  },
+  {
+    id: 'ntic-telecom-bi',
+    name: 'NTIC Telecom & DistribAlgeria — BI Decision Suite',
+    year: '2025',
+    category: 'ai-ml',
+    categoryLabel: 'Business Intelligence & Data Warehouse',
+    research: true,
+    isNewGithub: true,
+    featured: false,
+    stack: ['Python', 'Pandas', 'SQLite Warehouse', 'Power BI (.pbix)', 'NumPy', 'SQL'],
+    shortDesc: 'Master 1 SDSI Advanced BI suite: European NTIC Telecom strategic consulting (2018–2025 datasets) and DistribAlgeria SQLite warehouse & Power BI dashboards.',
+    fullDesc: 'Dual Business Intelligence Avancée project completed at Université Constantine 2 (Master 1 SDSI). Project 1 delivers a consultative strategic analysis for a new European NTIC Telecom enterprise — evaluating technology adoption, salary benchmarks, and AI workflow trends from multi-year Stack Overflow Europe datasets (2018–2025). Project 2 architectures an end-to-end SQLite data warehouse, Python ETL scripts, and interactive Power BI (.pbix) executive dashboards for commercial steering at DistribAlgeria.',
+    highlights: [
+      'Longitudinal analysis of European developer & telecom technology trends (2018–2025) for strategic market entry',
+      'Custom SQLite star-schema data warehouse with automated Python/Pandas ETL cleaning and aggregation scripts',
+      'Interactive Power BI (.pbix) executive dashboards tracking regional revenue, margins, and KPI targets'
+    ],
+    links: [
+      { label: 'GitHub Repo', url: 'https://github.com/Houssemeddine-mag/-Analyse-Consultative-pour-une-Nouvelle-Entreprise-NTIC-Telecom-Recommandations-Strat-giques' }
+    ]
+  },
+
+/* @@MORE_PROJECTS@@ */
+  {
+    id: 'penguin-deals',
+    name: 'Penguin Deals',
+    year: '2025',
+    category: 'mobile-desktop',
+    categoryLabel: 'Mobile E-Commerce & Deals',
+    research: false,
+    isNewGithub: true,
+    featured: false,
+    stack: ['Flutter', 'Dart', 'Firebase', 'Python', 'C++'],
+    shortDesc: 'Cross-platform mobile deals, coupons, and promotional offer discovery application built with Flutter and Firebase.',
+    fullDesc: 'Cross-platform mobile application (evolved from aliexpress_coupons into Penguin Deals) designed for discovering, filtering, and tracking promotional deals and discount coupons in real time. Built with a responsive Flutter/Dart UI and backed by Firebase services and data aggregation scripts.',
+    highlights: [
+      'Cross-platform Flutter mobile interface for browsing categorized coupons and flash promotions',
+      'Real-time cloud synchronization and deal feed management with Firebase',
+      'Clean modular Dart architecture with native Android/iOS build support'
+    ],
+    links: [
+      { label: 'GitHub Repo', url: 'https://github.com/Houssemeddine-mag/Penguin_deals' }
+    ]
+  },
+  {
+    id: 'handzy',
+    name: 'Handzy — Touchless Android Control',
+    year: '2026',
+    category: 'vision',
+    categoryLabel: 'On-Device Computer Vision & Mobile',
+    research: false,
+    isNewGithub: false,
+    featured: true,
+    stack: ['Flutter', 'Dart', 'Kotlin', 'C++', 'Google MediaPipe', 'Android Accessibility'],
+    shortDesc: 'Hands-free Android control via real-time 21-landmark 3D hand gesture tracking and Accessibility Service touch injection — 100% offline.',
+    fullDesc: 'Android application enabling hands-free device control through real-time hand gesture recognition powered by Google MediaPipe. Tracks 21 3D hand landmarks on-device and translates gestures (pinch to tap, fist to scroll, swipe navigation) into native system-wide touch events via the Android Accessibility Service. Operates 100% offline with zero network tracking, engineered as a hybrid Flutter/Kotlin bridge with native C++ MediaPipe integration for ultra-low latency.',
+    highlights: [
+      'On-device 21-keypoint 3D hand landmark tracking running in real time with zero cloud latency',
+      'System-wide gesture-to-touch injection via custom Kotlin Android Accessibility Service bridge',
+      '100% offline privacy-preserving execution with customizable gesture sensitivity profiles'
+    ],
+    links: [
+      { label: 'GitHub Repo', url: 'https://github.com/Houssemeddine-mag/Handzy' }
+    ]
+  },
+  {
+    id: 'rif-connect',
+    name: 'Rif Connect 2.0',
+    year: '2025',
+    category: 'fullstack-cloud',
+    categoryLabel: 'Conference Mobile & Web Platform',
+    research: false,
+    isNewGithub: false,
+    featured: true,
+    supervisor: 'Prof. Benchikha Magra Fouzia',
+    stack: ['Flutter', 'React.js', 'Firebase Firestore', 'Firebase Auth', 'FCM Push', 'Dart'],
+    shortDesc: 'Official mobile app & React admin system for the RIF 2025 International Conference on Women in CS Research at Université Constantine 2.',
+    fullDesc: 'Full-stack conference management system built for the RIF 2025 International Conference on Women in Computer Science Research, hosted at Université Constantine 2. Comprises a Flutter mobile application (attendee & admin interfaces) and a React web administration panel, both backed by Firebase Firestore, Authentication, and Cloud Messaging. Features live schedule synchronization, a 5-star presentation rating system, instant push notification broadcasting, and analytics export. Awarded a Certificate of Appreciation by the organizing committee.',
+    highlights: [
+      'Deployed in production for the RIF 2025 International Conference at Université Constantine 2',
+      'Real-time schedule updates, 5-star talk ratings, and instant push notifications across Flutter & React portals',
+      'Awarded official Certificate of Completion & Appreciation by the university organizing committee'
+    ],
+    links: [
+      { label: 'GitHub Repo', url: 'https://github.com/Houssemeddine-mag/rif2.0' },
+      { label: 'RIF 2025 Site', url: 'https://www.univ-constantine2.dz/rif/25/' }
+    ]
+  },
+  {
+    id: 'navijam',
+    name: 'NaviJam — 15 km Traffic Radar',
+    year: '2025',
+    category: 'mobile-desktop',
+    categoryLabel: 'Geospatial Mobile & Telemetry',
+    research: false,
+    isNewGithub: false,
+    featured: false,
+    stack: ['Flutter', 'Dart', 'TomTom Traffic API', 'OpenStreetMap', 'Firebase'],
+    shortDesc: 'Cross-platform mobile traffic awareness radar scanning a 15 km radius around origin and destination with live OpenStreetMap congestion polylines.',
+    fullDesc: 'Cross-platform mobile traffic awareness application acting as a 15 km real-time radar around both the user\u2019s current location and target destination. Integrates the TomTom Traffic Incidents API to detect and visually classify congestion severity (moderate, severe, road closed) as live polyline overlays on an OpenStreetMap canvas. Features dual-point scanning, alternative route suggestions, and smart API caching.',
+    highlights: [
+      'Dual-point 15 km radius traffic incident radar around user origin and destination coordinates',
+      'Color-coded severity polyline rendering (moderate, severe, closed) over interactive OpenStreetMap tiles',
+      'Smart request caching and alternative route recommendations to minimize API quota consumption'
+    ],
+    links: [
+      { label: 'GitHub Repo', url: 'https://github.com/Houssemeddine-mag/NaviJam' }
+    ]
+  },
+  {
+    id: 'musicalme',
+    name: 'MusicalMe (& Vision Suite: Mathic, YouDraw)',
+    year: '2025',
+    category: 'vision',
+    categoryLabel: 'Interactive Computer Vision & EdTech',
+    research: false,
+    isNewGithub: false,
+    featured: false,
+    stack: ['Python', 'Google MediaPipe', 'OpenCV', 'Pygame', 'NumPy'],
+    shortDesc: 'Webcam hand-gesture musical synthesizer and educational vision game suite (with Mathic & YouDraw) for children aged 4–8.',
+    fullDesc: 'Interactive hand-gesture music system and vision-based educational suite targeting children aged 4 to 8. Uses a standard webcam, OpenCV, and MediaPipe to track 21 hand landmarks in real time, mapping thumb-finger pinch combinations to musical notes (DO–SI scale across both hands). Features real-time audio synthesis across 4 instrument timbres, pitch bending via hand elevation, chord support, gesture-navigated menus, and companion interactive modules Mathic and YouDraw.',
+    highlights: [
+      'Bimanual 21-landmark pinch-to-note synthesis across the full DO–SI scale with 4 instrument timbres',
+      'Continuous pitch-bending via vertical hand elevation and multi-finger chord recognition',
+      'Expanded into a touch-free educational suite alongside Mathic (gesture arithmetic) and YouDraw (air canvas)'
+    ],
+    links: [
+      { label: 'GitHub Repo', url: 'https://github.com/Houssemeddine-mag/MusicalMe' }
+    ]
+  },
+  {
+    id: 'scourgifydata',
+    name: 'ScourgifyData — Tourism NLP Sentiment',
+    year: '2025',
+    category: 'ai-ml',
+    categoryLabel: 'NLP & Data Science Pipeline',
+    research: true,
+    isNewGithub: false,
+    featured: false,
+    supervisor: 'Dr. Ghammaz Wafa',
+    stack: ['Python', 'Jupyter Notebook', 'NLP', 'Scikit-Learn', 'LaTeX'],
+    shortDesc: 'End-to-end sentiment analysis pipeline on Yelp tourism reviews covering EDA, text preprocessing, feature engineering, ML modeling, and LaTeX reporting.',
+    fullDesc: 'Comprehensive sentiment analysis project on tourism platform reviews (Yelp dataset). Covers the complete data science lifecycle — exploratory data analysis (EDA), text cleaning, TF-IDF/n-gram feature engineering, supervised ML classification, and evaluation — organized across modular Jupyter notebooks with publication-quality visualizations and a formal LaTeX research report.',
+    highlights: [
+      'Full NLP preprocessing pipeline (tokenization, stopword removal, lemmatization, class balancing) on Yelp review data',
+      'Comparative evaluation of classical and ensemble classifiers with confusion matrices and ROC curves',
+      'Accompanied by a structured academic report typeset in LaTeX under the supervision of Dr. Ghammaz Wafa'
+    ],
+    links: [
+      { label: 'GitHub Repo', url: 'https://github.com/Houssemeddine-mag/ScourgifyData' }
+    ]
+  },
+  {
+    id: 'dac-classifier',
+    name: 'DAC — Full-Stack Image Classifier',
+    year: '2024',
+    category: 'vision',
+    categoryLabel: 'Computer Vision & Cross-Language UI',
+    research: true,
+    isNewGithub: false,
+    featured: false,
+    supervisor: 'Dr. Boudjlel Nada',
+    stack: ['Java', 'Python', 'Machine Learning', 'CSS'],
+    shortDesc: 'End-to-end image classification application bridging a Java desktop/web frontend with a Python ML inference backend.',
+    fullDesc: 'Full-stack image classification application combining a Java-based user interface with a Python machine learning classifier backend. Structured with a curated test-image dataset, demonstrating cross-language process communication and end-to-end integration between a trained vision model and a production user interface.',
+    highlights: [
+      'Cross-language bridge connecting a Java UI layer with a Python computer vision inference engine',
+      'Curated evaluation dataset with real-time class probability feedback',
+      'Developed at Université Constantine 2 under the supervision of Dr. Boudjlel Nada'
+    ],
+    links: [
+      { label: 'GitHub Repo', url: 'https://github.com/Houssemeddine-mag/DAC' }
+    ]
+  },
+  {
+    id: 'feedme-dineflow',
+    name: 'FeedMe / DineFlow — Restaurant Suite',
+    year: '2025',
+    category: 'fullstack-cloud',
+    categoryLabel: 'Multi-Role Web & Java Management',
+    research: false,
+    isNewGithub: false,
+    featured: false,
+    stack: ['React', 'Vite', 'JavaScript', 'SCSS', 'Java'],
+    shortDesc: 'Multi-role restaurant management platform covering Director, Chef, and HR (GRH) portals in React/SCSS plus a companion Java desktop module.',
+    fullDesc: 'Multi-role restaurant management ecosystem comprising a React + Vite web dashboard (atelier) and a Java application codebase (FeedMe). Covers dedicated Director, Chef, and HR (GRH) interfaces with protected routes, authentication context, role-based access control, menu management, restaurant listings, and employee administration styled with modular SCSS.',
+    highlights: [
+      'Role-based access control (RBAC) separating Director analytics, Chef kitchen workflows, and HR (GRH) staff forms',
+      'Modular SCSS design system with responsive layout and protected React routing',
+      'Backed by companion Java desktop management modules in the FeedMe repository'
+    ],
+    links: [
+      { label: 'GitHub (React)', url: 'https://github.com/Houssemeddine-mag/atelier' },
+      { label: 'GitHub (Java)', url: 'https://github.com/Houssemeddine-mag/FeedMe' }
+    ]
+  },
+  {
+    id: 'al-amira',
+    name: 'Al-Amira — Traditional Pastry Showcase',
+    year: '2024',
+    category: 'fullstack-cloud',
+    categoryLabel: 'Frontend & Cloud Hosting',
+    research: false,
+    isNewGithub: false,
+    featured: false,
+    stack: ['React.js', 'Firebase Hosting', 'CSS'],
+    shortDesc: 'Production showcase web application for an Algerian traditional pastry shop chain hosted live on Firebase.',
+    fullDesc: 'Showcase web application built for a real Algerian traditional pastry shop chain (Al-Amira). Features a polished 3-page React.js architecture (Accueil / Home, Produits / Catalog, Contact) deployed to production on Firebase Web Hosting.',
+    highlights: [
+      'Custom brand showcase celebrating Algerian traditional pastry craftsmanship',
+      'Single-page React.js navigation across Home, Product Catalog, and Contact views',
+      'Production cloud deployment on Firebase Web Hosting'
+    ],
+    links: [
+      { label: 'Live Site', url: 'https://al-amira-bbb72.web.app/' },
+      { label: 'GitHub Repo', url: 'https://github.com/Houssemeddine-mag/Al-Amira' }
+    ]
+  },
+  {
+    id: 'online-store-api',
+    name: 'Online Store REST API',
+    year: '2024',
+    category: 'fullstack-cloud',
+    categoryLabel: 'Backend & Relational Commerce',
+    research: false,
+    isNewGithub: false,
+    featured: false,
+    supervisor: 'Dr. Lezaar Fouzi',
+    stack: ['Django REST Framework', 'Python', 'PostgreSQL'],
+    shortDesc: 'E-commerce REST API managing products, customers, 19% VAT calculation, loyalty points accrual, and order lifecycle state transitions.',
+    fullDesc: 'Backend REST API for an e-commerce platform managing products, customers, and orders. Implements core commercial business rules including automated 19% Algerian VAT calculation, customer loyalty points accrual, and strict order status lifecycle transitions (CREATED → PAID). Engineered with Django REST Framework and PostgreSQL.',
+    highlights: [
+      'Transactional order processing with automated 19% VAT computation and loyalty point ledger updates',
+      'Strict state-machine validation across the order lifecycle (CREATED → PAID)',
+      'Developed under the supervision of Dr. Lezaar Fouzi at Université Constantine 2'
+    ],
+    links: [
+      { label: 'GitHub Repo', url: 'https://github.com/Houssemeddine-mag/employee' }
+    ]
+  },
+  {
+    id: 'microservices-store',
+    name: 'Simple Online Store Microservices',
+    year: '2025',
+    category: 'fullstack-cloud',
+    categoryLabel: 'Microservices, Consul & API Gateway',
+    research: false,
+    isNewGithub: false,
+    featured: false,
+    supervisor: 'Prof. Benmerzoug Djamel',
+    stack: ['FastAPI', 'HashiCorp Consul', 'NGINX', 'Docker Compose', 'Python'],
+    shortDesc: 'Complete microservices architecture with 3 FastAPI domain services behind an NGINX API gateway and Consul service discovery.',
+    fullDesc: 'Complete distributed microservices architecture comprising three independent FastAPI domain services (User, Product, Order) behind a unified NGINX API gateway, with HashiCorp Consul for service registry and health discovery. Services self-register on startup and dynamically resolve peer endpoints via the Consul catalog, fully orchestrated with Docker Compose.',
+    highlights: [
+      'Self-registering FastAPI microservices (User, Product, Order) with dynamic Consul catalog service discovery',
+      'NGINX reverse-proxy API gateway routing external client traffic across container replicas',
+      'Developed under the supervision of Prof. Benmerzoug Djamel'
+    ],
+    links: [
+      { label: 'GitHub Profile', url: 'https://github.com/Houssemeddine-mag' }
+    ]
+  },
+  {
+    id: 'nectar-ai',
+    name: 'Nectar AI — DeepSeek Chat Platform',
+    year: '2025',
+    category: 'ai-ml',
+    categoryLabel: 'Full-Stack LLM Proxy & Chat UI',
+    research: false,
+    isNewGithub: false,
+    featured: false,
+    supervisor: 'Prof. Benmerzoug Djamel',
+    stack: ['React', 'Django REST', 'DeepSeek API', 'Python'],
+    shortDesc: 'Full-stack AI conversational platform with a React frontend and a secure Django REST proxy to the DeepSeek language model.',
+    fullDesc: 'Full-stack AI chat application pairing a modern React conversational interface with a Django REST backend acting as a secure server-side proxy to the DeepSeek language model. Keeps API keys isolated server-side, manages CORS policies, exposes clean health-check and messaging endpoints, and provides dark/light themes with typing indicators and message timestamps.',
+    highlights: [
+      'Secure server-side LLM credential isolation and request sanitization via Django REST proxy',
+      'Responsive React conversational UI with dark/light mode, live typing indicators, and session history',
+      'Developed under the supervision of Prof. Benmerzoug Djamel'
+    ],
+    links: [
+      { label: 'GitHub Profile', url: 'https://github.com/Houssemeddine-mag' }
+    ]
+  },
+  {
+    id: 'weather-alert-app',
+    name: 'Weather Alert Webhook Dashboard',
+    year: '2025',
+    category: 'fullstack-cloud',
+    categoryLabel: 'Event-Driven Webhooks & Real-Time UI',
+    research: false,
+    isNewGithub: false,
+    featured: false,
+    supervisor: 'Prof. Benmerzoug Djamel',
+    stack: ['React', 'Django REST', 'IFTTT', 'n8n', 'Webhooks', 'SQLite'],
+    shortDesc: 'Real-time weather notification system ingesting webhook POST triggers from IFTTT and n8n into a live-polling React dashboard.',
+    fullDesc: 'Real-time weather notification platform that receives automated webhook POST payloads from workflow automation services (IFTTT, n8n), persists alert events in a Django REST + SQLite backend, and surfaces them in a React monitoring dashboard that auto-refreshes every 10 seconds with dynamic weather iconography and an alert audit grid.',
+    highlights: [
+      'Webhook ingestion endpoint compatible with IFTTT and n8n automation triggers',
+      '10-second live polling React telemetry board with condition severity icons and historical log grid',
+      'Developed under the supervision of Prof. Benmerzoug Djamel'
+    ],
+    links: [
+      { label: 'GitHub Profile', url: 'https://github.com/Houssemeddine-mag' }
+    ]
+  },
+  {
+    id: 'kafka-streaming',
+    name: 'Apache Kafka Distributed Streaming',
+    year: '2025',
+    category: 'fullstack-cloud',
+    categoryLabel: 'Event Streaming & Distributed Systems',
+    research: false,
+    isNewGithub: false,
+    featured: false,
+    supervisor: 'Prof. Benmerzoug Djamel',
+    stack: ['Python', 'Apache Kafka', 'Zookeeper', 'Docker Compose'],
+    shortDesc: 'Containerized Kafka producer/consumer pipeline with JSON serialization, partition-aware consumer groups, and offset management.',
+    fullDesc: 'End-to-end Apache Kafka event streaming architecture containerized with Docker Compose (Kafka + Zookeeper). Implements high-throughput text and JSON message producers, consumer group coordination, partition-aware message consumption, custom topic administration utilities, offset management, and consumer group rebalancing.',
+    highlights: [
+      'Containerized Kafka + Zookeeper cluster orchestrated via Docker Compose',
+      'Partition-aware Python producers/consumers with custom JSON serialization and offset tracking',
+      'Developed under the supervision of Prof. Benmerzoug Djamel'
+    ],
+    links: [
+      { label: 'GitHub Profile', url: 'https://github.com/Houssemeddine-mag' }
+    ]
+  },
+  {
+    id: 'grpc-rpc',
+    name: 'gRPC Remote Procedure Calls',
+    year: '2025',
+    category: 'fullstack-cloud',
+    categoryLabel: 'High-Performance RPC & Protobuf',
+    research: false,
+    isNewGithub: false,
+    featured: false,
+    supervisor: 'Prof. Benmerzoug Djamel',
+    stack: ['Python', 'gRPC', 'Protocol Buffers', 'ThreadPoolExecutor'],
+    shortDesc: 'Practical gRPC implementation in Python covering unary and server-streaming RPC patterns with Protocol Buffers.',
+    fullDesc: 'Implementation of high-performance Remote Procedure Calls (gRPC) in Python covering both unary request-response and server-streaming RPC patterns. Defines a strongly-typed GreetingService contract in Protocol Buffers (.proto), compiles client and server stubs, and demonstrates channel lifecycle management and stateful request tracking across a concurrent ThreadPoolExecutor server.',
+    highlights: [
+      'Strongly-typed Protocol Buffers (.proto) service contract with automated Python stub generation',
+      'Supports both synchronous unary calls and asynchronous server-streaming RPC flows',
+      'Concurrent multi-client request handling via ThreadPoolExecutor'
+    ],
+    links: [
+      { label: 'GitHub Profile', url: 'https://github.com/Houssemeddine-mag' }
+    ]
+  },
+  {
+    id: 'qr-generator',
+    name: 'Universal QR Code Generator',
+    year: '2024',
+    category: 'mobile-desktop',
+    categoryLabel: 'Cross-Platform Mobile Utility',
+    research: false,
+    isNewGithub: false,
+    featured: false,
+    stack: ['Flutter', 'Dart', 'Firebase Storage', 'Material Design 3'],
+    shortDesc: 'Cross-platform Flutter utility generating QR codes from URLs, images, videos, PDFs, and arbitrary files with Firebase Storage offload.',
+    fullDesc: 'Cross-platform Flutter mobile application for generating scannable QR codes from any input — URLs, images, videos, PDFs, and arbitrary binary files. Features instant QR rendering, one-tap save-to-gallery, native share sheet integration, scoped Android storage permissions across API levels, and automatic Firebase Cloud Storage offloading for large media files.',
+    highlights: [
+      'Supports arbitrary file-to-QR generation by automatically uploading large blobs to Firebase Storage',
+      'Material Design 3 adaptive interface with full dark/light mode support',
+      'Handles modern Android API permission scoping for gallery persistence and native sharing'
+    ],
+    links: [
+      { label: 'GitHub Profile', url: 'https://github.com/Houssemeddine-mag' }
+    ]
+  }
+];
+
+/* ════════════════════════════════════════════════════════════════
+   I18N — EN / FR / AR (both lenses per language)
+   ════════════════════════════════════════════════════════════════ */
+const I18N = {
+  en: {
+    dir: 'ltr',
+    navWork: 'Work', navExperience: 'Experience', navVenture: 'El Moultaqa', navSkills: 'Skills', navContact: 'Contact',
+    statusRec: 'Open to engineering roles', statusRes: 'Open to research collaboration',
+    heroRec1: 'Software engineer (Licence in Génie Logiciel) and Master&nbsp;2 Data Science &amp; Intelligent Systems researcher at <strong>Université Constantine 2</strong>. I ship end-to-end: a multi-tenant conference SaaS (<strong>El Moultaqa</strong>) with an automated Android CI/CD pipeline, and web-automation tooling for <strong>2G–5G radio planning</strong> at <strong>Ooredoo Algérie</strong>.',
+    heroRec2: 'Everything below links to real repositories — filter by domain, open a case study, or jump straight to the code.',
+    heroRes1: 'My research sits where applied machine learning meets deployed systems: <strong>Transformer fine-tuning for Arabic NLP</strong> (TRIA), <strong>interpretable clinical risk modeling</strong> with SHAP, and <strong>prognostics for wireless power transfer</strong> (ChargeOps&nbsp;AI).',
+    heroRes2: 'Supervised at Université Constantine 2 by Prof. F. Benchikha Magra, Prof. D. Benmerzoug, Dr. N. Boudjlel, Dr. W. Ghammaz and Dr. F. Lezaar — with public methods, notebooks and reports.',
+    ctaView: 'View selected work', ctaCv: 'CV ↗', ctaCvFull: 'Curriculum Vitæ (PDF) ↗', ctaEmail: 'Email',
+    lensRec: 'Recruiter lens', lensRes: 'Researcher lens',
+    workTitleRec: 'Builds &amp; production systems', workTitleRes: 'Research catalog &amp; studies',
+    workSubRec: 'Filter by domain or search the stack. Open any card for architecture notes, then jump straight to the repository.',
+    workSubRes: 'Grouped by domain, with supervision and methods noted — every repository and notebook below is public.',
+    viewCards: 'Cards', viewTable: 'Table',
+    filterAll: 'All · 23', filterFlagship: 'Flagship · 8', filterResearch: 'Research studies · 6',
+    filterAi: 'AI, NLP &amp; data · 6', filterVision: 'Vision &amp; 3D · 4', filterMobile: 'Mobile &amp; desktop · 5', filterFull: 'Full-stack &amp; distributed · 8',
+    resetFilters: 'Reset filters',
+    thProject: 'Project', thDomain: 'Domain', thStack: 'Stack', thContext: 'Supervision / context', thLinks: 'Links',
+    expHeading: 'Experience &amp; education', eduUc2: 'Université Constantine 2', langHeading: 'Languages',
+    ventureOrganizers: 'For organizers', ventureAttendees: 'For attendees', ventureArchitecture: 'Architecture &amp; CI/CD',
+    skillsHeading: 'Stack, certifications &amp; teaching', skillsSub: 'Click any technology to filter the catalog above.',
+    certLabel: 'Certificates · verified scans', certSub: 'Click any certificate to open the actual document.',
+    skLang: 'Languages', skAi: 'AI &amp; data', skWeb: 'Web &amp; mobile', skCloud: 'Cloud &amp; infra',
+    contactTitleRec: 'Ready when you are.', contactTitleRes: 'Open to collaboration.',
+    contactSubRec: 'Hiring for software engineering, data science or telecom-adjacent roles? Or evaluating El Moultaqa for your event? Reach out directly — replies within a day.',
+    contactSubRes: 'Interested in Arabic NLP, interpretable clinical ML, prognostics — or supervision for the next stage of my Master\u2019s? Write to either address; both reach me directly.',
+    copyEmail: 'Copy email',
+    modalHiEng: 'Engineering &amp; architecture highlights', modalHiRes: 'Methods &amp; contributions',
+    footnote: 'Designed &amp; written by hand — no template.'
+  },
+  fr: {
+    dir: 'ltr',
+    navWork: 'Travaux', navExperience: 'Parcours', navVenture: 'El Moultaqa', navSkills: 'Compétences', navContact: 'Contact',
+    statusRec: 'Disponible pour l\u2019ingénierie', statusRes: 'Ouvert à la collaboration de recherche',
+    heroRec1: 'Ingénieur logiciel (Licence Génie Logiciel) et chercheur en Master&nbsp;2 Science des Données &amp; Systèmes Intelligents à l\u2019<strong>Université Constantine 2</strong>. Je conçois de bout en bout : un SaaS de conférences multi-tenant (<strong>El Moultaqa</strong>) avec un pipeline CI/CD Android automatisé, et des outils web d\u2019automatisation pour la <strong>planification radio 2G–5G</strong> chez <strong>Ooredoo Algérie</strong>.',
+    heroRec2: 'Chaque élément renvoie vers un dépôt réel — filtrez par domaine, ouvrez une étude de cas, ou allez directement au code.',
+    heroRes1: 'Ma recherche se situe là où le machine learning appliqué rencontre les systèmes déployés : <strong>fine-tuning de Transformers pour le NLP arabe</strong> (TRIA), <strong>modélisation de risque clinique interprétable</strong> avec SHAP, et <strong>pronostics pour le transfert de puissance sans fil</strong> (ChargeOps&nbsp;AI).',
+    heroRes2: 'Encadré à l\u2019Université Constantine 2 par Pr. F. Benchikha Magra, Pr. D. Benmerzoug, Dr N. Boudjlel, Dr W. Ghammaz et Dr F. Lezaar — avec méthodes, notebooks et rapports publics.',
+    ctaView: 'Voir les travaux', ctaCv: 'CV ↗', ctaCvFull: 'CV (PDF) ↗', ctaEmail: 'Email',
+    lensRec: 'Vue recruteur', lensRes: 'Vue chercheur',
+    workTitleRec: 'Réalisations &amp; systèmes en production', workTitleRes: 'Catalogue de recherche &amp; études',
+    workSubRec: 'Filtrez par domaine ou cherchez une technologie. Ouvrez une carte pour l\u2019architecture, puis accédez au dépôt.',
+    workSubRes: 'Groupés par domaine, avec encadrement et méthodes — chaque dépôt et notebook ci-dessous est public.',
+    viewCards: 'Cartes', viewTable: 'Tableau',
+    filterAll: 'Tous · 23', filterFlagship: 'Phares · 8', filterResearch: 'Études de recherche · 6',
+    filterAi: 'IA, NLP &amp; data · 6', filterVision: 'Vision &amp; 3D · 4', filterMobile: 'Mobile &amp; desktop · 5', filterFull: 'Full-stack &amp; distribué · 8',
+    resetFilters: 'Réinitialiser',
+    thProject: 'Projet', thDomain: 'Domaine', thStack: 'Stack', thContext: 'Encadrement / contexte', thLinks: 'Liens',
+    expHeading: 'Expérience &amp; formation', eduUc2: 'Université Constantine 2', langHeading: 'Langues',
+    ventureOrganizers: 'Côté organisateurs', ventureAttendees: 'Côté participants', ventureArchitecture: 'Architecture &amp; CI/CD',
+    skillsHeading: 'Stack, certifications &amp; enseignement', skillsSub: 'Cliquez une technologie pour filtrer le catalogue.',
+    certLabel: 'Certificats · copies vérifiées', certSub: 'Cliquez un certificat pour ouvrir le document réel.',
+    skLang: 'Langages', skAi: 'IA &amp; data', skWeb: 'Web &amp; mobile', skCloud: 'Cloud &amp; infra',
+    contactTitleRec: 'Prêt quand vous l\u2019êtes.', contactTitleRes: 'Ouvert à la collaboration.',
+    contactSubRec: 'Recrutement en ingénierie logicielle, data science ou télécoms ? Ou El Moultaqa pour votre événement ? Contactez-moi directement — réponse sous 24 h.',
+    contactSubRes: 'NLP arabe, ML clinique interprétable, pronostics — ou encadrement pour la suite de mon master ? Écrivez à l\u2019une des deux adresses.',
+    copyEmail: 'Copier l\u2019email',
+    modalHiEng: 'Points forts d\u2019ingénierie &amp; d\u2019architecture', modalHiRes: 'Méthodes &amp; contributions',
+    footnote: 'Conçu &amp; écrit à la main — sans template.'
+  },
+  ar: {
+    dir: 'rtl',
+    navWork: 'الأعمال', navExperience: 'الخبرة', navVenture: 'الملتقى', navSkills: 'المهارات', navContact: 'تواصل',
+    statusRec: 'متاح لفرص هندسية', statusRes: 'متاح للتعاون البحثي',
+    heroRec1: 'مهندس برمجيات (ليسانس هندسة البرمجيات) وباحث في <strong>ماستر 2 علوم البيانات والأنظمة الذكية</strong> بجامعة <strong>قسنطينة 2</strong>. أطوّر أنظمة متكاملة: منصة SaaS متعددة المستأجرين للمؤتمرات (<strong>الملتقى</strong>) مع مسار بناء أندرويد مؤتمت، وأدوات ويب لأتمتة <strong>التخطيط الراديوي 2G–5G</strong> لدى <strong>أوريدو الجزائر</strong>.',
+    heroRec2: 'كل الأعمال أدناه تربط بمستودعات حقيقية — رشّح حسب المجال أو انتقل مباشرة إلى الكود.',
+    heroRes1: 'بحثي عند التقاطع بين تعلّم الآلة التطبيقي والأنظمة المُنفَّذة: <strong>ضبط Transformers للغة العربية</strong> (TRIA)، و<strong>نمذجة الخطر السريري القابلة للتفسير</strong> باستخدام SHAP، و<strong>توقع العمر التشغيلي لنقل الطاقة اللاسلكي</strong> (ChargeOps AI).',
+    heroRes2: 'بإشراف جامعة قسنطينة 2: أ. فوزية بن شيخة مقرة، أ. جمال بن مرزوق، د. ندى بوجلال، د. وفاء غماز، د. فوزي العزار — مع طرائق ودفاتر وتقارير مفتوحة.',
+    ctaView: 'اطّلع على الأعمال', ctaCv: 'CV ↗', ctaCvFull: 'السيرة الذاتية (PDF) ↗', ctaEmail: 'بريد',
+    lensRec: 'منظور المُوظِّف', lensRes: 'منظور الباحث',
+    workTitleRec: 'منظومات وأعمال في الإنتاج', workTitleRes: 'فهرس الأبحاث والدراسات',
+    workSubRec: 'رشّح حسب المجال أو ابحث في التقنيات. افتح أي بطاقة لمعرفة تفاصيل المعمارية ثم انتقل إلى المستودع.',
+    workSubRes: 'مصنّفة حسب المجال مع الإشراف والمناهج — كل مستودع ودفتر أدناه مفتوح.',
+    viewCards: 'بطاقات', viewTable: 'جدول',
+    filterAll: 'الكل · 23', filterFlagship: 'الرائدة · 8', filterResearch: 'دراسات بحثية · 6',
+    filterAi: 'ذكاء اصطناعي وبيانات · 6', filterVision: 'رؤية و 3D · 4', filterMobile: 'جوال وسطح المكتب · 5', filterFull: 'فول-ستاك وموزّع · 8',
+    resetFilters: 'إعادة التعيين',
+    thProject: 'المشروع', thDomain: 'المجال', thStack: 'التقنيات', thContext: 'الإشراف / السياق', thLinks: 'روابط',
+    expHeading: 'الخبرة والتعليم', eduUc2: 'جامعة قسنطينة 2', langHeading: 'اللغات',
+    ventureOrganizers: 'للمنظّمين', ventureAttendees: 'للحضور', ventureArchitecture: 'المعمارية والـCI/CD',
+    skillsHeading: 'التقنيات والشهادات والتعليم', skillsSub: 'انقر أي تقنية لتصفية الفهرس أعلاه.',
+    certLabel: 'الشهادات · نسخ موثّقة', certSub: 'انقر أي شهادة لعرض الوثيقة الأصلية.',
+    skLang: 'لغات البرمجة', skAi: 'الذكاء الاصطناعي والبيانات', skWeb: 'الويب والجوال', skCloud: 'السحابة والبنية',
+    contactTitleRec: 'جاهز عندما تكون جاهزًا.', contactTitleRes: 'مفتوح للتعاون.',
+    contactSubRec: 'توظّف في هندسة البرمجيات أو علوم البيانات أو الاتصالات؟ أو تقيّم الملتقى لحدثك؟ راسلني مباشرة — الرد خلال يوم.',
+    contactSubRes: 'مهتم بمعالجة اللغة العربية، أو ML السريري القابل للتفسير، أو الإشراف على المرحلة التالية من ماستري؟ اكتب إلى أي من البريدين.',
+    copyEmail: 'نسخ البريد',
+    modalHiEng: 'أبرز النقاط الهندسية والمعمارية', modalHiRes: 'المناهج والإسهامات',
+    footnote: 'مصمم ومكتوب يدويًا — بلا قوالب.'
+  }
+};
+
+/* ════════════════════════════════════════════════════════════════
+   STATE + HELPERS
+   ════════════════════════════════════════════════════════════════ */
+let currentMode = 'recruiter';
+let currentTheme = 'ledger';
+let currentLang = 'en';
+let currentCategory = 'all';
+let currentSearch = '';
+let currentView = 'cards';
+
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+
+function showToast(msg) {
+  const t = $('#toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(window._toastTimer);
+  window._toastTimer = setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+function copyTextSafe(str, label) {
+  const done = () => showToast(label);
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(str).then(done).catch(() => fallbackCopy(str, done));
+  } else {
+    fallbackCopy(str, done);
+  }
+}
+function fallbackCopy(str, done) {
+  const ta = document.createElement('textarea');
+  ta.value = str;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); done(); } catch (e) {}
+  document.body.removeChild(ta);
+}
+
+/* ════════════════════════════════════════════════════════════════
+   LENS SWITCH — the core transition
+   ════════════════════════════════════════════════════════════════ */
+function applyMode(mode, opts = {}) {
+  if (mode !== 'recruiter' && mode !== 'researcher') return;
+  currentMode = mode;
+  document.documentElement.dataset.mode = mode;
+
+  $$('[data-mode-btn]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.modeBtn === mode)));
+  try { localStorage.setItem('hm_mode', mode); } catch (e) {}
+
+  renderWork();
+
+  if (opts.toast !== false) {
+    showToast(mode === 'recruiter' ? (I18N[currentLang].lensRec || 'Recruiter lens') : (I18N[currentLang].lensRes || 'Researcher lens'));
+  }
+}
+
+function switchModeAnimated(mode) {
+  if (mode === currentMode) return;
+  const main = $('#pageMain');
+  main.classList.add('mode-switching');
+  setTimeout(() => {
+    applyMode(mode);
+    requestAnimationFrame(() => main.classList.remove('mode-switching'));
+  }, 190);
+}
+
+/* ════════════════════════════════════════════════════════════════
+   THEME + LANGUAGE
+   ════════════════════════════════════════════════════════════════ */
+function applyTheme(theme) {
+  if (theme !== 'ledger' && theme !== 'carbon') return;
+  currentTheme = theme;
+  document.documentElement.dataset.theme = theme;
+  $('#iconMoon').classList.toggle('hidden', theme === 'carbon');
+  $('#iconSun').classList.toggle('hidden', theme !== 'carbon');
+  try { localStorage.setItem('hm_theme', theme); } catch (e) {}
+}
+
+function applyLanguage(lang) {
+  if (!I18N[lang]) return;
+  currentLang = lang;
+  const dict = I18N[lang];
+  document.documentElement.lang = lang;
+  document.documentElement.dir = dict.dir;
+
+  $$('[data-i18n]').forEach(el => {
+    const k = el.getAttribute('data-i18n');
+    if (dict[k] !== undefined) el.innerHTML = dict[k];
+  });
+
+  $$('[data-lang-btn]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.langBtn === lang)));
+  try { localStorage.setItem('hm_lang', lang); } catch (e) {}
+}
+
+/* ════════════════════════════════════════════════════════════════
+   CATALOG RENDERING — lens-aware cards, table, filters
+   ════════════════════════════════════════════════════════════════ */
+function workList() {
+  const list = PROJECTS.filter(p => {
+    const matchesCat =
+      currentCategory === 'all' ||
+      (currentCategory === 'featured' && p.featured) ||
+      (currentCategory === 'research' && p.research) ||
+      p.category === currentCategory;
+    if (!matchesCat) return false;
+    if (!currentSearch) return true;
+    const hay = (p.name + ' ' + p.categoryLabel + ' ' + p.stack.join(' ') + ' ' + p.shortDesc + ' ' + p.fullDesc + ' ' + (p.supervisor || '')).toLowerCase();
+    return hay.includes(currentSearch.toLowerCase());
+  });
+
+  /* The lens reorders the story:
+     recruiter → flagship production first;
+     researcher → research studies first, then the rest. */
+  const score = p =>
+    currentMode === 'researcher'
+      ? (p.research ? 0 : (p.featured ? 1 : 2))
+      : (p.featured ? 0 : (p.research ? 2 : 1));
+
+  return list.sort((a, b) => score(a) - score(b) || (parseInt(b.year, 10) || 0) - (parseInt(a.year, 10) || 0));
+}
+
+function renderWork() {
+  const list = workList();
+  const grid = $('#workGrid');
+  const tbody = $('#workTableBody');
+  const countLine = $('#countLine');
+  const resetBtn = $('#resetFiltersBtn');
+  const isRes = currentMode === 'researcher';
+
+  countLine.textContent = currentSearch
+    ? (currentLang === 'fr' ? list.length + ' résultat(s) pour « ' + currentSearch + ' »' : 'Showing ' + list.length + ' matching "' + currentSearch + '"')
+    : (currentLang === 'fr' ? list.length + ' / 23 travaux' : 'Showing ' + list.length + ' of 23');
+
+  if (currentCategory !== 'all' || currentSearch !== '') resetBtn.classList.remove('hidden');
+  else resetBtn.classList.add('hidden');
+
+  /* Cards */
+  grid.innerHTML = '';
+  if (!list.length) {
+    grid.innerHTML = '<div class="col-span-full card p-10 text-center"><p class="prose">No matching work.</p><button type="button" id="emptyResetBtn" class="btn mt-4">' + (I18N[currentLang].resetFilters || 'Reset') + '</button></div>';
+    $('#emptyResetBtn').addEventListener('click', resetFilters);
+  } else {
+    list.forEach((p, idx) => {
+      const card = document.createElement('article');
+      card.className = 'card card-hover p-5 flex flex-col justify-between gap-4 cursor-pointer reveal';
+      card.style.transitionDelay = Math.min(idx * 35, 300) + 'ms';
+      card._cascade = true;
+
+      const stackPills = p.stack.slice(0, 4).map(s => '<span class="pill">' + s + '</span>').join('');
+      const extra = p.stack.length > 4 ? '<span class="pill">+' + (p.stack.length - 4) + '</span>' : '';
+      const links = p.links.map(l =>
+        '<a href="' + l.url + '" target="_blank" rel="noopener noreferrer" class="ext-link mono text-[11px] font-semibold hover:underline underline-offset-2" style="color:var(--accent)">' + l.label + ' ↗</a>'
+      ).join('');
+
+      const badge = isRes
+        ? (p.research ? '<span class="pill pill-accent">Study</span>' : '<span class="mono text-[11px]" style="color:var(--ink-3)">' + p.year + '</span>')
+        : (p.featured ? '<span class="pill pill-accent">Flagship</span>' : '<span class="mono text-[11px]" style="color:var(--ink-3)">' + p.year + '</span>');
+
+      let meta = '';
+      if (isRes) {
+        meta = p.supervisor
+          ? '<div class="mono text-[11px] pt-0.5" style="color:var(--accent)">Supervised by ' + p.supervisor + ' · UC2</div>'
+          : (p.research ? '<div class="mono text-[11px] pt-0.5" style="color:var(--accent)">Self-directed study</div>' : '');
+      }
+
+      card.innerHTML =
+        '<div class="space-y-2">' +
+          '<div class="flex items-center justify-between gap-2">' +
+            '<span class="mono text-[11px]" style="color:var(--ink-3)">' + String(idx + 1).padStart(2, '0') + ' · ' + p.categoryLabel + '</span>' +
+            badge +
+          '</div>' +
+          '<h3 class="font-display text-[19px] font-semibold tracking-tight leading-snug" style="color:var(--ink)">' + p.name + '</h3>' +
+          '<p class="text-[13px] leading-relaxed prose-serif" style="color:var(--ink-2)">' + p.shortDesc + '</p>' +
+          meta +
+        '</div>' +
+        '<div class="pt-3 border-t space-y-3" style="border-color:var(--rule)">' +
+          '<div class="flex flex-wrap gap-1.5">' + stackPills + extra + '</div>' +
+          '<div class="flex flex-wrap items-center justify-between gap-2">' +
+            '<div class="flex flex-wrap items-center gap-3">' + links + '</div>' +
+            (isRes ? '<span class="mono text-[11px] font-semibold" style="color:var(--ink-3)">Read more →</span>'
+                   : '<span class="mono text-[11px] font-semibold" style="color:var(--ink-3)">Case study →</span>') +
+          '</div>' +
+        '</div>';
+
+      card.addEventListener('click', e => {
+        if (e.target.closest('.ext-link')) return;
+        openProject(p.id);
+      });
+      grid.appendChild(card);
+    });
+    requestAnimationFrame(() => {
+      $$('#workGrid .reveal').forEach(el => {
+        el.classList.add('in-view');
+        setTimeout(() => { el.style.transitionDelay = ''; }, 950);
+      });
+    });
+  }
+
+  /* Table */
+  tbody.innerHTML = '';
+  list.forEach((p, idx) => {
+    const tr = document.createElement('tr');
+    tr.className = 'spec-row';
+    const links = p.links.map(l =>
+      '<a href="' + l.url + '" target="_blank" rel="noopener noreferrer" class="ext-link mono text-[11px] font-semibold hover:underline" style="color:var(--accent)">' + l.label + ' ↗</a>'
+    ).join(' ');
+    tr.innerHTML =
+      '<td class="mono text-[11px]" style="color:var(--ink-3)">' + String(idx + 1).padStart(2, '0') + '</td>' +
+      '<td class="font-semibold" style="color:var(--ink)">' + p.name + '</td>' +
+      '<td class="text-[12.5px]" style="color:var(--ink-2)">' + p.categoryLabel + '</td>' +
+      '<td class="mono text-[11px]" style="color:var(--ink-2)">' + p.stack.slice(0, 4).join(' · ') + '</td>' +
+      '<td class="text-[12px]" style="color:var(--ink-3)">' + (p.supervisor ? 'Supervised by ' + p.supervisor : p.year + ' · open source') + '</td>' +
+      '<td class="text-right whitespace-nowrap">' + links + '</td>';
+    tr.addEventListener('click', e => {
+      if (e.target.closest('.ext-link')) return;
+      openProject(p.id);
+    });
+    tbody.appendChild(tr);
+  });
+}
+
+function setCategory(cat) {
+  currentCategory = cat;
+  $$('#filterBar .chip').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.filter === cat)));
+  renderWork();
+}
+
+function resetFilters() {
+  currentSearch = '';
+  const si = $('#searchInput');
+  if (si) si.value = '';
+  setCategory('all');
+}
+
+function openProject(id) {
+  const p = PROJECTS.find(x => x.id === id);
+  if (!p) return;
+  $('#modalProjBadge').textContent = p.research ? 'Study' : 'Project';
+  $('#modalProjMeta').textContent = p.categoryLabel + ' · ' + p.year;
+  $('#modalProjTitle').textContent = p.name;
+  $('#modalProjStack').textContent = p.stack.join(' · ');
+  $('#modalProjDesc').textContent = p.fullDesc;
+  $('#modalProjHighlights').innerHTML = p.highlights.map(h =>
+    '<li class="flex gap-2.5"><span class="mt-2.5 h-px w-3.5 shrink-0" style="background:var(--accent)"></span><span>' + h + '</span></li>'
+  ).join('');
+  const sup = $('#modalProjSup');
+  if (p.supervisor) {
+    sup.textContent = 'Academic supervision: ' + p.supervisor + ' — Université Constantine 2';
+    sup.classList.remove('hidden');
+  } else {
+    sup.classList.add('hidden');
+  }
+  $('#modalProjLinks').innerHTML = p.links.map(l =>
+    '<a href="' + l.url + '" target="_blank" rel="noopener noreferrer" class="btn btn-primary text-[12px] px-4 py-2">' + l.label + ' ↗</a>'
+  ).join('');
+  $('#projectModal').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeOverlay(id) {
+  $(id).classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   CERTIFICATES — verified scans (light-angled lightbox for images,
+   direct file open for PDFs)
+   ══════════════════════════════════════════════════════════════════ */
+const CERTS = [
+  {
+    kind: 'img', src: 'assets/Informatique/Licence.jpg',
+    title: 'Diplôme de Licence — Informatique (Génie logiciel)',
+    meta: 'Université Constantine 2 · Abdelhamid Mehri · 2025'
+  },
+  {
+    kind: 'img', src: 'assets/Informatique/Rif%20Appreciation.jpg',
+    title: "RiF′25 — Conference app development",
+    meta: 'Université Constantine 2 · LIRE · IEEE · 2025'
+  },
+  {
+    kind: 'img', src: 'assets/Stage/ooredoo.jpg',
+    title: 'Attestation de fin de stage — network engineering',
+    meta: 'Ooredoo Algérie · Wataniya Télécom · 2026'
+  },
+  {
+    kind: 'img', src: 'assets/Informatique/Houssemag1%20-%20Python.png',
+    title: 'Python — Certificate of Completion',
+    meta: 'Kaggle · 2024'
+  },
+  {
+    kind: 'pdf', src: 'assets/Informatique/Saylor%20University%20certificates/Building%20with%20AI%20certificate.pdf', pages: 2,
+    title: 'CS205: Building with Artificial Intelligence',
+    meta: 'Saylor University'
+  },
+  {
+    kind: 'pdf', src: 'assets/Informatique/Saylor%20University%20certificates/intro%20to%20programming%201.pdf', pages: 2,
+    title: 'CS101: Introduction to Programming I',
+    meta: 'Saylor University'
+  },
+  {
+    kind: 'img', src: 'assets/Informatique/mozilla%20certif.jpg',
+    title: 'Certificate of Appreciation — Databases instructor',
+    meta: 'Mozilla Campus Club · Constantine · 2023/24'
+  },
+  {
+    kind: 'img', src: 'assets/English/ULC%20diploma.jpg',
+    title: 'Certificate of Achievement — English B2 (CEFR)',
+    meta: 'ULC · Universal Learning Center · 2025'
+  },
+  {
+    kind: 'pdf', src: 'assets/English/teacher%20essentials%20certificate.pdf', pages: 1,
+    title: 'Teacher Essentials',
+    meta: 'Canva Education'
+  },
+  {
+    kind: 'pdf', src: 'assets/other/houssem.magra%40univ-constantine2.dz.pdf', pages: 1,
+    title: 'Jury certificate — Forsa',
+    meta: 'Forsa'
+  }
+];
+
+function certThumbHTML(c) {
+  if (c.kind === 'img') {
+    return '<div class="cert-thumb"><img loading="lazy" decoding="async" src="' + c.src + '" alt="' + c.title + ' — scan"></div>';
+  }
+  const label = 'PDF · ' + (c.pages || 1) + ' PAGE' + ((c.pages || 1) > 1 ? 'S' : '');
+  return '<div class="cert-thumb"><div class="cert-doc">' +
+    '<svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">' +
+    '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg>' +
+    '<span class="mono text-[10px]" style="color:var(--ink-2)">' + label + '</span></div></div>';
+}
+
+function certBodyHTML(c) {
+  return '<div class="p-4 flex flex-col gap-1.5 flex-1">' +
+    '<h3 class="text-[13.5px] font-semibold leading-snug" style="color:var(--ink)">' + c.title + '</h3>' +
+    '<div class="mono text-[10.5px]" style="color:var(--ink-3)">' + c.meta + '</div>' +
+    '<div class="cert-view mono text-[10px] mt-auto pt-2.5" style="color:var(--accent)">' + (c.kind === 'img' ? 'VIEW' : 'OPEN PDF') + ' ↗</div></div>';
+}
+
+function renderCerts() {
+  $('#certGrid').innerHTML = CERTS.map((c, i) => {
+    const innerHTML = certThumbHTML(c) + certBodyHTML(c);
+    return c.kind === 'img'
+      ? '<button type="button" class="card card-hover cert-card overflow-hidden" data-cert="' + i + '" aria-label="Open certificate: ' + c.title + '">' + innerHTML + '</button>'
+      : '<a class="card card-hover cert-card overflow-hidden" href="' + c.src + '" target="_blank" rel="noopener" aria-label="Open document: ' + c.title + '">' + innerHTML + '</a>';
+  }).join('');
+  $$('#certGrid [data-cert]').forEach(btn => btn.addEventListener('click', () => openCert(parseInt(btn.dataset.cert, 10))));
+}
+
+let certIdx = 0;
+function showCert(i) {
+  certIdx = (i + CERTS.length) % CERTS.length;
+  const c = CERTS[certIdx];
+  const img = $('#certViewImg');
+  img.src = c.src;
+  img.alt = c.title + ' — scan';
+  $('#certViewTitle').textContent = c.title;
+  $('#certViewMeta').textContent = c.meta;
+  $('#certViewCount').textContent = String(certIdx + 1).padStart(2, '0') + ' / ' + String(CERTS.length).padStart(2, '0');
+}
+function openCert(i) {
+  showCert(i);
+  $('#certLightbox').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   INITIALIZATION
+   ════════════════════════════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  /* Restore preferences (attributes already set pre-paint) */
+  currentMode = document.documentElement.dataset.mode || 'recruiter';
+  currentTheme = document.documentElement.dataset.theme || 'ledger';
+  applyTheme(currentTheme);
+  try {
+    const savedLang = localStorage.getItem('hm_lang');
+    applyLanguage(savedLang && I18N[savedLang] ? savedLang : 'en');
+  } catch (e) { applyLanguage('en'); }
+  $$('[data-mode-btn]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.modeBtn === currentMode)));
+
+  renderWork();
+  renderCerts();
+
+  /* Scroll reveal */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        en.target.classList.add('in-view');
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.07 });
+  $$('.reveal').forEach(el => io.observe(el));
+
+  /* Stat count-up — once, eased, on first sight */
+  const counters = $$('.stat-num[data-count]');
+  if (counters.length) {
+    const cio = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        cio.unobserve(en.target);
+        const el = en.target;
+        const target = parseInt(el.dataset.count, 10) || 0;
+        const t0 = performance.now(), dur = 950, ease = x => 1 - Math.pow(1 - x, 3);
+        (function tick(now) {
+          const k = Math.min(1, (now - t0) / dur);
+          el.textContent = Math.round(target * ease(k));
+          if (k < 1) requestAnimationFrame(tick);
+        })(t0);
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(el => cio.observe(el));
+  }
+
+  /* Lens switch */
+  $$('[data-mode-btn]').forEach(btn => {
+    btn.addEventListener('click', () => switchModeAnimated(btn.dataset.modeBtn));
+  });
+
+  /* Theme */
+  $('#themeToggle').addEventListener('click', () => {
+    applyTheme(currentTheme === 'ledger' ? 'carbon' : 'ledger');
+  });
+
+  /* Language */
+  $$('[data-lang-btn]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      applyLanguage(btn.dataset.langBtn);
+      renderWork();
+    });
+  });
+
+  /* Filters */
+  $$('#filterBar .chip').forEach(btn => {
+    btn.addEventListener('click', () => setCategory(btn.dataset.filter));
+  });
+  const searchInput = $('#searchInput');
+  searchInput.addEventListener('input', e => {
+    currentSearch = e.target.value;
+    renderWork();
+  });
+  $('#resetFiltersBtn').addEventListener('click', resetFilters);
+
+  /* View switch */
+  const viewCardsBtn = $('#viewCardsBtn');
+  const viewTableBtn = $('#viewTableBtn');
+  viewCardsBtn.addEventListener('click', () => {
+    currentView = 'cards';
+    viewCardsBtn.setAttribute('aria-pressed', 'true');
+    viewTableBtn.setAttribute('aria-pressed', 'false');
+    $('#workGrid').classList.remove('hidden');
+    $('#workTableWrap').classList.add('hidden');
+  });
+  viewTableBtn.addEventListener('click', () => {
+    currentView = 'table';
+    viewTableBtn.setAttribute('aria-pressed', 'true');
+    viewCardsBtn.setAttribute('aria-pressed', 'false');
+    $('#workTableWrap').classList.remove('hidden');
+    $('#workGrid').classList.add('hidden');
+  });
+
+  /* Focus-card quick jumps */
+  $$('[data-jump]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      setCategory(btn.dataset.jump);
+      $('#work').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  /* Skill pills → search */
+  $$('[data-skill]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const skill = btn.dataset.skill;
+      currentSearch = skill;
+      searchInput.value = skill;
+      setCategory('all');
+      $('#work').scrollIntoView({ behavior: 'smooth' });
+      showToast('Filtered by "' + skill + '"');
+    });
+  });
+
+  /* Venture tabs */
+  $$('[data-venture-btn]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const t = btn.dataset.ventureBtn;
+      $$('[data-venture-btn]').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+      $$('.venture-panel').forEach(p => p.classList.toggle('hidden', p.id !== 'venture-panel-' + t));
+    });
+  });
+
+  /* Modals */
+  $('#closeProjectModalBtn').addEventListener('click', () => closeOverlay('#projectModal'));
+  $('#projectModal').addEventListener('click', e => { if (e.target.id === 'projectModal') closeOverlay('#projectModal'); });
+
+  /* Certificate lightbox */
+  $('#closeCertLightboxBtn').addEventListener('click', () => closeOverlay('#certLightbox'));
+  $('#certLightbox').addEventListener('click', e => { if (e.target.id === 'certLightbox') closeOverlay('#certLightbox'); });
+  $('#certPrevBtn').addEventListener('click', () => showCert(certIdx - 1));
+  $('#certNextBtn').addEventListener('click', () => showCert(certIdx + 1));
+
+  /* Copy helpers */
+  $('#copyEmailBtn').addEventListener('click', () => copyTextSafe('houssemeddinemagra@gmail.com', 'Copied'));
+  $('#copyCliBtn').addEventListener('click', () => copyTextSafe('pip install samcode-cli', 'Copied'));
+
+  /* Mobile menu closes after click */
+  $$('.menu-card a').forEach(a => a.addEventListener('click', () => {
+    const d = a.closest('details');
+    if (d) d.open = false;
+  }));
+
+  /* Keyboard */
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      ['#projectModal', '#certLightbox'].forEach(closeOverlayIfOpen);
+    }
+    if (e.key === 'ArrowLeft' && !$('#certLightbox').classList.contains('hidden')) showCert(certIdx - 1);
+    if (e.key === 'ArrowRight' && !$('#certLightbox').classList.contains('hidden')) showCert(certIdx + 1);
+  });
+  function closeOverlayIfOpen(sel) {
+    const el = $(sel);
+    if (!el.classList.contains('hidden')) closeOverlay(sel);
+  }
+
+  /* Small nicety: Escape closes overlays; handled above. */
+});
+</script>
 </body>
 </html>

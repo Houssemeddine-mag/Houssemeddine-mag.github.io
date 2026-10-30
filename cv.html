@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Houssem Eddine Magra — CV</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text x='2' y='52' font-family='Georgia,serif' font-size='46' font-weight='700' fill='%23ffffff'>H</text><text x='30' y='52' font-family='Georgia,serif' font-size='46' font-weight='700' fill='%231D9E75'>M</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1a18;
+    --ink-2: #444440;
+    --ink-3: #888880;
+    --rule: #d8d5cc;
+    --accent: #1D9E75;
+    --accent-light: #E1F5EE;
+    --page: #faf9f6;
+    --white: #ffffff;
+  }
+
+  html { font-size: 16px; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    background: #ede9e0;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2.5rem 1rem;
+    line-height: 1.65;
+  }
+
+  /* ── LANGUAGE SWITCHER ── */
+  .lang-switcher {
+    max-width: 820px;
+    margin: 0 auto 0.75rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+  }
+
+  .lang-btn {
+    background: var(--white);
+    border: 1.5px solid var(--rule);
+    color: var(--ink-3);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .lang-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .lang-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--page);
+    box-shadow: 0 4px 40px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.08);
+  }
+
+  /* ── HEADER ── */
+  .cv-header {
+    padding: 3.5rem 3.5rem 2.5rem;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: end;
+  }
+
+  .name-block h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .name-block h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .tagline {
+    margin-top: 0.6rem;
+    font-weight: 400;
+    color: var(--ink-2);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+  }
+
+  .contact-block {
+    text-align: right;
+    font-size: 0.82rem;
+    color: var(--ink-2);
+    line-height: 1.9;
+  }
+
+  .contact-block a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* ── BODY LAYOUT ── */
+  .cv-body {
+    display: grid;
+    grid-template-columns: 1fr 240px;
+  }
+
+  .cv-main {
+    padding: 2.5rem 3rem 3rem 3.5rem;
+    border-right: 1px solid var(--rule);
+  }
+
+  .cv-side {
+    padding: 2.5rem 2rem 3rem;
+    background: var(--white);
+  }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 2.4rem; }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── PROFILE ── */
+  .profile-text {
+    font-size: 0.92rem;
+    color: var(--ink-2);
+    line-height: 1.75;
+  }
+
+  /* ── PROJECTS ── */
+  .project {
+    margin-bottom: 1.6rem;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .project:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .project-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .project-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--ink);
+  }
+
+  .project-stack {
+    font-size: 0.72rem;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .project-desc {
+    font-size: 0.86rem;
+    color: var(--ink-2);
+    line-height: 1.7;
+  }
+
+  .project-link {
+    display: inline-block;
+    margin-top: 0.3rem;
+    font-size: 0.75rem;
+    color: var(--ink-3);
+    text-decoration: none;
+  }
+  .project-link:hover { color: var(--accent); }
+
+  /* ── SIDE SKILLS ── */
+  .skill-group { margin-bottom: 1.6rem; }
+
+  .skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .pill {
+    background: var(--accent-light);
+    color: #0F6E56;
+    font-size: 0.74rem;
+    font-weight: 400;
+    padding: 0.22rem 0.65rem;
+    border-radius: 100px;
+  }
+
+  .pill.gray { background: #F1EFE8; color: #5F5E5A; }
+
+  /* ── EDUCATION ── */
+  .edu-item { margin-bottom: 1rem; }
+  .edu-degree { font-size: 0.88rem; font-weight: 500; color: var(--ink); line-height: 1.4; }
+  .edu-school { font-size: 0.8rem; color: var(--ink-2); }
+  .edu-date { font-size: 0.74rem; color: var(--ink-3); }
+
+  /* ── LANGUAGES ── */
+  .lang-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    margin-bottom: 0.5rem;
+    color: var(--ink-2);
+  }
+  .lang-level { font-size: 0.72rem; color: var(--ink-3); }
+  .bar-track { width: 80px; height: 3px; background: var(--rule); border-radius: 2px; overflow: hidden; }
+  .bar-fill { height: 100%; background: var(--accent); border-radius: 2px; }
+
+  /* ── ARABIC RTL OVERRIDES ── */
+  html[lang="ar"] body { font-family: 'Scheherazade New', serif; font-size: 17px; }
+  html[lang="ar"] .cv-header { direction: rtl; }
+  html[lang="ar"] .contact-block { text-align: left; }
+  html[lang="ar"] .cv-body { direction: rtl; }
+  html[lang="ar"] .cv-main { border-right: none; border-left: 1px solid var(--rule); padding: 2.5rem 3.5rem 3rem 3rem; }
+  html[lang="ar"] .project-header { flex-direction: row-reverse; }
+  html[lang="ar"] .section-title { letter-spacing: 0; }
+  html[lang="ar"] .lang-switcher { justify-content: flex-start; }
+  html[lang="ar"] .tagline { letter-spacing: 0; }
+  html[lang="ar"] .lang-row { flex-direction: row-reverse; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; }
+    .lang-switcher { display: none; }
+  }
+
+  @media (max-width: 640px) {
+    .cv-header { grid-template-columns: 1fr; padding: 2rem; }
+    .contact-block { text-align: left; }
+    .cv-body { grid-template-columns: 1fr; }
+    .cv-main { padding: 2rem; border-right: none; border-bottom: 1px solid var(--rule); }
+    .cv-side { padding: 2rem; }
+    .name-block h1 { font-size: 2.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LANGUAGE SWITCHER -->
+<div class="lang-switcher">
+  <button class="lang-btn active" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('fr')">FR</button>
+  <button class="lang-btn" onclick="setLang('ar')">AR</button>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="cv-header">
+    <div class="name-block">
+      <h1>Houssem Eddine <em>Magra</em></h1>
+      <p class="tagline" id="tagline">Master 1 Data Science &nbsp;·&nbsp; Software Engineer &nbsp;·&nbsp; Constantine, Algeria</p>
+    </div>
+    <div class="contact-block">
+      <div><a target="_blank" rel="noopener noreferrer" href="mailto:houssemeddinemagra@gmail.com">houssemeddinemagra@gmail.com</a></div>
+      <div><a target="_blank" rel="noopener noreferrer" href="mailto:houssem.magra@univ-constantine2.dz">houssem.magra@univ-constantine2.dz</a></div>
+      <div>+213 541 529 890</div>
+      <div><a target="_blank" rel="noopener noreferrer" href="https://github.com/Houssemeddine-mag">github.com/Houssemeddine-mag</a></div>
+      <div><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/houssem-eddine-magra-880241343">linkedin.com/in/houssem-eddine-magra</a></div>
+      <div id="location">El Khroub, Constantine, Algeria</div>
+    </div>
+  </header>
+
+  <div class="cv-body">
+
+    <!-- MAIN COLUMN -->
+    <main class="cv-main">
+
+      <!-- ABOUT ME -->
+      <section class="section">
+        <h2 class="section-title" id="title-about">About Me</h2>
+        <p class="profile-text" id="about-text">
+          Master 1 Data Science student and Software Engineering graduate with a proven track record of delivering production-ready software across AI, mobile, and full-stack domains. Seeking an opportunity to contribute to challenging technical projects within a professional environment.
+        </p>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="section">
+        <h2 class="section-title" id="title-projects">Projects</h2>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">ChargeOps AI</span>
+            <span class="project-stack">Python · PyTorch · FastAPI · Docker</span>
+          </div>
+          <p class="project-desc" data-en="AI-powered diagnostic and prognostic platform for Wireless Power Transfer (WPT) EV charging infrastructure. Features an autonomous edge node simulator generating physics-based telemetry (voltages, currents, coil temperatures, Q-factor). A Transformer neural network estimates Remaining Useful Life (RUL) and detects real-time faults such as resonance frequency drift. Deployed as a containerised web service with a live Chart.js dashboard; also runs as a native desktop app via PyWebView."
+             data-fr="Plateforme de diagnostic et de pronostic alimentée par l'IA pour les infrastructures de recharge EV par transfert de puissance sans fil (WPT). Comprend un simulateur de nœud périphérique autonome générant de la télémétrie basée sur la physique (tensions, courants, températures de bobine, facteur Q). Un réseau de neurones Transformer estime la durée de vie utile restante (RUL) et détecte les pannes en temps réel telles que la dérive de fréquence de résonance. Déployé en tant que service web conteneurisé avec un tableau de bord Chart.js en direct ; fonctionne également en tant qu'application de bureau native via PyWebView."
+             data-ar="منصة تشخيص وتنبؤ مدعومة بالذكاء الاصطناعي لبنية تحتية لشحن المركبات الكهربائية بنقل الطاقة اللاسلكي (WPT). تتضمن محاكيًا لعقدة حافة مستقلة يولّد بيانات قياس عن بُعد مبنية على الفيزياء (الجهد، التيار، درجات حرارة الملف، عامل الجودة). تقدّر شبكة عصبية Transformer العمر الإنتاجي المتبقي (RUL) وتكشف الأعطال في الوقت الفعلي. مُنشر كخدمة ويب في حاوية مع لوحة تحكم Chart.js؛ ويعمل أيضًا كتطبيق سطح مكتب أصلي عبر PyWebView.">
+          </p>
+          <a class="project-link" href="https://github.com/Houssemeddine-mag/ChargeOps-AI">↗ github.com/Houssemeddine-mag/ChargeOps-AI</a>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Sam Code</span>
+            <span class="project-stack">Electron · React · Monaco Editor · Node.js</span>
+          </div>
+          <p class="project-desc" data-en="Open-source cross-platform desktop code editor built with Electron, React, and Monaco Editor (the same engine powering VS Code). Features syntax highlighting for 100+ languages, an integrated terminal (xterm.js + node-pty), an AI-powered coding assistant via OpenAI, a plugin marketplace, Jupyter notebook support, and CI/CD pipelines for automated cross-platform builds (Windows, macOS, Linux). Deployed with a landing page and download service on Firebase and Render."
+             data-fr="Éditeur de code de bureau multiplateforme open-source construit avec Electron, React et Monaco Editor (le même moteur que VS Code). Dispose de la coloration syntaxique pour plus de 100 langages, d'un terminal intégré (xterm.js + node-pty), d'un assistant de codage alimenté par l'IA via OpenAI, d'une marketplace de plugins, du support des notebooks Jupyter et de pipelines CI/CD pour des builds multiplateformes automatisés. Déployé avec une page d'accueil et un service de téléchargement sur Firebase et Render."
+             data-ar="محرر كود مفتوح المصدر متعدد المنصات مبني باستخدام Electron وReact وMon Monaco Editor (المحرك ذاته الذي يشغّل VS Code). يدعم تمييز البنية لأكثر من 100 لغة، ومحطة طرفية مدمجة، ومساعد ترميز بالذكاء الاصطناعي عبر OpenAI، وسوق إضافات، ودعم Jupyter. مُنشر مع صفحة هبوط وخدمة تنزيل على Firebase وRender.">
+          </p>
+          <a class="project-link" href="https://github.com/Houssemeddine-mag/Sam-Code" target="_blank" rel="noopener noreferrer">↗ github.com/Houssemeddine-mag/Sam-Code</a>
+          &nbsp;&nbsp;
+          <a class="project-link" href="https://samcode-26.web.app/#" target="_blank" rel="noopener noreferrer">↗ samcode-26.web.app (download after creator permission)</a>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Handzy</span>
+            <span class="project-stack">Flutter · Dart · Kotlin · MediaPipe</span>
+          </div>
+          <p class="project-desc" data-en="Android application enabling hands-free device control through real-time hand gesture recognition powered by Google MediaPipe. Tracks 21 3D hand landmarks on-device; translates gestures (pinch to tap, fist to scroll) into native touch events via the Android Accessibility Service. Operates fully offline — no network tracking. Written as a hybrid Flutter/Kotlin bridge with native C++ MediaPipe integration for low-latency performance."
+             data-fr="Application Android permettant le contrôle mains libres de l'appareil grâce à la reconnaissance de gestes en temps réel via Google MediaPipe. Suit 21 points de repère 3D de la main sur l'appareil ; traduit les gestes (pincement pour appuyer, poing pour défiler) en événements tactiles natifs via le Service d'Accessibilité Android. Fonctionne entièrement hors ligne. Écrit comme un pont hybride Flutter/Kotlin avec intégration native C++ MediaPipe."
+             data-ar="تطبيق أندرويد يتيح التحكم في الجهاز بدون لمس عبر التعرف على إيماءات اليد في الوقت الفعلي باستخدام Google MediaPipe. يتتبع 21 نقطة مرجعية ثلاثية الأبعاد على الجهاز، ويترجم الإيماءات إلى أحداث لمس أصلية عبر خدمة إمكانية الوصول لأندرويد. يعمل بالكامل دون إنترنت، مكتوب كجسر هجين بين Flutter وKotlin مع تكامل C++ أصلي.">
+          </p>
+          <a class="project-link" href="https://github.com/Houssemeddine-mag/Handzy">↗ github.com/Houssemeddine-mag/Handzy</a>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">DAC — Image Classifier</span>
+            <span class="project-stack">Java · Python · CSS</span>
+          </div>
+          <p class="project-desc" data-en="Full-stack image classification application with a Java-based frontend and a Python classifier backend. Structured with a dedicated test-image dataset, demonstrating an end-to-end ML pipeline integrated with a desktop or web UI. Reflects cross-language integration skills connecting a trained model to a production interface. Developed under the supervision of Dr. Boudjlel Nada."
+             data-fr="Application de classification d'images full-stack avec un frontend Java et un backend classificateur Python. Structurée avec un jeu de données d'images de test dédié, démontrant un pipeline ML de bout en bout intégré à une interface desktop ou web. Développée sous la supervision du Dr. Boudjlel Nada."
+             data-ar="تطبيق متكامل لتصنيف الصور بواجهة أمامية Java وخلفية Python. يُظهر خط أنابيب تعلم آلي متكامل من البداية إلى النهاية. طُوِّر تحت إشراف الدكتورة بودجلال ندى.">
+          </p>
+          <a class="project-link" href="https://github.com/Houssemeddine-mag/DAC">↗ github.com/Houssemeddine-mag/DAC</a>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">ScourgifyData</span>
+            <span class="project-stack">Python · Jupyter · NLP · ML</span>
+          </div>
+          <p class="project-desc" data-en="Sentiment analysis project on tourism platform reviews (Yelp dataset). Covers the full data science pipeline — EDA, cleaning, feature engineering, ML modelling, and evaluation — across structured notebooks. Includes LaTeX report generation and visualisations. Collaborative project with team-based dataset responsibilities. Developed under the supervision of Dr. Ghammaz Wafa."
+             data-fr="Projet d'analyse de sentiment sur les avis de plateformes touristiques (jeu de données Yelp). Couvre l'ensemble du pipeline de science des données — EDA, nettoyage, ingénierie des features, modélisation ML et évaluation — dans des notebooks structurés. Comprend la génération de rapports LaTeX et des visualisations. Développé sous la supervision du Dr. Ghammaz Wafa."
+             data-ar="مشروع تحليل مشاعر على تقييمات منصات السياحة (مجموعة بيانات Yelp). يغطي خط أنابيب علم البيانات الكامل: الاستكشاف، التنظيف، هندسة الميزات، النمذجة، والتقييم. طُوِّر تحت إشراف الدكتورة غماز وفاء.">
+          </p>
+          <a class="project-link" href="https://github.com/Houssemeddine-mag/ScourgifyData">↗ github.com/Houssemeddine-mag/ScourgifyData</a>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Rif Connect 2.0</span>
+            <span class="project-stack">Flutter · React.js · Firebase · Dart</span>
+          </div>
+          <p class="project-desc" data-en="Full-stack conference management system built for the RIF 2025 International Conference on Women in Computer Science Research, hosted at Constantine University 2. Comprises a Flutter mobile app (user &amp; admin interfaces) and a React web admin panel, both backed by Firebase Firestore, Authentication, and Push Notifications. Features include real-time conference schedule, 5-star presentation rating system, push notification broadcasting, user analytics dashboard, and data export. Developed under the supervision of Prof. Benchikha Magra Fouzia."
+             data-fr="Système de gestion de conférence full-stack développé pour la conférence internationale RIF 2025 sur les femmes dans la recherche en informatique, hébergée à l'Université Constantine 2. Comprend une application mobile Flutter (interfaces utilisateur et administrateur) et un panneau d'administration web React, tous deux soutenus par Firebase Firestore, l'Authentification et les Notifications Push. Développé sous la supervision du Prof. Benchikha Magra Fouzia."
+             data-ar="نظام متكامل لإدارة المؤتمرات، بُني لمؤتمر RIF 2025 الدولي حول المرأة في بحوث علوم الحاسوب بجامعة قسنطينة 2. يشمل تطبيق Flutter للجوال ولوحة ويب React، كلاهما مدعوم بـ Firebase. طُوِّر تحت إشراف الأستاذة بنشيخة مقرة فوزية.">
+          </p>
+          <a class="project-link" href="https://github.com/Houssemeddine-mag/rif2.0">↗ github.com/Houssemeddine-mag/rif2.0</a>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Al-Amira</span>
+            <span class="project-stack">React.js · Firebase · CSS</span>
+          </div>
+          <p class="project-desc" data-en="Showcase website for an Algerian traditional pastry shop — a 3-page React.js app (Home, Products, Contact) hosted on Firebase Web Hosting with a live deployment. Demonstrates front-end development and cloud deployment for a real local business."
+             data-fr="Site vitrine pour une pâtisserie traditionnelle algérienne — une application React.js de 3 pages (Accueil, Produits, Contact) hébergée sur Firebase Web Hosting avec un déploiement en production. Démontre le développement frontend et le déploiement cloud pour une vraie entreprise locale."
+             data-ar="موقع عرض لمحل حلويات جزائري تقليدي — تطبيق React.js من 3 صفحات (الرئيسية، المنتجات، التواصل) مستضاف على Firebase. يُظهر تطوير الواجهة الأمامية والنشر السحابي لعمل تجاري محلي حقيقي.">
+          </p>
+          <a class="project-link" href="https://al-amira-bbb72.web.app/">↗ al-amira-bbb72.web.app (live)</a>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">NaviJam</span>
+            <span class="project-stack">Flutter · Dart · TomTom API · Firebase</span>
+          </div>
+          <p class="project-desc" data-en="Cross-platform mobile traffic awareness app acting as a 15 km real-time radar around the user's location and destination. Integrates the TomTom Traffic Incidents API to detect and visually classify congestion severity (moderate, severe, closed) as live polyline overlays on an OpenStreetMap canvas. Features dual-point scanning, alternative route suggestions, and smart API caching."
+             data-fr="Application mobile multiplateforme de surveillance du trafic agissant comme un radar en temps réel de 15 km autour de la position et de la destination de l'utilisateur. Intègre l'API TomTom Traffic Incidents pour détecter et classer visuellement la gravité des embouteillages sur une carte OpenStreetMap."
+             data-ar="تطبيق جوال متعدد المنصات للوعي المروري يعمل كرادار في الوقت الفعلي بنطاق 15 كم حول موقع المستخدم ووجهته. يدمج TomTom Traffic API لاكتشاف الازدحام وتصنيفه بصريًا على خريطة OpenStreetMap.">
+          </p>
+          <a class="project-link" href="https://github.com/Houssemeddine-mag/NaviJam">↗ github.com/Houssemeddine-mag/NaviJam</a>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">DineFlow — Restaurant Dashboard</span>
+            <span class="project-stack">React · JavaScript · SCSS · Vite</span>
+          </div>
+          <p class="project-desc" data-en="Multi-role restaurant management dashboard built with React and Vite. Covers Director, Chef, and HR (GRH) interfaces with protected routes, authentication context, and role-based page access. Features include menu management, restaurant listings, employee (GRH) forms, and a chef-specific dashboard — all styled with modular SCSS."
+             data-fr="Tableau de bord de gestion de restaurant multi-rôles construit avec React et Vite. Couvre les interfaces Directeur, Chef et RH (GRH) avec des routes protégées, un contexte d'authentification et un accès aux pages basé sur les rôles. Stylisé avec du SCSS modulaire."
+             data-ar="لوحة تحكم متعددة الأدوار لإدارة المطاعم مبنية بـ React وVite. تشمل واجهات المدير والطاهي والموارد البشرية مع مسارات محمية ووصول قائم على الأدوار. مُصممة بـ SCSS معياري.">
+          </p>
+          <a class="project-link" href="https://github.com/Houssemeddine-mag/atelier">↗ github.com/Houssemeddine-mag/atelier</a>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">MusicalMe</span>
+            <span class="project-stack">Python · MediaPipe · OpenCV · Pygame</span>
+          </div>
+          <p class="project-desc" data-en="Interactive hand-gesture music system — currently being evolved into an educational game targeting children aged 4 to 8. Uses a standard webcam and MediaPipe to track 21 hand landmarks in real time, mapping thumb-finger pinch combinations to musical notes (DO–SI scale, both hands). Features real-time audio synthesis across 4 instrument timbres, pitch bending via hand elevation, chord support, and a fully gesture-navigated menu system."
+             data-fr="Système musical interactif par gestes de la main — en cours d'évolution vers un jeu éducatif ciblant les enfants de 4 à 8 ans. Utilise une webcam standard et MediaPipe pour suivre 21 points de repère de la main en temps réel, mappant des combinaisons de pincements pouce-doigt sur des notes musicales (gamme DO-SI). Dispose d'une synthèse audio en temps réel sur 4 timbres d'instruments."
+             data-ar="نظام موسيقي تفاعلي بإيماءات اليد، يتطور حاليًا إلى لعبة تعليمية للأطفال من 4 إلى 8 سنوات. يستخدم كاميرا ويب و MediaPipe لتتبع 21 نقطة مرجعية لليد في الوقت الفعلي، مع تركيب صوت عبر 4 أصوات آلات موسيقية.">
+          </p>
+          <a class="project-link" href="https://github.com/Houssemeddine-mag/MusicalMe">↗ github.com/Houssemeddine-mag/MusicalMe</a>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Online Store REST API</span>
+            <span class="project-stack">Django REST · Python · PostgreSQL</span>
+          </div>
+          <p class="project-desc" data-en="Backend API for an e-commerce system managing products, customers, and orders. Implements business logic including 19% VAT calculation, loyalty points accrual, and order status lifecycle (CREATED → PAID). Built with Django REST Framework and PostgreSQL. Developed under the supervision of Dr. Lezaar Fouzi."
+             data-fr="API backend pour un système e-commerce gérant produits, clients et commandes. Implémente la logique métier incluant le calcul de TVA à 19%, l'accumulation de points de fidélité et le cycle de vie des commandes (CRÉÉ → PAYÉ). Développée sous la supervision du Dr. Lezaar Fouzi."
+             data-ar="واجهة برمجية خلفية لنظام تجارة إلكترونية يدير المنتجات والعملاء والطلبات. تتضمن منطق الأعمال مع حساب ضريبة القيمة المضافة 19% ونقاط الولاء. طُوِّرت تحت إشراف الدكتور لزعر فوزي.">
+          </p>
+          <a class="project-link" href="https://github.com/Houssemeddine-mag/employee">↗ github.com/Houssemeddine-mag/employee</a>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">QR Code Generator</span>
+            <span class="project-stack">Flutter · Dart · Firebase Storage</span>
+          </div>
+          <p class="project-desc" data-en="Cross-platform Flutter application for generating QR codes from any input — URLs, images, videos, PDFs, and arbitrary files. Features real-time QR generation, save-to-gallery, and share functionality, all wrapped in a Material Design 3 UI with dark mode support. Handles Android permission scoping across API levels and optionally offloads large files to Firebase Storage."
+             data-fr="Application Flutter multiplateforme pour générer des QR codes depuis n'importe quelle entrée — URLs, images, vidéos, PDFs et fichiers arbitraires. Comprend la génération de QR en temps réel, la sauvegarde en galerie et le partage, le tout dans une interface Material Design 3 avec mode sombre."
+             data-ar="تطبيق Flutter متعدد المنصات لتوليد رموز QR من أي مدخلات: روابط URL، صور، فيديوهات، ملفات PDF وغيرها. يتميز بتوليد QR في الوقت الفعلي، الحفظ في المعرض، والمشاركة، بتصميم Material Design 3 مع دعم الوضع الداكن.">
+          </p>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Nectar AI</span>
+            <span class="project-stack">React · Django · DeepSeek API · Python</span>
+          </div>
+          <p class="project-desc" data-en="Full-stack AI chat application with a React frontend and a Django REST backend acting as a secure proxy to the DeepSeek language model. Keeps API credentials server-side, handles CORS, and exposes clean health-check and messaging endpoints. Features a modern chat interface with dark/light mode, typing indicators, and message timestamps. Developed under the supervision of Prof. Benmerzoug Djamel."
+             data-fr="Application de chat IA full-stack avec un frontend React et un backend Django REST agissant comme proxy sécurisé vers le modèle de langage DeepSeek. Garde les credentials API côté serveur, gère le CORS et expose des endpoints propres. Développée sous la supervision du Prof. Benmerzoug Djamel."
+             data-ar="تطبيق دردشة ذكاء اصطناعي متكامل بواجهة React وخلفية Django REST تعمل كوسيط آمن لنموذج DeepSeek. تحافظ على مفاتيح API من جانب الخادم وتعالج CORS. طُوِّر تحت إشراف الأستاذ بن مرزوق جمال.">
+          </p>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Weather Alert App</span>
+            <span class="project-stack">React · Django · IFTTT · Webhooks</span>
+          </div>
+          <p class="project-desc" data-en="Real-time weather notification system that receives webhook POST requests from automation platforms (IFTTT, n8n) and surfaces them in a React dashboard. A Django REST backend stores incoming alerts in SQLite and exposes polling endpoints; the React frontend auto-refreshes every 10 seconds with weather-condition icons and an alert history grid. Developed under the supervision of Prof. Benmerzoug Djamel."
+             data-fr="Système de notification météo en temps réel qui reçoit des requêtes POST webhook depuis des plateformes d'automatisation (IFTTT, n8n) et les affiche dans un tableau de bord React. Un backend Django REST stocke les alertes dans SQLite. Développée sous la supervision du Prof. Benmerzoug Djamel."
+             data-ar="نظام إشعارات طقس في الوقت الفعلي يستقبل طلبات webhook من منصات الأتمتة ويعرضها في لوحة React. الخلفية Django REST تخزن التنبيهات في SQLite. طُوِّر تحت إشراف الأستاذ بن مرزوق جمال.">
+          </p>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">gRPC Remote Procedure Calls</span>
+            <span class="project-stack">Python · gRPC · Protocol Buffers</span>
+          </div>
+          <p class="project-desc" data-en="Practical implementation of gRPC with Python covering unary and server-streaming RPC patterns. Defines a GreetingService in Protocol Buffers, auto-generates client and server stubs, and demonstrates channel management, stub patterns, and stateful service tracking across a ThreadPoolExecutor server. Developed under the supervision of Prof. Benmerzoug Djamel."
+             data-fr="Implémentation pratique de gRPC avec Python couvrant les patterns RPC unaires et de streaming serveur. Définit un GreetingService en Protocol Buffers, génère automatiquement les stubs client et serveur. Développée sous la supervision du Prof. Benmerzoug Djamel."
+             data-ar="تطبيق عملي لـ gRPC مع Python يغطي أنماط RPC الأحادية وتدفق الخادم. يعرّف GreetingService في Protocol Buffers ويولّد stubs العميل والخادم تلقائيًا. طُوِّر تحت إشراف الأستاذ بن مرزوق جمال.">
+          </p>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Apache Kafka Streaming</span>
+            <span class="project-stack">Python · Apache Kafka · Docker</span>
+          </div>
+          <p class="project-desc" data-en="End-to-end Kafka producer/consumer setup containerised with Docker Compose (Kafka + Zookeeper). Implements text and JSON message production, consumer group management, partition-aware consumption, and a topic manager utility. Covers offset management, message serialisation, and consumer group rebalancing. Developed under the supervision of Prof. Benmerzoug Djamel."
+             data-fr="Configuration Kafka producteur/consommateur de bout en bout conteneurisée avec Docker Compose. Implémente la production de messages texte et JSON, la gestion des groupes de consommateurs et la consommation par partition. Développée sous la supervision du Prof. Benmerzoug Djamel."
+             data-ar="إعداد Kafka منتج/مستهلك من البداية إلى النهاية في حاوية Docker Compose. ينفّذ إنتاج رسائل JSON والنصوص، وإدارة مجموعات المستهلكين، والاستهلاك الواعي بالأقسام. طُوِّر تحت إشراف الأستاذ بن مرزوق جمال.">
+          </p>
+          <a class="project-link" href="https://github.com/Houssemeddine-mag">↗ github.com/Houssemeddine-mag</a>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Simple Online Store Management</span>
+            <span class="project-stack">FastAPI · Consul · NGINX · Docker</span>
+          </div>
+          <p class="project-desc" data-en="Small but complete microservices architecture comprising three FastAPI business services (user, product, order) behind an NGINX API gateway, with Consul for service registry and discovery. Services self-register on startup; the order service dynamically resolves peer addresses via the Consul catalog. Orchestrated with Docker Compose. Developed under the supervision of Prof. Benmerzoug Djamel."
+             data-fr="Architecture microservices petite mais complète comprenant trois services métier FastAPI (utilisateur, produit, commande) derrière une passerelle API NGINX, avec Consul pour le registre et la découverte de services. Orchestrée avec Docker Compose. Développée sous la supervision du Prof. Benmerzoug Djamel."
+             data-ar="معمارية خدمات مصغرة صغيرة لكن مكتملة تضم ثلاث خدمات FastAPI (مستخدم، منتج، طلب) خلف بوابة NGINX، مع Consul لتسجيل الخدمات واكتشافها. مُنسَّقة بـ Docker Compose. طُوِّرت تحت إشراف الأستاذ بن مرزوق جمال.">
+          </p>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- SIDE COLUMN -->
+    <aside class="cv-side">
+
+      <!-- PERSONAL INFO -->
+      <section class="section">
+        <h2 class="section-title" id="title-personal">Personal Info</h2>
+        <div style="font-size:0.82rem; color:var(--ink-2); line-height:2;">
+          <div><span style="color:var(--ink-3); font-size:0.72rem;" id="label-dob">Date of birth</span><br>20 <span id="dob-month">June</span> 2003</div>
+          <div style="margin-top:0.5rem;"><span style="color:var(--ink-3); font-size:0.72rem;" id="label-address">Address</span><br>Cité El Chourouk, 64 Log. N°26<br>El Khroub, Constantine, <span id="country">Algeria</span></div>
+        </div>
+      </section>
+
+      <!-- TECHNICAL SKILLS -->
+      <section class="section">
+        <h2 class="section-title" id="title-prog">Programming Languages</h2>
+        <div class="skill-group">
+          <div class="skill-pills">
+            <span class="pill">Python</span><span class="pill">Java</span><span class="pill">Dart</span>
+            <span class="pill">Kotlin</span><span class="pill">JavaScript</span><span class="pill">SQL</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title" id="title-frameworks">Frameworks &amp; Libraries</h2>
+        <div class="skill-group">
+          <div class="skill-pills">
+            <span class="pill">PyTorch</span><span class="pill">FastAPI</span><span class="pill">Django REST</span>
+            <span class="pill">Flutter</span><span class="pill">React.js</span><span class="pill">Electron</span>
+            <span class="pill">MediaPipe</span><span class="pill">OpenCV</span><span class="pill">Chart.js</span>
+            <span class="pill">Tailwind CSS</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title" id="title-tools">Tools &amp; Platforms</h2>
+        <div class="skill-group">
+          <div class="skill-pills">
+            <span class="pill gray">Docker</span><span class="pill gray">Firebase</span>
+            <span class="pill gray">PostgreSQL</span><span class="pill gray">SQLite</span>
+            <span class="pill gray">Git / GitHub</span><span class="pill gray">Render</span>
+            <span class="pill gray">Jupyter</span><span class="pill gray">SCSS</span>
+            <span class="pill gray">VS Code</span><span class="pill gray">Apache Kafka</span>
+            <span class="pill gray">gRPC</span><span class="pill gray">Consul</span>
+            <span class="pill gray">NGINX</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title" id="title-domains">Domains</h2>
+        <div class="skill-group">
+          <div class="skill-pills">
+            <span class="pill gray" id="d1">Machine Learning</span>
+            <span class="pill gray" id="d2">Computer Vision</span>
+            <span class="pill gray">NLP</span>
+            <span class="pill gray" id="d3">IoT / Edge AI</span>
+            <span class="pill gray" id="d4">REST APIs</span>
+            <span class="pill gray" id="d5">Mobile Dev</span>
+            <span class="pill gray" id="d6">Web Dev</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="section">
+        <h2 class="section-title" id="title-edu">Education</h2>
+        <div class="edu-item">
+          <p class="edu-degree" id="edu-deg1">Master 1 — Data Science</p>
+          <p class="edu-school">Université Constantine 2 — Abdelhamid Mehri</p>
+          <p class="edu-date" id="edu-date1">In progress</p>
+        </div>
+        <div class="edu-item">
+          <p class="edu-degree" id="edu-deg2">Licence — Génie Logiciel</p>
+          <p class="edu-school">Université Constantine 2 — Abdelhamid Mehri</p>
+          <p class="edu-date" id="edu-date2">Completed</p>
+        </div>
+      </section>
+
+      <!-- SPOKEN LANGUAGES -->
+      <section class="section">
+        <h2 class="section-title" id="title-langs">Spoken Languages</h2>
+        <div class="lang-row">
+          <span id="lang-ar">Arabic</span>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+          <span class="lang-level" id="level-ar">Native</span>
+        </div>
+        <div class="lang-row">
+          <span id="lang-fr">French</span>
+          <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+          <span class="lang-level" id="level-fr">Fluent</span>
+        </div>
+        <div class="lang-row">
+          <span id="lang-en">English</span>
+          <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+          <span class="lang-level" id="level-en">Fluent</span>
+        </div>
+      </section>
+
+    </aside>
+  </div>
+
+</div>
+
+<script>
+const translations = {
+  en: {
+    lang: 'en', dir: 'ltr',
+    tagline: 'Master 1 Data Science &nbsp;·&nbsp; Software Engineer &nbsp;·&nbsp; Constantine, Algeria',
+    'title-about': 'About Me',
+    'about-text': 'Master 1 Data Science student and Software Engineering graduate with a proven track record of delivering production-ready software across AI, mobile, and full-stack domains. Seeking an opportunity to contribute to challenging technical projects within a professional environment.',
+    'title-projects': 'Projects',
+    'title-personal': 'Personal Info',
+    'label-dob': 'Date of birth',
+    'dob-month': 'June',
+    'label-address': 'Address',
+    'country': 'Algeria',
+    'title-prog': 'Programming Languages',
+    'title-frameworks': 'Frameworks & Libraries',
+    'title-tools': 'Tools & Platforms',
+    'title-domains': 'Domains',
+    'd1': 'Machine Learning', 'd2': 'Computer Vision', 'd3': 'IoT / Edge AI',
+    'd4': 'REST APIs', 'd5': 'Mobile Dev', 'd6': 'Web Dev',
+    'title-edu': 'Education',
+    'edu-deg1': 'Master 1 — Data Science',
+    'edu-date1': 'In progress',
+    'edu-deg2': 'Licence — Génie Logiciel',
+    'edu-date2': 'Completed',
+    'title-langs': 'Spoken Languages',
+    'lang-ar': 'Arabic', 'level-ar': 'Native',
+    'lang-fr': 'French', 'level-fr': 'Fluent',
+    'lang-en': 'English', 'level-en': 'Fluent',
+    'location': 'El Khroub, Constantine, Algeria',
+  },
+  fr: {
+    lang: 'fr', dir: 'ltr',
+    tagline: 'Master 1 Science des données &nbsp;·&nbsp; Ingénieur logiciel &nbsp;·&nbsp; Constantine, Algérie',
+    'title-about': 'À propos',
+    'about-text': 'Étudiant en Master 1 Science des données et diplômé en Génie Logiciel, avec un solide bilan de livraison de logiciels prêts pour la production dans les domaines de l\'IA, du mobile et du full-stack. Je recherche une opportunité de contribuer à des projets techniques stimulants dans un environnement professionnel.',
+    'title-projects': 'Projets',
+    'title-personal': 'Informations personnelles',
+    'label-dob': 'Date de naissance',
+    'dob-month': 'juin',
+    'label-address': 'Adresse',
+    'country': 'Algérie',
+    'title-prog': 'Langages de programmation',
+    'title-frameworks': 'Frameworks & Bibliothèques',
+    'title-tools': 'Outils & Plateformes',
+    'title-domains': 'Domaines',
+    'd1': 'Apprentissage automatique', 'd2': 'Vision par ordinateur', 'd3': 'IoT / IA embarquée',
+    'd4': 'APIs REST', 'd5': 'Dév. mobile', 'd6': 'Dév. web',
+    'title-edu': 'Formation',
+    'edu-deg1': 'Master 1 — Science des données',
+    'edu-date1': 'En cours',
+    'edu-deg2': 'Licence — Génie Logiciel',
+    'edu-date2': 'Obtenue',
+    'title-langs': 'Langues parlées',
+    'lang-ar': 'Arabe', 'level-ar': 'Langue maternelle',
+    'lang-fr': 'Français', 'level-fr': 'Courant',
+    'lang-en': 'Anglais', 'level-en': 'Courant',
+    'location': 'El Khroub, Constantine, Algérie',
+  },
+  ar: {
+    lang: 'ar', dir: 'rtl',
+    tagline: 'ماستر 1 علوم البيانات &nbsp;·&nbsp; مهندس برمجيات &nbsp;·&nbsp; قسنطينة، الجزائر',
+    'title-about': 'نبذة عني',
+    'about-text': 'طالب ماستر 1 في علوم البيانات وخريج هندسة البرمجيات، أمتلك سجلاً حافلاً في تسليم برمجيات جاهزة للإنتاج في مجالات الذكاء الاصطناعي والتطوير للجوال والأنظمة المتكاملة. أسعى إلى المساهمة في مشاريع تقنية محفّزة ضمن بيئة مهنية.',
+    'title-projects': 'المشاريع',
+    'title-personal': 'معلومات شخصية',
+    'label-dob': 'تاريخ الميلاد',
+    'dob-month': 'يونيو',
+    'label-address': 'العنوان',
+    'country': 'الجزائر',
+    'title-prog': 'لغات البرمجة',
+    'title-frameworks': 'الأطر والمكتبات',
+    'title-tools': 'الأدوات والمنصات',
+    'title-domains': 'المجالات',
+    'd1': 'تعلم الآلة', 'd2': 'رؤية حاسوبية', 'd3': 'إنترنت الأشياء / الذكاء الحافي',
+    'd4': 'REST APIs', 'd5': 'تطوير الجوال', 'd6': 'تطوير الويب',
+    'title-edu': 'التعليم',
+    'edu-deg1': 'ماستر 1 — علوم البيانات',
+    'edu-date1': 'قيد الدراسة',
+    'edu-deg2': 'ليسانس — هندسة البرمجيات',
+    'edu-date2': 'مكتملة',
+    'title-langs': 'اللغات المنطوقة',
+    'lang-ar': 'العربية', 'level-ar': 'اللغة الأم',
+    'lang-fr': 'الفرنسية', 'level-fr': 'طلاقة',
+    'lang-en': 'الإنجليزية', 'level-en': 'طلاقة',
+    'location': 'الخروب، قسنطينة، الجزائر',
+  }
+};
+
+function setLang(code) {
+  const t = translations[code];
+  const html = document.documentElement;
+  html.lang = t.lang;
+  html.dir = t.dir;
+
+  // Update all simple text elements
+  const simpleKeys = ['title-about','title-projects','title-personal','label-dob','dob-month',
+    'label-address','country','title-prog','title-frameworks','title-tools','title-domains',
+    'd1','d2','d3','d4','d5','d6','title-edu','edu-deg1','edu-date1','edu-deg2','edu-date2',
+    'title-langs','lang-ar','level-ar','lang-fr','level-fr','lang-en','level-en','location'];
+
+  simpleKeys.forEach(key => {
+    const el = document.getElementById(key);
+    if (el) el.textContent = t[key];
+  });
+
+  // Tagline uses innerHTML for &nbsp;
+  document.getElementById('tagline').innerHTML = t.tagline;
+  // About text
+  document.getElementById('about-text').textContent = t['about-text'];
+
+  // Translate project descriptions — read from the stored cache, not from the live DOM
+  document.querySelectorAll('.project-desc').forEach(el => {
+    const txt = descCache.get(el) ? descCache.get(el)[code] : null;
+    if (txt) el.innerHTML = txt;
+  });
+
+  // Update active button
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${code}')"]`).classList.add('active');
+
+  // Adjust font for Arabic
+  if (code === 'ar') {
+    document.body.style.fontFamily = "'Scheherazade New', serif";
+  } else {
+    document.body.style.fontFamily = "'DM Sans', sans-serif";
+  }
+
+  // Persist chosen language so back-navigation restores correctly
+  try { sessionStorage.setItem('cv-lang', code); } catch(e) {}
+}
+
+// Cache all data-* translations from the DOM before anything mutates them
+const descCache = new Map();
+document.querySelectorAll('.project-desc').forEach(el => {
+  descCache.set(el, {
+    en: el.getAttribute('data-en'),
+    fr: el.getAttribute('data-fr'),
+    ar: el.getAttribute('data-ar'),
+  });
+});
+
+// On page show (including back-navigation from bfcache), restore language
+window.addEventListener('pageshow', () => {
+  let saved = 'en';
+  try { saved = sessionStorage.getItem('cv-lang') || 'en'; } catch(e) {}
+  setLang(saved);
+});
+</script>
+</body>
+</html>
