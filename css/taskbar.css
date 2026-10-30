@@ -1,0 +1,515 @@
+
+/* =====================================
+   HOUSSEMOS 2.0 — TASKBAR
+===================================== */
+
+#taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--taskbar-height);
+
+    display: grid;
+    grid-template-columns: minmax(45px, 1fr) auto minmax(45px, 1fr);
+    align-items: center;
+
+    padding: 0 14px;
+
+    background: rgba(255, 255, 255, 0.76);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 -5px 25px rgba(65, 95, 135, 0.06);
+
+    z-index: 1100;
+}
+
+.taskbar-left,
+.taskbar-center,
+.taskbar-right {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+.taskbar-left {
+    justify-content: flex-start;
+}
+
+.taskbar-center {
+    justify-content: center;
+    gap: 7px;
+}
+
+.taskbar-right {
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.taskbar-button,
+.tray-button,
+.clock-button {
+    border: none;
+    background: transparent;
+    color: #465d79;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.2s ease;
+}
+
+.taskbar-button:hover,
+.tray-button:hover,
+.clock-button:hover {
+    background: rgba(83, 139, 203, 0.12);
+}
+
+.taskbar-button {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 11px;
+}
+
+.taskbar-button svg,
+.tray-button svg {
+    width: 21px;
+    height: 21px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.start-logo {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #4f8fce, #82b9eb);
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    box-shadow: 0 3px 10px rgba(76, 130, 195, 0.22);
+}
+
+.pinned-app.active::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    width: 14px;
+    height: 3px;
+    background: #4e91d2;
+    border-radius: 10px;
+}
+
+#taskbar-apps {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+}
+
+.taskbar-app-btn {
+    position: relative;
+    width: 38px;
+    height: 40px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    color: #465d79;
+    background: transparent;
+    transition: 0.2s ease;
+}
+
+.taskbar-app-btn svg {
+    width: 19px;
+    height: 19px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.taskbar-app-btn:hover {
+    background: rgba(83, 139, 203, 0.12);
+}
+
+.taskbar-app-btn.running {
+    background: rgba(83, 139, 203, 0.09);
+}
+
+.taskbar-app-btn.active {
+    background: rgba(83, 139, 203, 0.16);
+}
+
+.taskbar-app-btn::after,
+.pinned-app.running::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    width: 10px;
+    height: 3px;
+    border-radius: 10px;
+    background: rgba(78, 145, 210, 0.45);
+    transition: 0.2s ease;
+}
+
+.taskbar-app-btn.active::after {
+    width: 16px;
+    background: #4e91d2;
+}
+
+.pinned-app.running::after {
+    width: 10px;
+}
+
+.tray-button {
+    gap: 5px;
+    height: 38px;
+    min-width: 38px;
+    padding: 0 7px;
+    border-radius: 9px;
+}
+
+.clock-button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 3px;
+    padding: 6px 8px;
+    min-width: 76px;
+    border-radius: 9px;
+}
+
+#clock {
+    font-size: 12px;
+    font-weight: 650;
+}
+
+#date {
+    font-size: 10px;
+    color: #74869d;
+}
+
+.show-desktop {
+    width: 5px;
+    height: 42px;
+    margin-left: 5px;
+    border-left: 1px solid rgba(110, 140, 170, 0.35);
+    background: transparent;
+}
+
+.show-desktop:hover {
+    background: rgba(76, 130, 195, 0.18);
+}
+
+/* SYSTEM PANELS */
+
+.system-panel {
+    position: absolute;
+    right: 15px;
+    bottom: calc(var(--taskbar-height) + 10px);
+    width: min(340px, calc(100% - 24px));
+    max-height: min(75vh, 540px);
+    overflow-y: auto;
+    padding: 19px;
+
+    background: rgba(255, 255, 255, 0.91);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 17px;
+
+    box-shadow: 0 15px 45px rgba(45, 75, 110, 0.18);
+    z-index: 1200;
+
+    animation: panel-appear 0.18s ease;
+}
+
+@keyframes panel-appear {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.panel-heading strong {
+    font-size: 14px;
+    color: #344c68;
+}
+
+.panel-heading > span {
+    font-size: 11px;
+    color: #8091a7;
+}
+
+.panel-heading button {
+    background: transparent;
+    color: #4c82c3;
+    font-size: 11px;
+}
+
+/* QUICK SETTINGS */
+
+.quick-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.quick-tile {
+    min-height: 92px;
+    padding: 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 7px;
+
+    border-radius: 12px;
+    border: 1px solid #e3ebf4;
+    background: #f3f7fc;
+    color: #536b87;
+    text-align: left;
+    transition: 0.2s;
+}
+
+.quick-tile svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+}
+
+.quick-tile span {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.quick-tile small {
+    font-size: 10px;
+    opacity: 0.75;
+}
+
+.quick-tile.active {
+    background: #dfedff;
+    border-color: #c6dcf7;
+    color: #3977b8;
+}
+
+.quick-tile:hover {
+    transform: translateY(-2px);
+}
+
+.panel-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 17px;
+    padding-top: 13px;
+    border-top: 1px solid #e7edf5;
+    color: #8595a9;
+    font-size: 10px;
+}
+
+/* CALENDAR */
+
+.calendar-clock {
+    font-size: 32px;
+    font-weight: 650;
+    color: #426f9e;
+}
+
+.calendar-full-date {
+    margin-top: 4px;
+    margin-bottom: 20px;
+    color: #8292a6;
+    font-size: 12px;
+}
+
+#calendar-content {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    text-align: center;
+    font-size: 11px;
+}
+
+.calendar-day {
+    padding: 8px 0;
+    border-radius: 7px;
+    color: #546a85;
+}
+
+.calendar-day.today {
+    background: #4d8dcc;
+    color: white;
+    font-weight: 700;
+}
+
+.calendar-weekday {
+    color: #93a1b2;
+    font-weight: 600;
+}
+
+/* NOTIFICATIONS */
+
+.notification-button {
+    position: relative;
+}
+
+.notification-button.has-unread::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e5534b;
+    border: 2px solid #f4f8fd;
+}
+
+.notification-item {
+    display: flex;
+    gap: 11px;
+    padding: 12px 2px;
+    border-bottom: 1px dashed #e3eaf3;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item > svg {
+    width: 21px;
+    height: 21px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    stroke: #4c82c3;
+    fill: none;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.notification-item strong {
+    display: block;
+    font-size: 12.5px;
+    color: #334c68;
+}
+
+.notification-item span {
+    display: block;
+    font-size: 11.5px;
+    color: #6d7f96;
+}
+
+.notification-item small {
+    display: block;
+    margin-top: 3px;
+    font-size: 10px;
+    color: #93a3b6;
+}
+
+.empty-notifications {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    padding: 30px 10px;
+    color: #74869d;
+}
+
+.empty-notifications svg {
+    width: 30px;
+    height: 30px;
+    stroke: #8eafd2;
+    fill: none;
+}
+
+.empty-notifications strong {
+    font-size: 13px;
+}
+
+.empty-notifications span {
+    font-size: 11px;
+}
+
+/* RESPONSIVE TASKBAR */
+
+@media (max-width: 600px) {
+    #taskbar {
+        grid-template-columns: 42px minmax(0, 1fr) auto;
+        padding: 0 7px;
+    }
+
+    .taskbar-center {
+        gap: 2px;
+    }
+
+    .taskbar-button {
+        width: 36px;
+        height: 38px;
+    }
+
+    .taskbar-right {
+        gap: 2px;
+    }
+
+    .notification-button {
+        display: none;
+    }
+
+    .tray-button {
+        min-width: 30px;
+        padding: 0 3px;
+    }
+
+    .tray-button svg {
+        width: 17px;
+        height: 17px;
+    }
+
+    .clock-button {
+        min-width: 62px;
+        padding: 5px;
+    }
+
+    #date {
+        font-size: 9px;
+    }
+
+    .show-desktop {
+        width: 3px;
+        margin-left: 2px;
+    }
+
+    .taskbar-center .pinned-app:nth-child(n+3) {
+        display: none;
+    }
+}
