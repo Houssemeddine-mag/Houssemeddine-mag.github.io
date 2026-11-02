@@ -21,7 +21,7 @@ A site-wide segmented switch in the header (persisted in `localStorage`) retunes
 ## Features
 
 - **Consultative, no-gadget interactions**: filter chips + search, cards/spec-table view switch, project deep-dive modal, venture tabs, certificate lightbox, toasts — no intro curtains, typewriters, cursors, marquees or confetti.
-- **Complete 24-project catalog** covering AI/ML research (TRIA, Clinical Risk Modeling, NTIC Telecom BI), vision (ChargeOps Sys, Handzy, MusicalMe, DAC), AI gesture & EdTech (TechGraden), mobile & desktop (Sam Code, ItFits, Penguin Deals, NaviJam, QR generator), full-stack & distributed systems (Rif Connect 2.0, Al-Amira, Online Store API, microservices, Kafka, gRPC…).
+- **Complete 24-project catalog** covering AI/ML research and diagnostics (TRIA, Clinical Risk Modeling, NTIC Telecom BI, ChargeOps AI &amp; Sys), vision (Handzy, MusicalMe, DAC), AI gesture & EdTech (TechGraden), mobile & desktop (Sam Code, ItFits, Penguin Deals, NaviJam, QR generator), full-stack & distributed systems (Rif Connect 2.0, Al-Amira, Online Store API, microservices, Kafka, gRPC…).
 - **Trilingual interface (EN / FR / AR with RTL support)** and `prefers-reduced-motion` support.
 - **SEO basics**: canonical URL, Open Graph tags, and JSON-LD `Person` structured data.
 - **CV**: the primary CV ships as **`Houssem_Eddine_Magra_Academic_CV.pdf`** — the header button and hero CTA open it directly in a new tab. Legacy `cv.html`, `Houssem_Eddine_Magra_CV.pdf` and `houssemos.html` remain in the repo for reference.
