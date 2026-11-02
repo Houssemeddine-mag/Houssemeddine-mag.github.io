@@ -883,7 +883,17 @@ try {
       <div class="microlabel pt-4 text-right" style="color:var(--ink-3)">10</div>
     </div>
     <p class="text-sm" style="color:var(--ink-2)" data-i18n="certSub">Click any certificate to open the actual document.</p>
-    <div id="certGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+    <!-- Certificate filter chips -->
+    <div id="certFilter" class="flex flex-wrap items-center gap-2 mt-3">
+      <button type="button" data-filter="all" class="chip" aria-pressed="true">All · 11</button>
+      <button type="button" data-filter="English" class="chip" aria-pressed="false">English · 3</button>
+      <button type="button" data-filter="Computer Science" class="chip" aria-pressed="false">Computer Science · 5</button>
+      <button type="button" data-filter="Internship" class="chip" aria-pressed="false">Internship · 2</button>
+      <button type="button" data-filter="Other" class="chip" aria-pressed="false">Other · 1</button>
+    </div>
+
+    <div id="certGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-3"></div>
   </section>
 
   <!-- ══════════ 05 · CONTACT ══════════ -->
@@ -1871,56 +1881,39 @@ function closeOverlay(id) {
    direct file open for PDFs)
    ══════════════════════════════════════════════════════════════════ */
 const CERTS = [
-  {
-    kind: 'img', src: 'assets/Informatique/Licence.jpg',
+  { kind: 'img', src: 'assets/Informatique/Licence.jpg', category: 'Computer Science',
     title: 'Diplôme de Licence — Informatique (Génie logiciel)',
-    meta: 'Université Constantine 2 · Abdelhamid Mehri · 2025'
-  },
-  {
-    kind: 'img', src: 'assets/Informatique/Rif%20Appreciation.jpg',
+    meta: 'Université Constantine 2 · Abdelhamid Mehri · 2025' },
+  { kind: 'img', src: 'assets/Informatique/Rif%20Appreciation.jpg', category: 'Computer Science',
     title: "RiF′25 — Conference app development",
-    meta: 'Université Constantine 2 · LIRE · IEEE · 2025'
-  },
-  {
-    kind: 'img', src: 'assets/Stage/ooredoo.jpg',
+    meta: 'Université Constantine 2 · LIRE · IEEE · 2025' },
+  { kind: 'img', src: 'assets/Stage/ooredoo.jpg', category: 'Internship',
     title: 'Attestation de fin de stage — network engineering',
-    meta: 'Ooredoo Algérie · Wataniya Télécom · 2026'
-  },
-  {
-    kind: 'img', src: 'assets/Informatique/Houssemag1%20-%20Python.png',
+    meta: 'Ooredoo Algérie · Wataniya Télécom · 2026' },
+  { kind: 'img', src: 'assets/Informatique/Houssemag1%20-%20Python.png', category: 'Computer Science',
     title: 'Python — Certificate of Completion',
-    meta: 'Kaggle · 2024'
-  },
-  {
-    kind: 'pdf', src: 'assets/Informatique/Saylor%20University%20certificates/Building%20with%20AI%20certificate.pdf', pages: 2,
+    meta: 'Kaggle · 2024' },
+  { kind: 'pdf', src: 'assets/Informatique/Saylor%20University%20certificates/Building%20with%20AI%20certificate.pdf', pages: 2, category: 'Computer Science',
     title: 'CS205: Building with Artificial Intelligence',
-    meta: 'Saylor University'
-  },
-  {
-    kind: 'pdf', src: 'assets/Informatique/Saylor%20University%20certificates/intro%20to%20programming%201.pdf', pages: 2,
+    meta: 'Saylor University' },
+  { kind: 'pdf', src: 'assets/Informatique/Saylor%20University%20certificates/intro%20to%20programming%201.pdf', pages: 2, category: 'Computer Science',
     title: 'CS101: Introduction to Programming I',
-    meta: 'Saylor University'
-  },
-  {
-    kind: 'img', src: 'assets/Informatique/mozilla%20certif.jpg',
+    meta: 'Saylor University' },
+  { kind: 'img', src: 'assets/Informatique/mozilla%20certif.jpg', category: 'Internship',
     title: 'Certificate of Appreciation — Databases instructor',
-    meta: 'Mozilla Campus Club · Constantine · 2023/24'
-  },
-  {
-    kind: 'img', src: 'assets/English/ULC%20diploma.jpg',
+    meta: 'Mozilla Campus Club · Constantine · 2023/24' },
+  { kind: 'img', src: 'assets/English/ULC%20diploma.jpg', category: 'English',
     title: 'Certificate of Achievement — English B2 (CEFR)',
-    meta: 'ULC · Universal Learning Center · 2025'
-  },
-  {
-    kind: 'pdf', src: 'assets/English/teacher%20essentials%20certificate.pdf', pages: 1,
+    meta: 'ULC · Universal Learning Center · 2025' },
+  { kind: 'pdf', src: 'assets/English/teacher%20essentials%20certificate.pdf', pages: 1, category: 'English',
     title: 'Teacher Essentials',
-    meta: 'Canva Education'
-  },
-  {
-    kind: 'pdf', src: 'assets/other/houssem.magra%40univ-constantine2.dz.pdf', pages: 1,
+    meta: 'Canva Education' },
+  { kind: 'pdf', src: 'assets/English/TR3257089263-certificate.pdf', pages: 1, category: 'English',
+    title: 'Teaching English as a Foreign Language (TEFL) — 120 Hours',
+    meta: 'TEFL Professional Institute · Teacher Record · Nov. 2026 · Cert. No. TR3257089263' },
+  { kind: 'pdf', src: 'assets/other/houssem.magra%40univ-constantine2.dz.pdf', pages: 1, category: 'Other',
     title: 'Jury certificate — Forsa',
-    meta: 'Forsa'
-  }
+    meta: 'Forsa' }
 ];
 
 function certThumbHTML(c) {
@@ -1941,14 +1934,22 @@ function certBodyHTML(c) {
     '<div class="cert-view mono text-[10px] mt-auto pt-2.5" style="color:var(--accent)">' + (c.kind === 'img' ? 'VIEW' : 'OPEN PDF') + ' ↗</div></div>';
 }
 
+let certFilter = 'all';
+
 function renderCerts() {
-  $('#certGrid').innerHTML = CERTS.map((c, i) => {
+  const list = certFilter === 'all' ? CERTS : CERTS.filter(c => c.category === certFilter);
+  $('#certGrid').innerHTML = list.map((c, idx) => {
+    const realIndex = CERTS.indexOf(c);
     const innerHTML = certThumbHTML(c) + certBodyHTML(c);
     return c.kind === 'img'
-      ? '<button type="button" class="card card-hover cert-card overflow-hidden" data-cert="' + i + '" aria-label="Open certificate: ' + c.title + '">' + innerHTML + '</button>'
+      ? '<button type="button" class="card card-hover cert-card overflow-hidden" data-cert="' + realIndex + '" aria-label="Open certificate: ' + c.title + '">' + innerHTML + '</button>'
       : '<a class="card card-hover cert-card overflow-hidden" href="' + c.src + '" target="_blank" rel="noopener" aria-label="Open document: ' + c.title + '">' + innerHTML + '</a>';
   }).join('');
   $$('#certGrid [data-cert]').forEach(btn => btn.addEventListener('click', () => openCert(parseInt(btn.dataset.cert, 10))));
+
+  $$('#certFilter .chip').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.filter === certFilter)));
+  const countEl = document.querySelector('.pt-4.flex .microlabel');
+  if (countEl) countEl.textContent = String(list.length);
 }
 
 let certIdx = 0;
@@ -1985,6 +1986,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderWork();
   renderCerts();
+
+  /* Certificate filter chips */
+  $$('#certFilter .chip').forEach(btn => btn.addEventListener('click', () => {
+    certFilter = btn.dataset.filter;
+    renderCerts();
+  }));
 
   /* Scroll reveal */
   const io = new IntersectionObserver(entries => {

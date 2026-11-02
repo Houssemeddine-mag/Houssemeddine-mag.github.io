@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HoussemOS — Houssem Eddine Magra CV</title>
+<title>HoussemOS â€” Houssem Eddine Magra CV</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='2' y='2' width='9' height='9' rx='2' fill='%231D9E75'/%3E%3Crect x='13' y='2' width='9' height='9' rx='2' fill='%23ffffff'/%3E%3Crect x='2' y='13' width='9' height='9' rx='2' fill='%23ffffff'/%3E%3Crect x='13' y='13' width='9' height='9' rx='2' fill='%23ffffff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=VT323&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
   body { font-family: 'Inter', system-ui, sans-serif; background: #10121f; color: var(--ink); overflow: hidden; }
   button, a, .desk-icon { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
 
-  /* ══════════════ BOOT SCREEN ══════════════ */
+  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â• BOOT SCREEN â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
   #boot {
     position: fixed; inset: 0; z-index: 10000; background: #08090f;
     display: flex; flex-direction: column; justify-content: center; align-items: center;
@@ -41,7 +41,7 @@
   #boot.done { opacity: 0; pointer-events: none; }
   @keyframes blink { 50% { opacity: 0; } }
 
-  /* ══════════════ SHUTDOWN SCREEN ══════════════ */
+  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â• SHUTDOWN SCREEN â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
   #shutdown {
     position: fixed; inset: 0; z-index: 9999; background: #05060a;
     display: none; flex-direction: column; justify-content: center; align-items: center;
@@ -55,7 +55,7 @@
   }
   #shutdown button:hover { background: #8df0b8; color: #05060a; }
 
-  /* ══════════════ DESKTOP ══════════════ */
+  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â• DESKTOP â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
   #desktop {
     position: fixed; inset: 0; overflow: hidden;
     background:
@@ -74,7 +74,7 @@
   }
   #stars { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
 
-  /* ══════════════ WELCOME TOAST ══════════════ */
+  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â• WELCOME TOAST â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
   #toast {
     position: absolute; top: 18px; right: 18px; width: 320px; z-index: 5000;
     background: rgba(20, 23, 43, 0.95); border: 1px solid rgba(255,255,255,.12);
@@ -88,7 +88,7 @@
   #toast .t-close { position: absolute; top: 8px; right: 10px; background: none; border: none; color: #8a90b8; cursor: pointer; font-size: 15px; }
   #toast .t-close:hover { color: #fff; }
 
-  /* ══════════════ DESKTOP ICONS ══════════════ */
+  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â• DESKTOP ICONS â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
   .desk-icons {
     position: absolute; top: 18px; left: 16px; bottom: 64px;
     display: flex; flex-flow: column wrap; align-content: flex-start; gap: 10px;
@@ -109,7 +109,7 @@
   .dicon svg { width: 28px; height: 28px; }
   .dlabel { color: #ececff; font-size: 11px; line-height: 1.25; text-shadow: 0 1px 3px rgba(0,0,0,.8); max-width: 84px; text-align: center; }
 
-  /* ══════════════ WINDOWS ══════════════ */
+  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â• WINDOWS â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
   .window {
     position: absolute; display: none; flex-direction: column; overflow: hidden;
     background: var(--paper); border-radius: 11px; border: 1px solid rgba(0,0,0,.18);
@@ -190,7 +190,7 @@
   .proj-links a:hover { text-decoration: underline; }
   .proj-count { color: var(--ink-3); font-size: 11.5px; margin-top: 12px; text-align: right; font-family: var(--mono); }
 
-  /* ══════════════ FILE EXPLORER ══════════════ */
+  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â• FILE EXPLORER â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
   .fm { display: flex; flex-direction: column; height: 100%; background: var(--card); }
   .fm-toolbar { display: flex; align-items: center; gap: 7px; padding: 7px 10px; border-bottom: 1px solid var(--rule); background: #f6f4ee; flex-shrink: 0; }
   .fm-nav { display: flex; gap: 4px; }
@@ -283,7 +283,7 @@
   .xp-tag { font-size: 10.5px; color: var(--ink-3); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
   ul.bullets { list-style: none; margin-top: 10px; }
   ul.bullets li { position: relative; padding-left: 18px; margin-bottom: 7px; color: var(--ink-2); font-size: 12.5px; }
-  ul.bullets li::before { content: '▸'; position: absolute; left: 2px; color: var(--accent); }
+  ul.bullets li::before { content: 'â–¸'; position: absolute; left: 2px; color: var(--accent); }
 
   .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; }
   .contact-btn {
@@ -320,7 +320,7 @@
   #sticky strong { display: block; margin-bottom: 4px; font-size: 13px; }
   #sticky::after { content: ''; position: absolute; top: -6px; left: 50%; transform: translateX(-50%); width: 40px; height: 12px; background: rgba(255,255,255,.35); border-radius: 2px; }
 
-  /* ══════════════ TASKBAR ══════════════ */
+  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â• TASKBAR â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
   #taskbar {
     position: absolute; left: 0; right: 0; bottom: 0; height: 48px; z-index: 6000;
     background: var(--taskbar); backdrop-filter: blur(10px); border-top: 1px solid rgba(255,255,255,.09);
@@ -387,7 +387,7 @@
 
   .konami-hint { position: absolute; bottom: 58px; right: 12px; color: rgba(255,255,255,.28); font-family: var(--mono); font-size: 13px; z-index: 8; }
 
-  /* ══════════════ RESPONSIVE ══════════════ */
+  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â• RESPONSIVE â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
   @media (max-width: 720px) {
     body { overflow: auto; }
     #desktop { overflow-y: auto; -webkit-overflow-scrolling: touch; }
@@ -425,11 +425,11 @@
 <body>
 
 <!-- BOOT SCREEN -->
-<div id="boot"><div class="boot-box" id="bootBox"></div><div class="boot-hint" id="bootHint">▌ CLICK ANYWHERE TO LOG IN</div></div>
+<div id="boot"><div class="boot-box" id="bootBox"></div><div class="boot-hint" id="bootHint">â–Œ CLICK ANYWHERE TO LOG IN</div></div>
 
 <!-- SHUTDOWN -->
 <div id="shutdown">
-  <div class="shut-text">Saving your progress…</div>
+  <div class="shut-text">Saving your progressâ€¦</div>
   <div style="font-size:20px; color:#3f4656;">Goodbye, visitor. See you soon.</div>
   <button id="wakeBtn">Power on</button>
 </div>
@@ -440,10 +440,10 @@
   <canvas id="stars" aria-hidden="true"></canvas>
 
   <div id="toast">
-    <button class="t-close" onclick="closeToast()">×</button>
+    <button class="t-close" onclick="closeToast()">Ã—</button>
     <div class="t-title">Welcome to HoussemOS</div>
     This is a CV pretending to be an operating system. Click any desktop icon to explore.
-    <br><br>PS: try the Konami code <kbd>↑↑↓↓←→←→B A</kbd>.
+    <br><br>PS: try the Konami code <kbd>â†‘â†‘â†“â†“â†â†’â†â†’B A</kbd>.
   </div>
 
   <!-- DESKTOP ICONS -->
@@ -501,16 +501,16 @@
   <!-- STICKY NOTE -->
   <div id="sticky"><strong>note_to_self.txt</strong>From 2G to 5G in one internship,<br>from Android to AI in a weekend.<br>No pressure. It's just a career.</div>
 
-  <div class="konami-hint">HINT: try the Konami code ↑↑↓↓←→←→ B A</div>
+  <div class="konami-hint">HINT: try the Konami code â†‘â†‘â†“â†“â†â†’â†â†’ B A</div>
 
-  <!-- ═══════════ WINDOWS ═══════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â•â• WINDOWS â•â•â•â•â•â•â•â•â•â•â• -->
 
   <!-- README (About) -->
   <div class="window" id="win-about" style="--tb1:#159b6e;--tb2:#1D9E75;width:530px;height:470px;">
-    <div class="titlebar"><span class="tb-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3h12l4 4v14H4z"/><path d="M14 3v5h5"/><path d="M8 12h8M8 16h6"/></svg></span>README.txt — Notepad<span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('about')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('about')" title="Close"></button></span></div>
+    <div class="titlebar"><span class="tb-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3h12l4 4v14H4z"/><path d="M14 3v5h5"/><path d="M8 12h8M8 16h6"/></svg></span>README.txt â€” Notepad<span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('about')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('about')" title="Close"></button></span></div>
     <div class="window-body">
       <div class="wb-head">houssem.eddine.magra</div>
-      <div class="wb-sub">Master 2 Data Science &amp; Intelligent Systems · Software Engineer</div>
+      <div class="wb-sub">Master 2 Data Science &amp; Intelligent Systems Â· Software Engineer</div>
       <div class="wb-section">
         <h3>About Me</h3>
         <p class="wb-text">Master 2 Data Science &amp; Intelligent Systems student and Software Engineering graduate with a proven track record of delivering production-ready software across AI, mobile, and full-stack domains. Seeking an opportunity to contribute to challenging technical projects within a professional environment.</p>
@@ -521,13 +521,13 @@
           <tr><td>User</td><td>Houssem Eddine Magra</td></tr>
           <tr><td>Build</td><td>20 June 2003</td></tr>
           <tr><td>Location</td><td>El Khroub, Constantine, Algeria</td></tr>
-          <tr><td>University</td><td>Université Constantine 2 — Abdelhamid Mehri</td></tr>
-          <tr><td>Kernel</td><td>Python · Java · Dart · Kotlin · JavaScript</td></tr>
-          <tr><td>Security</td><td>Public profile — open to collaborations</td></tr>
+          <tr><td>University</td><td>UniversitÃ© Constantine 2 â€” Abdelhamid Mehri</td></tr>
+          <tr><td>Kernel</td><td>Python Â· Java Â· Dart Â· Kotlin Â· JavaScript</td></tr>
+          <tr><td>Security</td><td>Public profile â€” open to collaborations</td></tr>
         </table>
       </div>
       <div class="chip-row">
-        <a class="chip" href="mailto:houssemeddinemagra@gmail.com">✉ Email</a>
+        <a class="chip" href="mailto:houssemeddinemagra@gmail.com">âœ‰ Email</a>
         <a class="chip" href="https://github.com/Houssemeddine-mag" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a class="chip" href="https://www.linkedin.com/in/houssem-eddine-magra-880241343" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a class="chip" href="Houssem_Eddine_Magra_Academic_CV.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
@@ -537,7 +537,7 @@
 
   <!-- Projects -->
   <div class="window" id="win-projects" style="--tb1:#3b66f5;--tb2:#6b8bff;width:760px;height:560px;">
-    <div class="titlebar"><span class="tb-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 12l9-5M12 12v10M12 12L3 7"/></svg></span>Projects.exe — Quest Log<span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('projects')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('projects')" title="Close"></button></span></div>
+    <div class="titlebar"><span class="tb-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 12l9-5M12 12v10M12 12L3 7"/></svg></span>Projects.exe â€” Quest Log<span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('projects')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('projects')" title="Close"></button></span></div>
     <div style="background:rgba(27,30,60,0.92);border-bottom:1px solid rgba(255,255,255,.06);padding:6px 12px;display:flex;gap:6px;flex-wrap:wrap;font-family:monospace;font-size:11px;color:#8a8a82;">
       <span style="margin-right:4px;color:#1D9E75;font-weight:bold;">Filter:</span>
       <button onclick="filterProj('all')" class="filter-btn" style="background:rgba(13,122,110,0.18);border:1px solid rgba(13,122,110,0.35);border-radius:6px;padding:2px 8px;color:#1D9E75;font-family:inherit;font-size:inherit;cursor:pointer;">All</button>
@@ -571,20 +571,20 @@
           <div class="fm-side" id="fmSide"></div>
           <div class="fm-main" id="fmMain"></div>
         </div>
-        <div class="fm-status"><span id="fmStatus"></span><span>FREE SPACE: ∞ GB</span></div>
+        <div class="fm-status"><span id="fmStatus"></span><span>FREE SPACE: âˆž GB</span></div>
       </div>
     </div>
   </div>
 
   <!-- Notepad viewer -->
   <div class="window" id="win-viewer" style="--tb1:#3a4150;--tb2:#5a6375;width:470px;height:400px;">
-    <div class="titlebar"><span class="tb-tile" id="viewerTile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2.5h9.2L19.5 6.8V21.5H6z"/></svg></span><span id="viewerTitle">— Notepad</span><span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('viewer')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('viewer')" title="Close"></button></span></div>
+    <div class="titlebar"><span class="tb-tile" id="viewerTile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2.5h9.2L19.5 6.8V21.5H6z"/></svg></span><span id="viewerTitle">â€” Notepad</span><span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('viewer')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('viewer')" title="Close"></button></span></div>
     <div class="window-body" id="viewerBody"></div>
   </div>
 
   <!-- Skills -->
   <div class="window" id="win-skills" style="--tb1:#8f3df0;--tb2:#b577f7;width:560px;height:480px;">
-    <div class="titlebar"><span class="tb-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 12h8M12 8v8"/></svg></span>Skills.ini — Installed Packages<span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('skills')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('skills')" title="Close"></button></span></div>
+    <div class="titlebar"><span class="tb-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 12h8M12 8v8"/></svg></span>Skills.ini â€” Installed Packages<span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('skills')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('skills')" title="Close"></button></span></div>
     <div class="window-body">
       <div class="wb-section">
         <h3>Programming Languages</h3>
@@ -607,23 +607,23 @@
 
   <!-- Ooredoo -->
   <div class="window" id="win-ooredoo" style="--tb1:#f0451b;--tb2:#ff7a3c;width:600px;height:470px;">
-    <div class="titlebar"><span class="tb-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20a10 10 0 0 1 14 0"/><path d="M8.5 20a6.5 6.5 0 0 1 7 0"/><path d="M12 20h.01"/></svg></span>Ooredoo.exe — Work Experience<span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('ooredoo')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('ooredoo')" title="Close"></button></span></div>
+    <div class="titlebar"><span class="tb-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20a10 10 0 0 1 14 0"/><path d="M8.5 20a6.5 6.5 0 0 1 7 0"/><path d="M12 20h.01"/></svg></span>Ooredoo.exe â€” Work Experience<span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('ooredoo')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('ooredoo')" title="Close"></button></span></div>
     <div class="window-body">
       <div class="xp-line">
         <span class="xp-icon" style="background:linear-gradient(150deg,#f0451b,#ff7a3c);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20a10 10 0 0 1 14 0"/><path d="M8.5 20a6.5 6.5 0 0 1 7 0"/><path d="M12 20h.01"/></svg></span>
         <div>
           <div class="xp-title">Radio Engineering Intern</div>
-          <div class="xp-tag">Ooredoo Algérie — Constantine · 2026</div>
+          <div class="xp-tag">Ooredoo AlgÃ©rie â€” Constantine Â· 2026</div>
         </div>
       </div>
       <div class="xp-line">
         <span class="xp-icon" style="background:linear-gradient(150deg,#3b66f5,#6b8bff);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M2 20h20M7 20l1-3h8l1 3"/></svg></span>
         <div>
           <div class="xp-title">Web Developer &amp; Problem Solver</div>
-          <div class="xp-tag">Radio Planning Team · Ooredoo Algérie — after the internship</div>
+          <div class="xp-tag">Radio Planning Team Â· Ooredoo AlgÃ©rie â€” after the internship</div>
         </div>
       </div>
-      <p class="wb-text">From theory to practice: a deep dive into the world of mobile networks — from 2G to 5G — within the radio engineering team in Constantine. After the internship I continued working with the radio planning team as a web developer and problem solver.</p>
+      <p class="wb-text">From theory to practice: a deep dive into the world of mobile networks â€” from 2G to 5G â€” within the radio engineering team in Constantine. After the internship I continued working with the radio planning team as a web developer and problem solver.</p>
       <ul class="bullets">
         <li>Mobile network architecture: RAN (Radio Access Network), NSS, and the roles of BSC, BTS, NodeB and eNodeB.</li>
         <li>Site planning (greenfield &amp; rooftop), sectorization, handover optimization and KPI improvement.</li>
@@ -645,14 +645,14 @@
 
   <!-- Startup -->
   <div class="window" id="win-startup" style="--tb1:#6b3fb8;--tb2:#9b6ff0;width:690px;height:560px;">
-    <div class="titlebar"><span class="tb-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2 0-2.8-.8-.8-2-.8-3-.2z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span>Startup.app — El Moultaqa<span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('startup')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('startup')" title="Close"></button></span></div>
+    <div class="titlebar"><span class="tb-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2 0-2.8-.8-.8-2-.8-3-.2z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span>Startup.app â€” El Moultaqa<span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('startup')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('startup')" title="Close"></button></span></div>
     <div class="window-body">
-      <div class="wb-head">El Moultaqa <span class="badge done" style="vertical-align:4px;">الملتقى — "the gathering"</span></div>
-      <div class="wb-sub">Startup — the all-in-one conference platform</div>
-      <p class="wb-text" style="margin-top:10px;">El Moultaqa lets anyone launch a professional conference with its own branded mobile app, live program, streaming, and attendee engagement — no code, no vendors, no months of development. One platform for organizers, one app for every attendee.</p>
+      <div class="wb-head">El Moultaqa <span class="badge done" style="vertical-align:4px;">Ø§Ù„Ù…Ù„ØªÙ‚Ù‰ â€” "the gathering"</span></div>
+      <div class="wb-sub">Startup â€” the all-in-one conference platform</div>
+      <p class="wb-text" style="margin-top:10px;">El Moultaqa lets anyone launch a professional conference with its own branded mobile app, live program, streaming, and attendee engagement â€” no code, no vendors, no months of development. One platform for organizers, one app for every attendee.</p>
       <div class="wb-section">
         <h3>What it is</h3>
-        <p class="wb-text">A multi-tenant SaaS platform for conferences. An organizer signs up, fills a short wizard — name, dates, program, keynote speakers, sponsors, branding — and instantly gets a working admin panel, an attendee web app, and their very own Android app branded with the conference logo and colors, built automatically.</p>
+        <p class="wb-text">A multi-tenant SaaS platform for conferences. An organizer signs up, fills a short wizard â€” name, dates, program, keynote speakers, sponsors, branding â€” and instantly gets a working admin panel, an attendee web app, and their very own Android app branded with the conference logo and colors, built automatically.</p>
       </div>
       <div class="wb-section">
         <h3>For organizers</h3>
@@ -663,7 +663,7 @@
           </div>
           <div class="proj">
             <div class="proj-top"><span class="proj-tile" style="--c1:#f0451b;--c2:#ff7a3c;">2</span><span class="proj-name">One-click mobile app</span></div>
-            <div class="proj-desc">A CI/CD pipeline builds, signs and packages a native Android APK using the conference's own name, logo and theme color — press build, download the installable app.</div>
+            <div class="proj-desc">A CI/CD pipeline builds, signs and packages a native Android APK using the conference's own name, logo and theme color â€” press build, download the installable app.</div>
           </div>
           <div class="proj">
             <div class="proj-top"><span class="proj-tile" style="--c1:#3b66f5;--c2:#6b8bff;">3</span><span class="proj-name">Live &amp; engaged</span></div>
@@ -671,7 +671,7 @@
           </div>
           <div class="proj">
             <div class="proj-top"><span class="proj-tile" style="--c1:#8f3df0;--c2:#b577f7;">4</span><span class="proj-name">Data &amp; growth</span></div>
-            <div class="proj-desc">Attendee lists, session stats and CSV/JSON export — plus a public discovery page on the platform so new audiences can find the conference.</div>
+            <div class="proj-desc">Attendee lists, session stats and CSV/JSON export â€” plus a public discovery page on the platform so new audiences can find the conference.</div>
           </div>
         </div>
       </div>
@@ -680,15 +680,15 @@
         <div class="proj-grid">
           <div class="proj">
             <div class="proj-top"><span class="proj-tile" style="--c1:#0aa7b0;--c2:#35d0d8;">1</span><span class="proj-name">One app, every conference</span></div>
-            <div class="proj-desc">Log in once and your schedule, speakers and streams follow you from one conference to the next — no separate apps per event.</div>
+            <div class="proj-desc">Log in once and your schedule, speakers and streams follow you from one conference to the next â€” no separate apps per event.</div>
           </div>
           <div class="proj">
             <div class="proj-top"><span class="proj-tile" style="--c1:#e89a0c;--c2:#ffc24d;">2</span><span class="proj-name">Stay in the loop</span></div>
-            <div class="proj-desc">Full program by day, live streaming with a questions panel, speaker bios, notifications and direct messaging — everything in one place.</div>
+            <div class="proj-desc">Full program by day, live streaming with a questions panel, speaker bios, notifications and direct messaging â€” everything in one place.</div>
           </div>
           <div class="proj">
             <div class="proj-top"><span class="proj-tile" style="--c1:#e45a96;--c2:#ff8ac0;">3</span><span class="proj-name">Make your voice heard</span></div>
-            <div class="proj-desc">Rate sessions and presenters after each talk — feedback that organizers use to improve the next edition.</div>
+            <div class="proj-desc">Rate sessions and presenters after each talk â€” feedback that organizers use to improve the next edition.</div>
           </div>
           <div class="proj">
             <div class="proj-top"><span class="proj-tile" style="--c1:#0f766e;--c2:#2dd4bf;">4</span><span class="proj-name">Zero friction</span></div>
@@ -698,7 +698,7 @@
       </div>
       <div class="wb-section">
         <h3>Why it matters</h3>
-        <p class="wb-text">Conferences are where communities, research and ideas come together — yet most organizers can't afford custom apps, and attendees juggle a different tool for every event. El Moultaqa turns a week of preparation into a one-hour setup: organizers save months of development, and attendees get one familiar, polished experience for every gathering they join.</p>
+        <p class="wb-text">Conferences are where communities, research and ideas come together â€” yet most organizers can't afford custom apps, and attendees juggle a different tool for every event. El Moultaqa turns a week of preparation into a one-hour setup: organizers save months of development, and attendees get one familiar, polished experience for every gathering they join.</p>
       </div>
       <div class="wb-section">
         <h3>Status</h3>
@@ -713,21 +713,21 @@
 
   <!-- Education -->
   <div class="window" id="win-education" style="--tb1:#e89a0c;--tb2:#ffc24d;width:460px;height:380px;">
-    <div class="titlebar"><span class="tb-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8v6"/></svg></span>Education.log — XP History<span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('education')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('education')" title="Close"></button></span></div>
+    <div class="titlebar"><span class="tb-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8v6"/></svg></span>Education.log â€” XP History<span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('education')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('education')" title="Close"></button></span></div>
     <div class="window-body">
       <div class="edu-item pending">
-        <div class="edu-degree">Master 2 — Data Science &amp; Intelligent Systems <span class="badge going">IN PROGRESS</span></div>
-        <div class="edu-school">Université Constantine 2 — Abdelhamid Mehri</div>
+        <div class="edu-degree">Master 2 â€” Data Science &amp; Intelligent Systems <span class="badge going">IN PROGRESS</span></div>
+        <div class="edu-school">UniversitÃ© Constantine 2 â€” Abdelhamid Mehri</div>
         <div class="edu-date">In progress</div>
       </div>
       <div class="edu-item">
-        <div class="edu-degree">Master 1 — Data Science <span class="badge done">COMPLETE ✓</span></div>
-        <div class="edu-school">Université Constantine 2 — Abdelhamid Mehri</div>
+        <div class="edu-degree">Master 1 â€” Data Science <span class="badge done">COMPLETE âœ“</span></div>
+        <div class="edu-school">UniversitÃ© Constantine 2 â€” Abdelhamid Mehri</div>
         <div class="edu-date">Completed</div>
       </div>
       <div class="edu-item">
-        <div class="edu-degree">Licence — Software Engineering (Génie Logiciel) <span class="badge done">COMPLETE ✓</span></div>
-        <div class="edu-school">Université Constantine 2 — Abdelhamid Mehri</div>
+        <div class="edu-degree">Licence â€” Software Engineering (GÃ©nie Logiciel) <span class="badge done">COMPLETE âœ“</span></div>
+        <div class="edu-school">UniversitÃ© Constantine 2 â€” Abdelhamid Mehri</div>
         <div class="edu-date">Completed</div>
       </div>
     </div>
@@ -735,7 +735,7 @@
 
   <!-- Languages -->
   <div class="window" id="win-languages" style="--tb1:#0aa7b0;--tb2:#35d0d8;width:400px;height:300px;">
-    <div class="titlebar"><span class="tb-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-8 8H4l2-3a8 8 0 1 1 15-5z"/><path d="M9 9h6M9 13h4"/></svg></span>Languages.exe — Comms<span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('languages')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('languages')" title="Close"></button></span></div>
+    <div class="titlebar"><span class="tb-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-8 8H4l2-3a8 8 0 1 1 15-5z"/><path d="M9 9h6M9 13h4"/></svg></span>Languages.exe â€” Comms<span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('languages')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('languages')" title="Close"></button></span></div>
     <div class="window-body">
       <div class="lang-row"><span class="lang-name">Arabic</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="lang-level">Native</span></div>
       <div class="lang-row"><span class="lang-name">French</span><div class="bar-track"><div class="bar-fill" style="width:85%"></div></div><span class="lang-level">Fluent</span></div>
@@ -745,23 +745,42 @@
 
   <!-- Certifications -->
   <div class="window" id="win-certifications" style="--tb1:#d97706;--tb2:#fbbf24;width:540px;height:480px;">
-<div class="titlebar"><span class="tb-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg></span>Certifications.exe — Achievements<span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('certifications')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('certifications')" title="Close"></button></span></div>
+<div class="titlebar"><span class="tb-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg></span>Certifications.exe â€” Achievements<span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('certifications')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('certifications')" title="Close"></button></span></div>
 <div class="window-body">
-      <div class="cert"><span class="cert-icon" style="--c1:#f0451b;--c2:#ff7a3c;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20a10 10 0 0 1 14 0"/><path d="M8.5 20a6.5 6.5 0 0 1 7 0"/><path d="M12 20h.01"/></svg></span><div><div class="cert-title">Licence — Génie Logiciel</div><div class="cert-issuer">Université Constantine 2 · 2025</div><div class="cert-desc">Diplôme de Licence en Informatique, domaine Génie Logiciel.</div><div class="cert-link"><a href="assets/Informatique/Licence.jpg" target="_blank">↗ View scan</a></div></div></div>
-<div class="cert"><span class="cert-icon" style="--c1:#e89a0c;--c2:#ffc24d;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l3 2"/></svg></span><div><div class="cert-title">RiF′25 — Conference App</div><div class="cert-issuer">Université Constantine 2 · LIRE · IEEE · 2025</div><div class="cert-desc">Certificate of completion for building the RIF Connect app.</div><div class="cert-link"><a href="assets/Informatique/Rif Appreciation.jpg" target="_blank">↗ View scan</a></div></div></div>
-<div class="cert"><span class="cert-icon" style="--c1:#2f6fe8;--c2:#5a8bff;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></span><div><div class="cert-title">Python — Kaggle</div><div class="cert-issuer">Kaggle · 2024</div><div class="cert-desc">Certified Python programming and data-science proficiency.</div><div class="cert-link"><a href="assets/Informatique/Houssemag1 - Python.png" target="_blank">↗ View scan</a></div></div></div>
-<div class="cert"><span class="cert-icon" style="--c1:#8f3df0;--c2:#b577f7;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-8 8H4l2-3a8 8 0 1 1 15-5z"/><path d="M9 9h6M9 13h4"/></svg></span><div><div class="cert-title">English — B2 (CEFR)</div><div class="cert-issuer">ULC School, Constantine · 2025</div><div class="cert-desc">Certified professional English communication — B2 level.</div><div class="cert-link"><a href="assets/English/ULC Certif.jpg" target="_blank">↗ View scan</a></div></div></div>
-<div class="cert"><span class="cert-icon" style="--c1:#6b3fb8;--c2:#9b6ff0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M7 6V4h10v2M6 10h12l-1 10H7L6 10z"/></svg></span><div><div class="cert-title">Canva Teacher Essentials</div><div class="cert-issuer">Canva</div><div class="cert-desc">Digital content creation and instructional design.</div><div class="cert-link"><a href="assets/English/teacher essentials certificate.pdf" target="_blank">↗ View PDF</a></div></div></div>
-<div class="cert"><span class="cert-icon" style="--c1:#f0451b;--c2:#ff7a3c;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20a10 10 0 0 1 14 0"/><path d="M8.5 20a6.5 6.5 0 0 1 7 0"/><path d="M12 20h.01"/></svg></span><div><div class="cert-title">CS205: Building with AI</div><div class="cert-issuer">Saylor University</div><div class="cert-desc">Certificate of completion — AI and intelligent systems.</div><div class="cert-link"><a href="assets/Informatique/Saylor University certificates/Building with AI certificate.pdf" target="_blank">↗ View PDF</a></div></div></div>
-<div class="cert"><span class="cert-icon" style="--c1:#159b6e;--c2:#35c999;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20M7 20l1-3h8l1 3"/></svg></span><div><div class="cert-title">Internship — Mobile Networks</div><div class="cert-issuer">Ooredoo Algérie · 2026</div><div class="cert-desc">Radio engineering &amp; planning — 2G to 5G cellular networks.</div><div class="cert-link"><a href="assets/Stage/ooredoo.jpg" target="_blank">↗ View photo</a></div></div></div>
-<div class="cert"><span class="cert-icon" style="--c1:#3b66f5;--c2:#6b8bff;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3.5" fill="#3b66f5"/><rect x="7.5" y="7.5" width="3.6" height="3.6" rx=".9" fill="#fff"/><rect x="12.9" y="7.5" width="3.6" height="3.6" rx=".9" fill="#fff"/><rect x="7.5" y="12.9" width="3.6" height="3.6" rx=".9" fill="#fff"/><rect x="12.9" y="12.9" width="3.6" height="3.6" rx=".9" fill="#fff"/></svg></span><div><div class="cert-title">CS101: Intro to Programming I</div><div class="cert-issuer">Saylor University</div><div class="cert-desc">Certificate of completion — programming fundamentals.</div><div class="cert-link"><a href="assets/Informatique/Saylor University certificates/intro to programming 1.pdf" target="_blank">↗ View PDF</a></div></div></div>
-<div class="cert"><span class="cert-icon" style="--c1:#e0451b;--c2:#ff7a3c;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8v6"/></svg></span><div><div class="cert-title">Appreciation — Databases</div><div class="cert-issuer">Mozilla Campus Club · Constantine · 2023/24</div><div class="cert-desc">Recognized for teaching database fundamentals and SQL modeling.</div><div class="cert-link"><a href="assets/Informatique/mozilla certif.jpg" target="_blank">↗ View scan</a></div></div></div>
-<div class="cert"><span class="cert-icon" style="--c1:#d97706;--c2:#fbbf24;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg></span><div><div class="cert-title">Jury Certificate — Forsa</div><div class="cert-issuer">Forsa</div><div class="cert-desc">Jury recognition of participation.</div><div class="cert-link"><a href="assets/other/houssem.magra@univ-constantine2.dz.pdf" target="_blank">↗ View PDF</a></div></div></div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">
+        <button onclick="filterCerts('all')" style="font-size:10.5px;padding:3px 9px;border-radius:100px;background:var(--ink);color:#fff;border:none;cursor:pointer;" id="cf-all">All</button>
+        <button onclick="filterCerts('en')" style="font-size:10.5px;padding:3px 9px;border-radius:100px;background:rgba(29,78,216,0.08);color:#1d4ed8;border:1px solid rgba(29,78,216,0.2);cursor:pointer;" id="cf-en">English</button>
+        <button onclick="filterCerts('cs')" style="font-size:10.5px;padding:3px 9px;border-radius:100px;background:rgba(59,102,245,0.08);color:#3b66f5;border:1px solid rgba(59,102,245,0.2);cursor:pointer;" id="cf-cs">Computer Science</button>
+        <button onclick="filterCerts('in')" style="font-size:10.5px;padding:3px 9px;border-radius:100px;background:rgba(240,69,27,0.08);color:#f0451b;border:1px solid rgba(240,69,27,0.2);cursor:pointer;" id="cf-in">Internship</button>
+        <button onclick="filterCerts('ot')" style="font-size:10.5px;padding:3px 9px;border-radius:100px;background:rgba(217,119,6,0.08);color:#d97706;border:1px solid rgba(217,119,6,0.2);cursor:pointer;" id="cf-ot">Other</button>
+      </div>
+      <script>
+        function filterCerts(cat) {
+          document.querySelectorAll('#win-certifications .filter-btn').forEach(b => { b.style.opacity = '0.5'; });
+          document.getElementById('cf-' + (cat === 'all' ? 'all' : (cat === 'en' ? 'en' : (cat === 'cs' ? 'cs' : (cat === 'in' ? 'in' : 'ot'))))).style.opacity = '1';
+          document.querySelectorAll('#win-certifications .cert').forEach(el => {
+            const cls = Array.from(el.classList);
+            const match = cat === 'all' || cls.some(c => (cat === 'en' ? c === 'cert-en' : (cat === 'cs' ? c === 'cert-cs' : (cat === 'in' ? c === 'cert-in' : (cat === 'ot' ? c === 'cert-ot' : false)))));
+            el.style.display = match ? '' : 'none';
+          });
+        }
+      </script>
+      <div class="cert cert-cs"><span class="cert-icon" style="--c1:#f0451b;--c2:#ff7a3c;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20a10 10 0 0 1 14 0"/><path d="M8.5 20a6.5 6.5 0 0 1 7 0"/><path d="M12 20h.01"/></svg></span><div><div class="cert-title">Licence â€” GÃ©nie Logiciel</div><div class="cert-issuer">UniversitÃ© Constantine 2 Â· 2025</div><div class="cert-desc">DiplÃ´me de Licence en Informatique, domaine GÃ©nie Logiciel.</div><div class="cert-link"><a href="assets/Informatique/Licence.jpg" target="_blank">â†— View scan</a></div></div></div>
+<div class="cert cert-cs"><span class="cert-icon" style="--c1:#e89a0c;--c2:#ffc24d;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l3 2"/></svg></span><div><div class="cert-title">RiFâ€²25 â€” Conference App</div><div class="cert-issuer">UniversitÃ© Constantine 2 Â· LIRE Â· IEEE Â· 2025</div><div class="cert-desc">Certificate of completion for building the RIF Connect app.</div><div class="cert-link"><a href="assets/Informatique/Rif Appreciation.jpg" target="_blank">â†— View scan</a></div></div></div>
+<div class="cert cert-cs"><span class="cert-icon" style="--c1:#2f6fe8;--c2:#5a8bff;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></span><div><div class="cert-title">Python â€” Kaggle</div><div class="cert-issuer">Kaggle Â· 2024</div><div class="cert-desc">Certified Python programming and data-science proficiency.</div><div class="cert-link"><a href="assets/Informatique/Houssemag1 - Python.png" target="_blank">â†— View scan</a></div></div></div>
+<div class="cert cert-en"><span class="cert-icon" style="--c1:#8f3df0;--c2:#b577f7;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-8 8H4l2-3a8 8 0 1 1 15-5z"/><path d="M9 9h6M9 13h4"/></svg></span><div><div class="cert-title">English â€” B2 (CEFR)</div><div class="cert-issuer">ULC School, Constantine Â· 2025</div><div class="cert-desc">Certified professional English communication â€” B2 level.</div><div class="cert-link"><a href="assets/English/ULC Certif.jpg" target="_blank">â†— View scan</a></div></div></div>
+<div class="cert cert-en"><span class="cert-icon" style="--c1:#6b3fb8;--c2:#9b6ff0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M7 6V4h10v2M6 10h12l-1 10H7L6 10z"/></svg></span><div><div class="cert-title">Canva Teacher Essentials</div><div class="cert-issuer">Canva</div><div class="cert-desc">Digital content creation and instructional design.</div><div class="cert-link"><a href="assets/English/teacher essentials certificate.pdf" target="_blank">â†— View PDF</a></div></div></div>
+<div class="cert cert-en"><span class="cert-icon" style="--c1:#1d4ed8;--c2:#60a5fa;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span><div><div class="cert-title">TEFL â€” Teaching English (120 Hours)</div><div class="cert-issuer">TEFL Professional Institute Â· Teacher Record Â· Nov. 2026</div><div class="cert-desc">Teaching English as a Foreign Language â€” verified scan (Cert. TR3257089263).</div><div class="cert-link"><a href="assets/English/TR3257089263-certificate.pdf" target="_blank">â†— View PDF</a></div></div></div>
+<div class="cert cert-cs"><span class="cert-icon" style="--c1:#f0451b;--c2:#ff7a3c;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20a10 10 0 0 1 14 0"/><path d="M8.5 20a6.5 6.5 0 0 1 7 0"/><path d="M12 20h.01"/></svg></span><div><div class="cert-title">CS205: Building with AI</div><div class="cert-issuer">Saylor University</div><div class="cert-desc">Certificate of completion â€” AI and intelligent systems.</div><div class="cert-link"><a href="assets/Informatique/Saylor University certificates/Building with AI certificate.pdf" target="_blank">â†— View PDF</a></div></div></div>
+<div class="cert cert-in"><span class="cert-icon" style="--c1:#159b6e;--c2:#35c999;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20M7 20l1-3h8l1 3"/></svg></span><div><div class="cert-title">Internship â€” Mobile Networks</div><div class="cert-issuer">Ooredoo AlgÃ©rie Â· 2026</div><div class="cert-desc">Radio engineering &amp; planning â€” 2G to 5G cellular networks.</div><div class="cert-link"><a href="assets/Stage/ooredoo.jpg" target="_blank">â†— View photo</a></div></div></div>
+<div class="cert cert-cs"><span class="cert-icon" style="--c1:#3b66f5;--c2:#6b8bff;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3.5" fill="#3b66f5"/><rect x="7.5" y="7.5" width="3.6" height="3.6" rx=".9" fill="#fff"/><rect x="12.9" y="7.5" width="3.6" height="3.6" rx=".9" fill="#fff"/><rect x="7.5" y="12.9" width="3.6" height="3.6" rx=".9" fill="#fff"/><rect x="12.9" y="12.9" width="3.6" height="3.6" rx=".9" fill="#fff"/></svg></span><div><div class="cert-title">CS101: Intro to Programming I</div><div class="cert-issuer">Saylor University</div><div class="cert-desc">Certificate of completion â€” programming fundamentals.</div><div class="cert-link"><a href="assets/Informatique/Saylor University certificates/intro to programming 1.pdf" target="_blank">â†— View PDF</a></div></div></div>
+<div class="cert cert-cs"><span class="cert-icon" style="--c1:#e0451b;--c2:#ff7a3c;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8v6"/></svg></span><div><div class="cert-title">Appreciation â€” Databases</div><div class="cert-issuer">Mozilla Campus Club Â· Constantine Â· 2023/24</div><div class="cert-desc">Recognized for teaching database fundamentals and SQL modeling.</div><div class="cert-link"><a href="assets/Informatique/mozilla certif.jpg" target="_blank">â†— View scan</a></div></div></div>
+<div class="cert cert-ot"><span class="cert-icon" style="--c1:#d97706;--c2:#fbbf24;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg></span><div><div class="cert-title">Jury Certificate â€” Forsa</div><div class="cert-issuer">Forsa</div><div class="cert-desc">Jury recognition of participation.</div><div class="cert-link"><a href="assets/other/houssem.magra@univ-constantine2.dz.pdf" target="_blank">â†— View PDF</a></div></div></div>
     </div>
   </div>
 
   <div class="window" id="win-terminal" style="--tb1:#23262e;--tb2:#3a4150;width:580px;height:420px;">
-    <div class="titlebar"><span class="tb-tile" style="background:rgba(141,240,184,.2);color:#8df0b8;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M7 9l3 3-3 3"/><path d="M12 15h5"/></svg></span>Terminal — houssem@houssemos<span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('terminal')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('terminal')" title="Close"></button></span></div>
+    <div class="titlebar"><span class="tb-tile" style="background:rgba(141,240,184,.2);color:#8df0b8;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M7 9l3 3-3 3"/><path d="M12 15h5"/></svg></span>Terminal â€” houssem@houssemos<span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('terminal')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('terminal')" title="Close"></button></span></div>
     <div class="window-body" style="background:#0d1117;">
       <div class="term-wrap">
         <div id="term-output"></div>
@@ -772,9 +791,9 @@
 
   <!-- Contact -->
   <div class="window" id="win-contact" style="--tb1:#e45a96;--tb2:#ff8ac0;width:470px;height:420px;">
-    <div class="titlebar"><span class="tb-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 7l9 6 9-6"/></svg></span>Contact.app — Open a Ticket<span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('contact')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('contact')" title="Close"></button></span></div>
+    <div class="titlebar"><span class="tb-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 7l9 6 9-6"/></svg></span>Contact.app â€” Open a Ticket<span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('contact')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('contact')" title="Close"></button></span></div>
     <div class="window-body">
-      <p class="wb-text" style="margin-bottom:14px;">Open a ticket, send a message, or co-op with me on a side quest. I usually reply within a day — unless I'm in the middle of a debugging session.</p>
+      <p class="wb-text" style="margin-bottom:14px;">Open a ticket, send a message, or co-op with me on a side quest. I usually reply within a day â€” unless I'm in the middle of a debugging session.</p>
       <div class="contact-grid">
         <a class="contact-btn" href="mailto:houssemeddinemagra@gmail.com">
           <svg style="color:var(--accent);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 7l9 6 9-6"/></svg>
@@ -796,7 +815,7 @@
       <div class="chip-row">
         <a class="chip" href="mailto:houssem.magra@univ-constantine2.dz">University email</a>
       </div>
-      <p style="margin-top:14px; color:var(--ink-3); font-size:11.5px; font-family:var(--mono);">status: online — accepting side quests ▮</p>
+      <p style="margin-top:14px; color:var(--ink-3); font-size:11.5px; font-family:var(--mono);">status: online â€” accepting side quests â–®</p>
     </div>
   </div>
 
@@ -804,7 +823,7 @@
   <div class="window" id="win-recycle" style="--tb1:#6c727c;--tb2:#98a0ab;width:380px;height:240px;">
     <div class="titlebar"><span class="tb-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/><path d="M6 7l1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13"/></svg></span>Recycle.bin<span class="tb-btns"><button class="tb-btn tb-min" onclick="minimizeApp('recycle')" title="Minimize"></button><button class="tb-btn tb-close" onclick="closeApp('recycle')" title="Close"></button></span></div>
     <div class="window-body">
-      <p class="wb-text" style="font-family:var(--mono); font-size:15px;">0 files in the trash.<br><br>Every bug was fixed before<br>it ever got deleted.<br><br><span style="color:var(--ink-3);">— Signed, the bug catcher</span></p>
+      <p class="wb-text" style="font-family:var(--mono); font-size:15px;">0 files in the trash.<br><br>Every bug was fixed before<br>it ever got deleted.<br><br><span style="color:var(--ink-3);">â€” Signed, the bug catcher</span></p>
     </div>
   </div>
 
@@ -848,36 +867,36 @@
 <div id="confetti"></div>
 
 <script>
-/* ══════════ DATA ══════════ */
+/* â•â•â•â•â•â•â•â•â•â• DATA â•â•â•â•â•â•â•â•â•â• */
 const PROJECTS = [
-  { n:'ChargeOps AI', s:'Python · PyTorch · FastAPI · Docker', d:'AI-powered diagnostic and prognostic platform for Wireless Power Transfer (WPT) EV charging infrastructure. A Transformer neural network estimates Remaining Useful Life (RUL) and detects real-time faults such as resonance frequency drift. Deployed as a containerised web service with a live Chart.js dashboard; also runs as a native desktop app via PyWebView.', l:[['GitHub','https://github.com/Houssemeddine-mag/ChargeOps-AI']], c:['#159b6e','#4fd1a3'], ab:'CA', cat:'ai-ml' },
-  { n:'ChargeOps Sys', s:'React · Three.js · Electron · Vite', d:'Real-time wireless EV charging diagnostic simulator. Models the complete 11-stage power-transfer chain (AC grid → Tx/Rx coils → battery), auto-detects 8 fault types (FOD, coil misalignment, capacitor, inverter, thermal, component aging…), walks through step-by-step resolution procedures, and visualises everything in immersive 3D — magnetic field lines, power flow, live waveforms and alignment controls — then generates a PDF diagnostic report. Runs in the browser or as an Electron desktop app.', l:[['GitHub — private','https://github.com/Houssemeddine-mag/ChargeOps-sys']], c:['#0f766e','#2dd4bf'], ab:'CS' },
-  { n:'Sam Code', s:'Electron · React · Monaco Editor · Node.js', d:'Open-source cross-platform desktop code editor built on the same engine powering VS Code. Syntax highlighting for 100+ languages, integrated terminal, an AI coding assistant via OpenAI, a plugin marketplace, and Jupyter notebook support. Want to download the editor? Reach out to me — or install the CLI agent directly with: pip install samcode-cli.', l:[['GitHub','https://github.com/Houssemeddine-mag/Sam-Code'],['Download','https://samcode-26.web.app/#']], c:['#3b66f5','#6b8bff'], ab:'SC' },
-  { n:'ItFits', s:'Flutter · Dart · Riverpod · freezed', d:'AI Interior Design app — scan your room with the camera (6 guided shots: walls, ceiling, floor), pick a design style, color palette and preferences (full redesign, keep furniture, budget, luxury, natural light, cozy), and get AI-generated redesign panoramas. Includes floor-plan modelling (walls, doors, windows, dimensions) and a saved project history.', l:[], c:['#b3490c','#ffa03c'], ab:'IF' },
-  { n:'Handzy', s:'Flutter · Dart · Kotlin · MediaPipe', d:'Android app for hands-free device control via real-time hand gesture recognition. Tracks 21 3D hand landmarks on-device and translates gestures into native touch events through the Accessibility Service. Fully offline.', l:[['GitHub','https://github.com/Houssemeddine-mag/Handzy']], c:['#8f3df0','#b577f7'], ab:'HZ' },
-  { n:'DAC — Image Classifier', s:'Java · Python · CSS', d:'Full-stack image classification app with a Java frontend and a Python classifier backend. Demonstrates an end-to-end ML pipeline integrated with a production UI.', l:[['GitHub','https://github.com/Houssemeddine-mag/DAC']], c:['#0aa7b0','#35d0d8'], ab:'DA', sup:'Dr. Boudjlel Nada' },
-  { n:'ScourgifyData', s:'Python · Jupyter · NLP · ML', d:'Sentiment analysis on tourism platform reviews (Yelp dataset) covering the full data science pipeline — EDA, cleaning, feature engineering, modelling and evaluation — with LaTeX report generation.', l:[['GitHub','https://github.com/Houssemeddine-mag/ScourgifyData']], c:['#e89a0c','#ffc24d'], ab:'SD', sup:'Dr. Ghammaz Wafa' },
-  { n:'Rif Connect 2.0', s:'Flutter · React.js · Firebase · Dart', d:'Full-stack conference management system for the RIF 2025 International Conference on Women in Computer Science Research (Constantine 2). Flutter mobile app + React admin panel, with real-time schedule, 5-star rating system, push notifications and analytics.', l:[['GitHub','https://github.com/Houssemeddine-mag/rif2.0']], c:['#f0451b','#ff7a3c'], ab:'RC', sup:'Prof. Benchikha Magra Fouzia' },
-  { n:'Al-Amira', s:'React.js · Firebase · CSS', d:'Showcase website for an Algerian traditional pastry shop — a 3-page React app hosted on Firebase with a live deployment for a real local business.', l:[['Live','https://al-amira-bbb72.web.app/']], c:['#e45a96','#ff8ac0'], ab:'AM' },
-  { n:'NaviJam', s:'Flutter · Dart · TomTom API · Firebase', d:'Cross-platform traffic awareness app acting as a 15 km real-time radar around your location and destination. Classifies congestion severity as live overlays on OpenStreetMap, with dual-point scanning and smart API caching.', l:[['GitHub','https://github.com/Houssemeddine-mag/NaviJam']], c:['#2f56c9','#5a7df5'], ab:'NJ' },
-  { n:'FeedMe', s:'React · JavaScript · SCSS · Vite', d:'Multi-role restaurant management dashboard (Director, Chef, HR) with protected routes, authentication context and role-based access — menu management, listings, employee forms and a chef dashboard.', l:[['GitHub','https://github.com/Houssemeddine-mag/atelier']], c:['#0f766e','#14b8a6'], ab:'FM' },
-  { n:'MusicalMe', s:'Python · MediaPipe · OpenCV · Pygame', d:'Interactive hand-gesture music system evolving into an educational game for ages 4–8. Maps pinch combinations to musical notes, with 4 instrument timbres, pitch bending and a gesture-navigated menu.', l:[['GitHub','https://github.com/Houssemeddine-mag/MusicalMe']], c:['#b3490c','#ffa03c'], ab:'MM' },
-  { n:'Online Store REST API', s:'Django REST · Python · PostgreSQL', d:'E-commerce backend managing products, customers and orders. Implements 19% VAT calculation, loyalty points accrual and the order status lifecycle.', l:[['GitHub','https://github.com/Houssemeddine-mag/employee']], c:['#6b3fb8','#9b6ff0'], ab:'OS', sup:'Dr. Lezaar Fouzi' },
-  { n:'QR Code Generator', s:'Flutter · Dart · Firebase Storage', d:'Cross-platform Flutter app generating QR codes from URLs, images, videos, PDFs and arbitrary files — with save-to-gallery, sharing and Material Design 3 dark mode.', l:[], c:['#159b6e','#35c999'], ab:'QR' },
-  { n:'Nectar AI', s:'React · Django · DeepSeek API · Python', d:'Full-stack AI chat app with a Django REST backend acting as a secure proxy to the DeepSeek model. Keeps credentials server-side, handles CORS, with typing indicators and dark/light mode.', l:[], c:['#e45a96','#ff8ac0'], ab:'NA', sup:'Prof. Benmerzoug Djamel' },
-  { n:'Weather Alert App', s:'React · Django · IFTTT · Webhooks', d:'Real-time weather notification system receiving webhook POSTs from automation platforms and surfacing them in a React dashboard that auto-refreshes with condition icons and an alert history grid.', l:[], c:['#0aa7b0','#35d0d8'], ab:'WA', sup:'Prof. Benmerzoug Djamel' },
-  { n:'gRPC Remote Procedure Calls', s:'Python · gRPC · Protocol Buffers', d:'Practical gRPC implementation covering unary and server-streaming RPCs with a Protocol Buffers-defined GreetingService, auto-generated stubs and stateful tracking across a ThreadPoolExecutor server.', l:[], c:['#6c727c','#98a0ab'], ab:'GR', sup:'Prof. Benmerzoug Djamel' },
-  { n:'Apache Kafka Streaming', s:'Python · Apache Kafka · Docker', d:'End-to-end producer/consumer setup containerised with Docker Compose — JSON messaging, consumer groups, partition-aware consumption, offset management and rebalancing.', l:[['GitHub','https://github.com/Houssemeddine-mag']], c:['#8f3df0','#b577f7'], ab:'KF', sup:'Prof. Benmerzoug Djamel' },
-  { n:'Simple Online Store Management', s:'FastAPI · Consul · NGINX · Docker', d:'A microservices architecture: three FastAPI services (user, product, order) behind an NGINX gateway with Consul for service registry/discovery and dynamic peer resolution.', l:[], c:['#3b66f5','#6b8bff'], ab:'MC', sup:'Prof. Benmerzoug Djamel' },
-  { n:'TRIA — Hate Speech Detection', s:'Python · PyTorch · Hugging Face · AraBERT', d:'Fine-tunes QARiB, AraBERT, and mBERT Transformers for Arabic (MSA & dialects) and multilingual hate speech detection with anti-overfitting techniques.', l:[['GitHub','https://github.com/Houssemeddine-mag/Hate-Speech-Detection-using-transformer-models']], c:['#e89a0c','#ffc24d'], ab:'TR', sup:'Prof. Benmerzoug Djamel' },
-  { n:'Clinical Risk — Heart Failure ML', s:'Python · Scikit-Learn · SHAP · Jupyter', d:'Early mortality risk stratification in heart failure patients with clinically-motivated feature engineering, 3-tier risk scoring, and SHAP explainability.', l:[['GitHub','https://github.com/Houssemeddine-mag/Clinical-Risk-Modeling-']], c:['#159b6e','#35c999'], ab:'CR', sup:'Dr. Boudjlel Nada' },
-  { n:'NTIC Telecom & DistribAlgeria — BI', s:'Python · Pandas · SQLite · Power BI', d:'Master 1 SDSI BI suite: European telecom strategic consulting (2018–2025) and DistribAlgeria SQLite warehouse + interactive Power BI dashboards.', l:[['GitHub','https://github.com/Houssemeddine-mag/-Analyse-Consultative-pour-une-Nouvelle-Entreprise-NTIC-Telecom-Recommandations-Strat-giques']], c:['#6b3fb8','#9b6ff0'], ab:'NT', sup:'Prof. Benmerzoug Djamel' },
-  { n:'Penguin Deals', s:'Flutter · Dart · Firebase', d:'Cross-platform mobile deals and promotional coupon discovery application with real-time cloud sync.', l:[['GitHub','https://github.com/Houssemeddine-mag/Penguin_deals']], c:['#b3490c','#ffa03c'], ab:'PD', sup:'Prof. Benmerzoug Djamel' }
+  { n:'ChargeOps AI', s:'Python Â· PyTorch Â· FastAPI Â· Docker', d:'AI-powered diagnostic and prognostic platform for Wireless Power Transfer (WPT) EV charging infrastructure. A Transformer neural network estimates Remaining Useful Life (RUL) and detects real-time faults such as resonance frequency drift. Deployed as a containerised web service with a live Chart.js dashboard; also runs as a native desktop app via PyWebView.', l:[['GitHub','https://github.com/Houssemeddine-mag/ChargeOps-AI']], c:['#159b6e','#4fd1a3'], ab:'CA', cat:'ai-ml' },
+  { n:'ChargeOps Sys', s:'React Â· Three.js Â· Electron Â· Vite', d:'Real-time wireless EV charging diagnostic simulator. Models the complete 11-stage power-transfer chain (AC grid â†’ Tx/Rx coils â†’ battery), auto-detects 8 fault types (FOD, coil misalignment, capacitor, inverter, thermal, component agingâ€¦), walks through step-by-step resolution procedures, and visualises everything in immersive 3D â€” magnetic field lines, power flow, live waveforms and alignment controls â€” then generates a PDF diagnostic report. Runs in the browser or as an Electron desktop app.', l:[['GitHub â€” private','https://github.com/Houssemeddine-mag/ChargeOps-sys']], c:['#0f766e','#2dd4bf'], ab:'CS' },
+  { n:'Sam Code', s:'Electron Â· React Â· Monaco Editor Â· Node.js', d:'Open-source cross-platform desktop code editor built on the same engine powering VS Code. Syntax highlighting for 100+ languages, integrated terminal, an AI coding assistant via OpenAI, a plugin marketplace, and Jupyter notebook support. Want to download the editor? Reach out to me â€” or install the CLI agent directly with: pip install samcode-cli.', l:[['GitHub','https://github.com/Houssemeddine-mag/Sam-Code'],['Download','https://samcode-26.web.app/#']], c:['#3b66f5','#6b8bff'], ab:'SC' },
+  { n:'ItFits', s:'Flutter Â· Dart Â· Riverpod Â· freezed', d:'AI Interior Design app â€” scan your room with the camera (6 guided shots: walls, ceiling, floor), pick a design style, color palette and preferences (full redesign, keep furniture, budget, luxury, natural light, cozy), and get AI-generated redesign panoramas. Includes floor-plan modelling (walls, doors, windows, dimensions) and a saved project history.', l:[], c:['#b3490c','#ffa03c'], ab:'IF' },
+  { n:'Handzy', s:'Flutter Â· Dart Â· Kotlin Â· MediaPipe', d:'Android app for hands-free device control via real-time hand gesture recognition. Tracks 21 3D hand landmarks on-device and translates gestures into native touch events through the Accessibility Service. Fully offline.', l:[['GitHub','https://github.com/Houssemeddine-mag/Handzy']], c:['#8f3df0','#b577f7'], ab:'HZ' },
+  { n:'DAC â€” Image Classifier', s:'Java Â· Python Â· CSS', d:'Full-stack image classification app with a Java frontend and a Python classifier backend. Demonstrates an end-to-end ML pipeline integrated with a production UI.', l:[['GitHub','https://github.com/Houssemeddine-mag/DAC']], c:['#0aa7b0','#35d0d8'], ab:'DA', sup:'Dr. Boudjlel Nada' },
+  { n:'ScourgifyData', s:'Python Â· Jupyter Â· NLP Â· ML', d:'Sentiment analysis on tourism platform reviews (Yelp dataset) covering the full data science pipeline â€” EDA, cleaning, feature engineering, modelling and evaluation â€” with LaTeX report generation.', l:[['GitHub','https://github.com/Houssemeddine-mag/ScourgifyData']], c:['#e89a0c','#ffc24d'], ab:'SD', sup:'Dr. Ghammaz Wafa' },
+  { n:'Rif Connect 2.0', s:'Flutter Â· React.js Â· Firebase Â· Dart', d:'Full-stack conference management system for the RIF 2025 International Conference on Women in Computer Science Research (Constantine 2). Flutter mobile app + React admin panel, with real-time schedule, 5-star rating system, push notifications and analytics.', l:[['GitHub','https://github.com/Houssemeddine-mag/rif2.0']], c:['#f0451b','#ff7a3c'], ab:'RC', sup:'Prof. Benchikha Magra Fouzia' },
+  { n:'Al-Amira', s:'React.js Â· Firebase Â· CSS', d:'Showcase website for an Algerian traditional pastry shop â€” a 3-page React app hosted on Firebase with a live deployment for a real local business.', l:[['Live','https://al-amira-bbb72.web.app/']], c:['#e45a96','#ff8ac0'], ab:'AM' },
+  { n:'NaviJam', s:'Flutter Â· Dart Â· TomTom API Â· Firebase', d:'Cross-platform traffic awareness app acting as a 15 km real-time radar around your location and destination. Classifies congestion severity as live overlays on OpenStreetMap, with dual-point scanning and smart API caching.', l:[['GitHub','https://github.com/Houssemeddine-mag/NaviJam']], c:['#2f56c9','#5a7df5'], ab:'NJ' },
+  { n:'FeedMe', s:'React Â· JavaScript Â· SCSS Â· Vite', d:'Multi-role restaurant management dashboard (Director, Chef, HR) with protected routes, authentication context and role-based access â€” menu management, listings, employee forms and a chef dashboard.', l:[['GitHub','https://github.com/Houssemeddine-mag/atelier']], c:['#0f766e','#14b8a6'], ab:'FM' },
+  { n:'MusicalMe', s:'Python Â· MediaPipe Â· OpenCV Â· Pygame', d:'Interactive hand-gesture music system evolving into an educational game for ages 4â€“8. Maps pinch combinations to musical notes, with 4 instrument timbres, pitch bending and a gesture-navigated menu.', l:[['GitHub','https://github.com/Houssemeddine-mag/MusicalMe']], c:['#b3490c','#ffa03c'], ab:'MM' },
+  { n:'Online Store REST API', s:'Django REST Â· Python Â· PostgreSQL', d:'E-commerce backend managing products, customers and orders. Implements 19% VAT calculation, loyalty points accrual and the order status lifecycle.', l:[['GitHub','https://github.com/Houssemeddine-mag/employee']], c:['#6b3fb8','#9b6ff0'], ab:'OS', sup:'Dr. Lezaar Fouzi' },
+  { n:'QR Code Generator', s:'Flutter Â· Dart Â· Firebase Storage', d:'Cross-platform Flutter app generating QR codes from URLs, images, videos, PDFs and arbitrary files â€” with save-to-gallery, sharing and Material Design 3 dark mode.', l:[], c:['#159b6e','#35c999'], ab:'QR' },
+  { n:'Nectar AI', s:'React Â· Django Â· DeepSeek API Â· Python', d:'Full-stack AI chat app with a Django REST backend acting as a secure proxy to the DeepSeek model. Keeps credentials server-side, handles CORS, with typing indicators and dark/light mode.', l:[], c:['#e45a96','#ff8ac0'], ab:'NA', sup:'Prof. Benmerzoug Djamel' },
+  { n:'Weather Alert App', s:'React Â· Django Â· IFTTT Â· Webhooks', d:'Real-time weather notification system receiving webhook POSTs from automation platforms and surfacing them in a React dashboard that auto-refreshes with condition icons and an alert history grid.', l:[], c:['#0aa7b0','#35d0d8'], ab:'WA', sup:'Prof. Benmerzoug Djamel' },
+  { n:'gRPC Remote Procedure Calls', s:'Python Â· gRPC Â· Protocol Buffers', d:'Practical gRPC implementation covering unary and server-streaming RPCs with a Protocol Buffers-defined GreetingService, auto-generated stubs and stateful tracking across a ThreadPoolExecutor server.', l:[], c:['#6c727c','#98a0ab'], ab:'GR', sup:'Prof. Benmerzoug Djamel' },
+  { n:'Apache Kafka Streaming', s:'Python Â· Apache Kafka Â· Docker', d:'End-to-end producer/consumer setup containerised with Docker Compose â€” JSON messaging, consumer groups, partition-aware consumption, offset management and rebalancing.', l:[['GitHub','https://github.com/Houssemeddine-mag']], c:['#8f3df0','#b577f7'], ab:'KF', sup:'Prof. Benmerzoug Djamel' },
+  { n:'Simple Online Store Management', s:'FastAPI Â· Consul Â· NGINX Â· Docker', d:'A microservices architecture: three FastAPI services (user, product, order) behind an NGINX gateway with Consul for service registry/discovery and dynamic peer resolution.', l:[], c:['#3b66f5','#6b8bff'], ab:'MC', sup:'Prof. Benmerzoug Djamel' },
+  { n:'TRIA â€” Hate Speech Detection', s:'Python Â· PyTorch Â· Hugging Face Â· AraBERT', d:'Fine-tunes QARiB, AraBERT, and mBERT Transformers for Arabic (MSA & dialects) and multilingual hate speech detection with anti-overfitting techniques.', l:[['GitHub','https://github.com/Houssemeddine-mag/Hate-Speech-Detection-using-transformer-models']], c:['#e89a0c','#ffc24d'], ab:'TR', sup:'Prof. Benmerzoug Djamel' },
+  { n:'Clinical Risk â€” Heart Failure ML', s:'Python Â· Scikit-Learn Â· SHAP Â· Jupyter', d:'Early mortality risk stratification in heart failure patients with clinically-motivated feature engineering, 3-tier risk scoring, and SHAP explainability.', l:[['GitHub','https://github.com/Houssemeddine-mag/Clinical-Risk-Modeling-']], c:['#159b6e','#35c999'], ab:'CR', sup:'Dr. Boudjlel Nada' },
+  { n:'NTIC Telecom & DistribAlgeria â€” BI', s:'Python Â· Pandas Â· SQLite Â· Power BI', d:'Master 1 SDSI BI suite: European telecom strategic consulting (2018â€“2025) and DistribAlgeria SQLite warehouse + interactive Power BI dashboards.', l:[['GitHub','https://github.com/Houssemeddine-mag/-Analyse-Consultative-pour-une-Nouvelle-Entreprise-NTIC-Telecom-Recommandations-Strat-giques']], c:['#6b3fb8','#9b6ff0'], ab:'NT', sup:'Prof. Benmerzoug Djamel' },
+  { n:'Penguin Deals', s:'Flutter Â· Dart Â· Firebase', d:'Cross-platform mobile deals and promotional coupon discovery application with real-time cloud sync.', l:[['GitHub','https://github.com/Houssemeddine-mag/Penguin_deals']], c:['#b3490c','#ffa03c'], ab:'PD', sup:'Prof. Benmerzoug Djamel' }
 ];
 
-/* ══════════ BOOT ══════════ */
+/* â•â•â•â•â•â•â•â•â•â• BOOT â•â•â•â•â•â•â•â•â•â• */
 const bootLines = [
-  'HOUSSEMOS BIOS v1.0 (c) 2003–2026 Houssem Eddine Magra',
+  'HOUSSEMOS BIOS v1.0 (c) 2003â€“2026 Houssem Eddine Magra',
   'CPU: 23 years of curiosity @ 1337 MHz',
   'RAM: 23 projects loaded',
   '',
@@ -922,7 +941,7 @@ function showToast() {
 }
 function closeToast() { document.getElementById('toast').classList.remove('show'); }
 
-/* ══════════ WINDOW MANAGER ══════════ */
+/* â•â•â•â•â•â•â•â•â•â• WINDOW MANAGER â•â•â•â•â•â•â•â•â•â• */
 let zTop = 10;
 let cascade = 0;
 const appState = {};   // id -> {open, minimized, btn}
@@ -1012,7 +1031,7 @@ document.querySelectorAll('.window').forEach(w => {
   });
 });
 
-/* ══════════ START MENU / TASKBAR ══════════ */
+/* â•â•â•â•â•â•â•â•â•â• START MENU / TASKBAR â•â•â•â•â•â•â•â•â•â• */
 function toggleStartMenu(e) {
   e.stopPropagation();
   document.getElementById('startMenu').classList.toggle('show');
@@ -1035,12 +1054,12 @@ function tickClock() {
 tickClock();
 setInterval(tickClock, 1000);
 
-/* ══════════ FILE EXPLORER ══════════ */
+/* â•â•â•â•â•â•â•â•â•â• FILE EXPLORER â•â•â•â•â•â•â•â•â•â• */
 function renderProjects() {
   const body = document.getElementById('projectsBody');
   let html = '<div class="proj-grid">';
   PROJECTS.forEach(p => {
-    const links = p.l.map(l => '<a href="' + l[1] + '" target="_blank" rel="noopener noreferrer">↗ ' + l[0] + '</a>').join('');
+    const links = p.l.map(l => '<a href="' + l[1] + '" target="_blank" rel="noopener noreferrer">â†— ' + l[0] + '</a>').join('');
     html += '<div class="proj">'
       + '<div class="proj-top"><span class="proj-tile" style="--c1:' + p.c[0] + ';--c2:' + p.c[1] + ';">' + p.ab + '</span><span class="proj-name">' + p.n + '</span></div>'
       + '<div class="proj-stack">' + p.s + '</div>'
@@ -1049,7 +1068,7 @@ function renderProjects() {
       + (links ? '<div class="proj-links">' + links + '</div>' : '')
       + '</div>';
   });
-  html += '</div><div class="proj-count">// ' + PROJECTS.length + ' quests completed — all from my own hands ▮</div>';
+  html += '</div><div class="proj-count">// ' + PROJECTS.length + ' quests completed â€” all from my own hands â–®</div>';
   body.innerHTML = html;
 }
 function filterProj(cat) {
@@ -1066,7 +1085,7 @@ function filterProj(cat) {
       if (!match) return;
     }
     count++;
-    const links = p.l.map(l => '<a href="' + l[1] + '" target="_blank" rel="noopener noreferrer">↗ ' + l[0] + '</a>').join('');
+    const links = p.l.map(l => '<a href="' + l[1] + '" target="_blank" rel="noopener noreferrer">â†— ' + l[0] + '</a>').join('');
     html += '<div class="proj">'
       + '<div class="proj-top"><span class="proj-tile" style="--c1:' + p.c[0] + ';--c2:' + p.c[1] + ';">' + p.ab + '</span><span class="proj-name">' + p.n + '</span></div>'
       + '<div class="proj-stack">' + p.s + '</div>'
@@ -1075,7 +1094,7 @@ function filterProj(cat) {
       + (links ? '<div class="proj-links">' + links + '</div>' : '')
       + '</div>';
   });
-  html += '</div><div class="proj-count">// ' + count + '/' + PROJECTS.length + ' quests shown ▮</div>';
+  html += '</div><div class="proj-count">// ' + count + '/' + PROJECTS.length + ' quests shown â–®</div>';
   body.innerHTML = html;
 }
 
@@ -1104,17 +1123,17 @@ FS['C:\\Users\\houssem\\Desktop'] = {
 };
 FS['C:\\Users\\houssem\\Documents'] = {
   dirs: [], files: [
-    { n: 'CV.pdf', t: 'pdf', url: 'https://houssemeddine-mag.github.io/Houssem_Eddine_Magra_Academic_CV.pdf', view: { title: 'Curriculum Vitæ', text: 'Academic CV — Houssem Eddine Magra\nMaster 2 Data Science & Intelligent Systems\nUniversité Constantine 2\nLicence Génie Logiciel' } },
-    { n: 'el-moultaqa-pitch.md', t: 'md', view: { title: 'el-moultaqa-pitch.md', text: '# El Moultaqa — "the gathering"\n\nAll-in-one conference platform. One platform for organizers, one app for every attendee.\n\n- Launch a conference in minutes (wizard + ready admin panel)\n- One-click branded Android app via CI/CD\n- HLS live streams, questions, ratings, notifications\n- Attendee lists, stats, CSV/JSON export\n\nStatus: ~68 fixes applied — all web apps clean, Flutter 0 errors / 0 warnings.' } },
-    { n: 'itfits-notes.md', t: 'md', view: { title: 'itfits-notes.md', text: '# ItFits — AI Interior Design\n\nFlutter · Dart · Riverpod · freezed\n\nScan your room (6 guided shots), pick a style & palette, get AI-generated redesign panoramas. Includes floor-plan modelling and saved project history.' } },
-    { n: 'thesis-progress.md', t: 'md', view: { title: 'thesis-progress.md', text: '# Master 2 — Data Science & Intelligent Systems\n\nStatus: in progress @ Université Constantine 2 — Abdelhamid Mehri.\n\n# TODO\n- [ ] finish experiments\n- [ ] write chapters\n- [ ] defend' } }
+    { n: 'CV.pdf', t: 'pdf', url: 'https://houssemeddine-mag.github.io/Houssem_Eddine_Magra_Academic_CV.pdf', view: { title: 'Curriculum VitÃ¦', text: 'Academic CV â€” Houssem Eddine Magra\nMaster 2 Data Science & Intelligent Systems\nUniversitÃ© Constantine 2\nLicence GÃ©nie Logiciel' } },
+    { n: 'el-moultaqa-pitch.md', t: 'md', view: { title: 'el-moultaqa-pitch.md', text: '# El Moultaqa â€” "the gathering"\n\nAll-in-one conference platform. One platform for organizers, one app for every attendee.\n\n- Launch a conference in minutes (wizard + ready admin panel)\n- One-click branded Android app via CI/CD\n- HLS live streams, questions, ratings, notifications\n- Attendee lists, stats, CSV/JSON export\n\nStatus: ~68 fixes applied â€” all web apps clean, Flutter 0 errors / 0 warnings.' } },
+    { n: 'itfits-notes.md', t: 'md', view: { title: 'itfits-notes.md', text: '# ItFits â€” AI Interior Design\n\nFlutter Â· Dart Â· Riverpod Â· freezed\n\nScan your room (6 guided shots), pick a style & palette, get AI-generated redesign panoramas. Includes floor-plan modelling and saved project history.' } },
+    { n: 'thesis-progress.md', t: 'md', view: { title: 'thesis-progress.md', text: '# Master 2 â€” Data Science & Intelligent Systems\n\nStatus: in progress @ UniversitÃ© Constantine 2 â€” Abdelhamid Mehri.\n\n# TODO\n- [ ] finish experiments\n- [ ] write chapters\n- [ ] defend' } }
   ]
 };
 FS['C:\\Users\\houssem\\Downloads'] = {
   dirs: [], files: [
     { n: 'samcode-installer.exe', t: 'exe', url: 'https://samcode-26.web.app/#' },
     { n: 'ooredoo-radio-glossary.pdf', t: 'pdf', view: { title: 'ooredoo-radio-glossary.pdf', text: 'OOREDOO RADIO ENGINEERING GLOSSARY\n\n- RAN  : Radio Access Network\n- NSS  : Network & Switching Subsystem\n- BSC  : Base Station Controller\n- BTS  : Base Transceiver Station\n- NodeB / eNodeB\n- GSM900, GSM1800, U2100, LTE, 5G n78\n- FDMA / TDMA / CDMA / OFDMA, FDD/TDD\n- BCCH, BSIC, MIMO' } },
-    { n: 'wpt-ev-charging-paper.pdf', t: 'pdf', view: { title: 'wpt-ev-charging-paper.pdf', text: 'WIRELESS POWER TRANSFER FOR EV CHARGING\n\nChargeOps AI — Transformer model estimating Remaining Useful Life (RUL) and detecting faults (resonance frequency drift) in WPT charging infrastructure.' } }
+    { n: 'wpt-ev-charging-paper.pdf', t: 'pdf', view: { title: 'wpt-ev-charging-paper.pdf', text: 'WIRELESS POWER TRANSFER FOR EV CHARGING\n\nChargeOps AI â€” Transformer model estimating Remaining Useful Life (RUL) and detecting faults (resonance frequency drift) in WPT charging infrastructure.' } }
   ]
 };
 
@@ -1234,7 +1253,7 @@ function codeSnippet(f) {
 
 function fmViewer(name, text, t) {
   document.getElementById('viewerTile').innerHTML = fIcon(t);
-  document.getElementById('viewerTitle').textContent = name + ' — Notepad';
+  document.getElementById('viewerTitle').textContent = name + ' â€” Notepad';
   document.getElementById('viewerBody').textContent = text;
   openApp('viewer');
 }
@@ -1244,7 +1263,7 @@ function fmRender() {
   const parts = fmState.path.split('\\').filter(Boolean);
   const folderName = parts[parts.length - 1];
   const t = document.getElementById('fmTitle');
-  if (t) t.textContent = folderName === 'C:' ? '' : ' — ' + folderName;
+  if (t) t.textContent = folderName === 'C:' ? '' : ' â€” ' + folderName;
 
   const addr = document.getElementById('fmAddr');
   addr.innerHTML = '';
@@ -1304,7 +1323,7 @@ function fmRender() {
   document.getElementById('fmFwdBtn').disabled = fmState.hIdx >= fmState.hist.length - 1;
 }
 
-/* ══════════ TERMINAL ══════════ */
+/* â•â•â•â•â•â•â•â•â•â• TERMINAL â•â•â•â•â•â•â•â•â•â• */
 const termOut = document.getElementById('term-output');
 const termIn = document.getElementById('term-input');
 function tLine(html, cls) {
@@ -1317,41 +1336,41 @@ function termRun(cmd) {
   tLine('<span class="t-ok">houssem@houssemos:~$</span> ' + cmd);
   switch (c) {
     case 'help': tLine('Available commands:\n  whoami   about   skills   projects   education   experience   languages\n  certifications  contact  ls      github   linkedin   samcode   chargeops   itfits   startup   sudo   hack   coffee   uptime   clear   exit', 't-dim'); break;
-    case 'whoami': tLine('houssem.eddine.magra — Software Engineer / Master 2 Data Science & Intelligent Systems @ Constantine 2'); break;
+    case 'whoami': tLine('houssem.eddine.magra â€” Software Engineer / Master 2 Data Science & Intelligent Systems @ Constantine 2'); break;
     case 'who': tLine('houssem.eddine.magra'); break;
     case 'about': tLine('Master 2 Data Science & Intelligent Systems student and Software Engineering graduate delivering production-ready software across AI, mobile and full-stack domains.'); break;
     case 'skills': tLine('Languages : Python, Java, Dart, Kotlin, JavaScript, SQL\nFrameworks : PyTorch, FastAPI, Django REST, Flutter, React.js, Electron, MediaPipe, OpenCV, Three.js\nTools     : Docker, Firebase, Supabase, Clerk, PostgreSQL, Kafka, gRPC, Consul, NGINX, Git, VS Code'); break;
     case 'projects': tLine('19 projects installed. Favourites:\n  ChargeOps AI, ChargeOps Sys, Sam Code, ItFits, Rif Connect 2.0, Handzy, NaviJam, MusicalMe\nOpen File Explorer to browse the filesystem.'); break;
-    case 'education': tLine('Master 2 — Data Science & Intelligent Systems (in progress)\nMaster 1 — Data Science (completed)\nLicence — Software Engineering / Génie Logiciel (completed)\nUniversité Constantine 2 — Abdelhamid Mehri'); break;
-    case 'experience': tLine('Radio Engineering Intern @ Ooredoo Algérie (Constantine, 2026)\nDeep dive into mobile networks — from 2G to 5G. Now web developer & problem solver for the radio planning team. See Ooredoo.exe for details.'); break;
-    case 'samcode': tLine('Sam Code — desktop editor & CLI agent.\nDownload editor: samcode-26.web.app (reach out for access)\nCLI agent: pip install samcode-cli'); break;
-    case 'chargeops': tLine('ChargeOps AI — predictive maintenance for wireless EV charging.\nChargeOps Sys — 3D diagnostic simulator (repo is private — request access).'); break;
-    case 'itfits': tLine('ItFits — AI interior design app.\nScan your room → pick a style, colors & preferences → get AI-generated redesigns.'); break;
-    case 'startup': case 'elmoultaqa': tLine('El Moultaqa — my startup.\nLaunch a branded conference in minutes: program, live streams, ratings,\nnotifications + a one-click branded Android app. One platform for organizers,\none app for every attendee.\nOpen Startup.app for the full pitch.'); break;
-    case 'languages': case 'language': tLine('Arabic (native) · French (fluent) · English (fluent)'); break;
-    case 'certifications': case 'certification': case 'certs': tLine('Verified achievements:\n  Python Certification — Kaggle\n  English B2 — ULC School, Constantine\n  Certificate of Appreciation — Mozilla Club (teaching Databases)\n  Canva Teacher Essentials — Canva\n  Certificate of Completion & Appreciation — RIF Conference (RIF Connect app)\n  Certificate of Internship — Ooredoo Algérie (mobile networks)\nOpen Certifications.exe for details.'); break;
+    case 'education': tLine('Master 2 â€” Data Science & Intelligent Systems (in progress)\nMaster 1 â€” Data Science (completed)\nLicence â€” Software Engineering / GÃ©nie Logiciel (completed)\nUniversitÃ© Constantine 2 â€” Abdelhamid Mehri'); break;
+    case 'experience': tLine('Radio Engineering Intern @ Ooredoo AlgÃ©rie (Constantine, 2026)\nDeep dive into mobile networks â€” from 2G to 5G. Now web developer & problem solver for the radio planning team. See Ooredoo.exe for details.'); break;
+    case 'samcode': tLine('Sam Code â€” desktop editor & CLI agent.\nDownload editor: samcode-26.web.app (reach out for access)\nCLI agent: pip install samcode-cli'); break;
+    case 'chargeops': tLine('ChargeOps AI â€” predictive maintenance for wireless EV charging.\nChargeOps Sys â€” 3D diagnostic simulator (repo is private â€” request access).'); break;
+    case 'itfits': tLine('ItFits â€” AI interior design app.\nScan your room â†’ pick a style, colors & preferences â†’ get AI-generated redesigns.'); break;
+    case 'startup': case 'elmoultaqa': tLine('El Moultaqa â€” my startup.\nLaunch a branded conference in minutes: program, live streams, ratings,\nnotifications + a one-click branded Android app. One platform for organizers,\none app for every attendee.\nOpen Startup.app for the full pitch.'); break;
+    case 'languages': case 'language': tLine('Arabic (native) Â· French (fluent) Â· English (fluent)'); break;
+    case 'certifications': case 'certification': case 'certs': tLine('Verified achievements:\n  Python Certification â€” Kaggle\n  English B2 â€” ULC School, Constantine\n  Certificate of Appreciation â€” Mozilla Club (teaching Databases)\n  Canva Teacher Essentials â€” Canva\n  Certificate of Completion & Appreciation â€” RIF Conference (RIF Connect app)\n  Certificate of Internship â€” Ooredoo AlgÃ©rie (mobile networks)\nOpen Certifications.exe for details.'); break;
     case 'contact': tLine('email  : houssemeddinemagra@gmail.com\nphone  : +213 541 529 890\ngithub : Houssemeddine-mag\nlinkedin : houssem-eddine-magra'); break;
     case 'ls': tLine('README.txt  Projects.exe  Skills.ini  Ooredoo.exe  Startup.app\nEducation.log  Certifications.exe  Languages.exe  Terminal  Contact.app  Recycle.bin'); break;
     case 'clear': termOut.innerHTML = ''; return;
     case 'sudo': tLine('houssem is not in the sudoers file. This incident will be reported.', 't-err'); break;
     case 'hack': tLine('Nice try. My 2-factor security is coffee + VS Code.', 't-warn'); break;
-    case 'coffee': tLine('Brewing… /home/houssem/coffee.brew — 100% arabica. Done.', 't-ok'); break;
-    case 'uptime': tLine('uptime: since 20 June 2003 — feels like 1337 days.'); break;
-    case 'os': tLine('HoussemOS 1.0 "El Khroub Edition" — a CV pretending to be an OS.'); break;
-    case 'github': tLine('Opening browser…'); setTimeout(() => window.open('https://github.com/Houssemeddine-mag', '_blank'), 300); break;
-    case 'linkedin': tLine('Opening browser…'); setTimeout(() => window.open('https://www.linkedin.com/in/houssem-eddine-magra-880241343', '_blank'), 300); break;
+    case 'coffee': tLine('Brewingâ€¦ /home/houssem/coffee.brew â€” 100% arabica. Done.', 't-ok'); break;
+    case 'uptime': tLine('uptime: since 20 June 2003 â€” feels like 1337 days.'); break;
+    case 'os': tLine('HoussemOS 1.0 "El Khroub Edition" â€” a CV pretending to be an OS.'); break;
+    case 'github': tLine('Opening browserâ€¦'); setTimeout(() => window.open('https://github.com/Houssemeddine-mag', '_blank'), 300); break;
+    case 'linkedin': tLine('Opening browserâ€¦'); setTimeout(() => window.open('https://www.linkedin.com/in/houssem-eddine-magra-880241343', '_blank'), 300); break;
     case 'exit': tLine('Nope, you can\'t quit that easily. Type "help".', 't-warn'); break;
     case '': break;
     case 'hello': case 'hi': case 'hey': tLine('Hello, visitor! Type "help" to explore my CV.'); break;
-    case 'rm': tLine('rm: refusing to delete /home/houssem/projects — still my favourite.', 't-err'); break;
-    default: tLine('command not found: ' + cmd + ' — try "help".', 't-err');
+    case 'rm': tLine('rm: refusing to delete /home/houssem/projects â€” still my favourite.', 't-err'); break;
+    default: tLine('command not found: ' + cmd + ' â€” try "help".', 't-err');
   }
 }
 termIn.addEventListener('keydown', e => {
   if (e.key === 'Enter') { termRun(termIn.value); termIn.value = ''; }
 });
 
-/* ══════════ KONAMI ══════════ */
+/* â•â•â•â•â•â•â•â•â•â• KONAMI â•â•â•â•â•â•â•â•â•â• */
 const konami = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
 let ki = 0;
 document.addEventListener('keydown', e => {
@@ -1375,7 +1394,7 @@ function confetti() {
   setTimeout(() => { host.innerHTML = ''; }, 5200);
 }
 
-/* ══════════ STARFIELD ══════════ */
+/* â•â•â•â•â•â•â•â•â•â• STARFIELD â•â•â•â•â•â•â•â•â•â• */
 (function initStars() {
   const cv = document.getElementById('stars');
   const ctx = cv.getContext('2d');
@@ -1444,10 +1463,13 @@ function confetti() {
   requestAnimationFrame(frame);
 })();
 
-/* ══════════ INIT ══════════ */
+/* â•â•â•â•â•â•â•â•â•â• INIT â•â•â•â•â•â•â•â•â•â• */
 renderProjects();
 fmNav('C:\\', false);
 boot();
 </script>
 </body>
 </html>
+
+
+
