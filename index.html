@@ -464,7 +464,7 @@ function certImgFallback(img) {
           <div class="microlabel mt-1.5">Production web apps</div>
         </div>
         <div class="py-4 sm:border-l sm:pl-5" style="border-color:var(--rule)">
-          <div class="stat-num" data-count="14">14</div>
+          <div class="stat-num" data-count="15">15</div>
           <div class="microlabel mt-1.5">Certifications — verified scans</div>
         </div>
       </div>
@@ -910,6 +910,25 @@ function certImgFallback(img) {
       </div>
     </div>
 
+    <!-- Google Cloud — Machine Learning badge (file lives in assets/Informatique/google/) -->
+    <div class="mt-4 card p-5 sm:p-6 flex flex-col sm:flex-row gap-5 items-start" style="border-color:var(--rule);">
+      <a href="assets/Informatique/google/introduction%20to%20machine%20learning%20via%20google%20cloud.png" target="_blank" rel="noopener noreferrer" class="shrink-0" aria-label="Google Cloud Introduction to Machine Learning badge">
+        <img src="assets/Informatique/google/introduction%20to%20machine%20learning%20via%20google%20cloud.png" alt="Google Cloud — Introduction to Machine Learning badge" class="w-28 h-auto rounded-lg shadow-sm" style="border:1px solid var(--rule);" onerror="certImgFallback(this)">
+      </a>
+      <div class="flex-1 min-w-0 space-y-3">
+        <div class="flex flex-wrap items-center gap-2">
+          <h3 class="font-display text-[17px] font-semibold leading-snug" style="color:var(--ink)">Introduction to Machine Learning — Google Cloud</h3>
+          <span class="pill pill-accent shrink-0">ML</span>
+        </div>
+        <p class="text-[13px] leading-relaxed" style="color:var(--ink-2)">I completed Google Cloud's Introduction to Machine Learning badge — covering machine learning fundamentals, model development, and deploying models with Google Cloud's ML tooling.</p>
+        <div class="flex flex-wrap items-center gap-2.5">
+          <a href="assets/Informatique/google/introduction%20to%20machine%20learning%20via%20google%20cloud.png" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 btn btn-primary text-[12px] px-4 py-2">
+            View badge ↗
+          </a>
+        </div>
+      </div>
+    </div>
+
     <!-- Head of Development Team -->
     <div class="card p-5 space-y-2 mt-6" style="border-color:var(--rule);">
       <div class="flex items-center gap-2.5">
@@ -923,15 +942,15 @@ function certImgFallback(img) {
 
     <div class="pt-4 flex items-center justify-between gap-4 border-t" style="border-color:var(--rule)">
       <div class="microlabel pt-4" data-i18n="certLabel">Certificates · verified scans</div>
-      <div class="microlabel pt-4 text-right" style="color:var(--ink-3)">14</div>
+      <div class="microlabel pt-4 text-right" style="color:var(--ink-3)">15</div>
     </div>
     <p class="text-sm" style="color:var(--ink-2)" data-i18n="certSub">Click any certificate to open the actual document.</p>
 
     <!-- Certificate filter chips -->
     <div id="certFilter" class="flex flex-wrap items-center gap-2 mt-3">
-      <button type="button" data-filter="all" class="chip" aria-pressed="true">All · 14</button>
+      <button type="button" data-filter="all" class="chip" aria-pressed="true">All · 15</button>
       <button type="button" data-filter="English" class="chip" aria-pressed="false">English · 3</button>
-      <button type="button" data-filter="Computer Science" class="chip" aria-pressed="false">Computer Science · 7</button>
+      <button type="button" data-filter="Computer Science" class="chip" aria-pressed="false">Computer Science · 8</button>
       <button type="button" data-filter="Internship" class="chip" aria-pressed="false">Internship · 2</button>
       <button type="button" data-filter="Management" class="chip" aria-pressed="false">Management · 1</button>
       <button type="button" data-filter="Other" class="chip" aria-pressed="false">Other · 1</button>
@@ -1967,6 +1986,9 @@ const CERTS = [
   { kind: 'pdf', src: 'assets/Informatique/aws/Grades%20for%20Houssem%20Magra_%20AWS%20Academy%20Cloud%20Foundations%20%5B191305%5D.pdf', pages: 2, category: 'Computer Science',
     title: 'AWS Academy — Cloud Foundations (grade report)',
     meta: 'Amazon Web Services · AWS Academy · Course 191305' },
+  { kind: 'img', src: 'assets/Informatique/google/introduction%20to%20machine%20learning%20via%20google%20cloud.png', category: 'Computer Science',
+    title: 'Introduction to Machine Learning on Google Cloud',
+    meta: 'Google Cloud · Skills Boost badge' },
   { kind: 'img', src: 'assets/English/ULC%20diploma.jpg', category: 'English',
     title: 'Certificate of Achievement — English B2 (CEFR)',
     meta: 'ULC · Universal Learning Center · 2025' },
