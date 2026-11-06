@@ -213,6 +213,47 @@
   /* Certificate lightbox */
   .cert-frame { background: #FFFFFF; border-radius: 14px; box-shadow: var(--shadow); animation: modalIn .3s cubic-bezier(.2, .7, .2, 1) both; }
   .cert-frame img { max-height: 76vh; max-width: 92vw; width: auto; height: auto; border-radius: 8px; }
+
+  /* ── Badge carousel ── */
+  .badge-viewport { overflow: hidden; border-radius: 16px; }
+  .badge-track { display: flex; will-change: transform; transition: transform .65s cubic-bezier(.2, .7, .2, 1); }
+  .badge-slide { flex: 0 0 100%; min-width: 100%; padding: 2px; }
+  .badge-card {
+    display: grid; grid-template-columns: 1fr; gap: 20px; align-items: center;
+    background: var(--raised); border: 1px solid var(--rule); border-radius: 16px; padding: 24px;
+  }
+  @media (min-width: 640px) {
+    .badge-card { grid-template-columns: 200px 1fr; gap: 32px; padding: 30px 34px; }
+  }
+  .badge-figure {
+    display: flex; align-items: center; justify-content: center;
+    background: #FFFFFF; border: 1px solid var(--rule); border-radius: 12px;
+    padding: 14px; aspect-ratio: 1 / 1; width: 100%; max-width: 200px; margin-inline: auto;
+  }
+  .badge-figure img { width: 100%; height: 100%; object-fit: contain; }
+  .badge-kicker { font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+  .badge-name { font-family: var(--font-display); font-size: 21px; font-weight: 600; line-height: 1.2; color: var(--ink); margin-top: 6px; }
+  .badge-issuer { font-family: var(--font-mono); font-size: 11.5px; color: var(--accent); margin-top: 8px; }
+  .badge-desc { font-size: 13px; line-height: 1.65; color: var(--ink-2); margin-top: 10px; }
+  .badge-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-size: 12px; font-weight: 600; color: var(--accent); }
+  .badge-link:hover { text-decoration: underline; text-underline-offset: 2px; }
+  .badge-nav {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 38px; height: 38px; border-radius: 999px; display: flex; align-items: center; justify-content: center;
+    background: var(--raised); border: 1px solid var(--rule); color: var(--ink-2); cursor: pointer; z-index: 2;
+    transition: border-color .25s ease, color .25s ease, background-color .25s ease;
+  }
+  .badge-nav:hover { border-color: var(--rule-2); color: var(--accent); }
+  .badge-nav-prev { left: -6px; }
+  .badge-nav-next { right: -6px; }
+  @media (min-width: 768px) { .badge-nav-prev { left: -19px; } .badge-nav-next { right: -19px; } }
+  .badge-dots { display: flex; align-items: center; justify-content: center; gap: 7px; margin-top: 18px; }
+  .badge-dot {
+    width: 7px; height: 7px; border-radius: 999px; background: var(--rule-2); border: none; padding: 0; cursor: pointer;
+    transition: width .3s ease, background-color .3s ease;
+  }
+  .badge-dot[aria-current="true"] { width: 24px; background: var(--accent); }
+
   .tile { display: block; background: var(--paper-2); border: 1px solid var(--rule); border-radius: 12px; padding: 14px 16px; }
   .tile:hover { border-color: var(--rule-2); }
 
@@ -372,6 +413,7 @@ function certImgFallback(img) {
       <a class="nav-link" href="#experience" data-i18n="navExperience">Experience</a>
       <a class="nav-link" href="#venture" data-i18n="navVenture">El Moultaqa</a>
       <a class="nav-link" href="#skills" data-i18n="navSkills">Skills</a>
+      <a class="nav-link" href="#badges" data-i18n="navBadges">Badges</a>
       <a class="nav-link" href="#contact" data-i18n="navContact">Contact</a>
     </nav>
 
@@ -408,6 +450,7 @@ function certImgFallback(img) {
           <a class="block px-3 py-2 text-[13px] font-medium rounded-lg hover:bg-[var(--paper-2)]" href="#experience" data-i18n="navExperience">Experience</a>
           <a class="block px-3 py-2 text-[13px] font-medium rounded-lg hover:bg-[var(--paper-2)]" href="#venture" data-i18n="navVenture">El Moultaqa</a>
           <a class="block px-3 py-2 text-[13px] font-medium rounded-lg hover:bg-[var(--paper-2)]" href="#skills" data-i18n="navSkills">Skills</a>
+          <a class="block px-3 py-2 text-[13px] font-medium rounded-lg hover:bg-[var(--paper-2)]" href="#badges" data-i18n="navBadges">Badges</a>
           <a class="block px-3 py-2 text-[13px] font-medium rounded-lg hover:bg-[var(--paper-2)]" href="#contact" data-i18n="navContact">Contact</a>
           <div class="flex gap-2 px-1 pt-2 mt-1 border-t" style="border-color:var(--rule)">
             <button type="button" class="langbtn" data-lang-btn="en" aria-pressed="true">EN</button>
@@ -464,7 +507,7 @@ function certImgFallback(img) {
           <div class="microlabel mt-1.5">Production web apps</div>
         </div>
         <div class="py-4 sm:border-l sm:pl-5" style="border-color:var(--rule)">
-          <div class="stat-num" data-count="15">15</div>
+          <div class="stat-num" data-count="13">13</div>
           <div class="microlabel mt-1.5">Certifications — verified scans</div>
         </div>
       </div>
@@ -888,47 +931,6 @@ function certImgFallback(img) {
       <button type="button" id="copyCliBtn" class="btn text-[12px] shrink-0 self-start sm:self-auto">Copy</button>
     </div>
 
-    <!-- AWS Academy — Cloud Foundations (files live in assets/Informatique/aws/) -->
-    <div class="mt-6 card p-5 sm:p-6 flex flex-col sm:flex-row gap-5 items-start" style="border-color:var(--rule);">
-      <a href="assets/Informatique/aws/AWS_Academy_Graduate___Cloud_Foundations___Training_Badge_Badge20261103-20-b5u0wt.pdf" target="_blank" rel="noopener noreferrer" class="shrink-0" aria-label="AWS Academy Cloud Foundations training badge PDF">
-        <img src="assets/Informatique/aws/badge.jpg" alt="AWS Academy Graduate — Cloud Foundations training badge" class="w-28 h-auto rounded-lg shadow-sm" style="border:1px solid var(--rule);" onerror="certImgFallback(this)">
-      </a>
-      <div class="flex-1 min-w-0 space-y-3">
-        <div class="flex flex-wrap items-center gap-2">
-          <h3 class="font-display text-[17px] font-semibold leading-snug" style="color:var(--ink)">Amazon AWS Cloud Foundations</h3>
-          <span class="pill pill-accent shrink-0">Cloud</span>
-        </div>
-        <p class="text-[13px] leading-relaxed" style="color:var(--ink-2)">I have completed the Amazon AWS Cloud Foundations certificate through AWS Academy — covering cloud concepts, AWS services, security, architecture, pricing and support.</p>
-        <div class="flex flex-wrap items-center gap-2.5">
-          <a href="assets/Informatique/aws/AWS_Academy_Graduate___Cloud_Foundations___Training_Badge_Badge20261103-20-b5u0wt.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 btn btn-primary text-[12px] px-4 py-2">
-            Training badge ↗
-          </a>
-          <a href="assets/Informatique/aws/Grades%20for%20Houssem%20Magra_%20AWS%20Academy%20Cloud%20Foundations%20%5B191305%5D.pdf" target="_blank" rel="noopener noreferrer" class="btn text-[12px] px-4 py-2">
-            Grade report ↗
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Google Cloud — Machine Learning badge (file lives in assets/Informatique/google/) -->
-    <div class="mt-6 card p-5 sm:p-6 flex flex-col sm:flex-row gap-5 items-start" style="border-color:var(--rule);">
-      <a href="assets/Informatique/google/introduction%20to%20machine%20learning%20via%20google%20cloud.png" target="_blank" rel="noopener noreferrer" class="shrink-0" aria-label="Google Cloud Introduction to Machine Learning badge">
-        <img src="assets/Informatique/google/introduction%20to%20machine%20learning%20via%20google%20cloud.png" alt="Google Cloud — Introduction to Machine Learning badge" class="w-28 h-auto rounded-lg shadow-sm" style="border:1px solid var(--rule);" onerror="certImgFallback(this)">
-      </a>
-      <div class="flex-1 min-w-0 space-y-3">
-        <div class="flex flex-wrap items-center gap-2">
-          <h3 class="font-display text-[17px] font-semibold leading-snug" style="color:var(--ink)">Introduction to Machine Learning — Google Cloud</h3>
-          <span class="pill pill-accent shrink-0">Cloud</span>
-        </div>
-        <p class="text-[13px] leading-relaxed" style="color:var(--ink-2)">I have completed the Introduction to Machine Learning badge through Google Cloud Skills Boost — covering machine learning fundamentals, model development, and deploying models with Google Cloud's ML tooling.</p>
-        <div class="flex flex-wrap items-center gap-2.5">
-          <a href="assets/Informatique/google/introduction%20to%20machine%20learning%20via%20google%20cloud.png" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 btn btn-primary text-[12px] px-4 py-2">
-            View badge ↗
-          </a>
-        </div>
-      </div>
-    </div>
-
     <!-- Head of Development Team -->
     <div class="card p-5 space-y-2 mt-6" style="border-color:var(--rule);">
       <div class="flex items-center gap-2.5">
@@ -942,15 +944,15 @@ function certImgFallback(img) {
 
     <div class="pt-4 flex items-center justify-between gap-4 border-t" style="border-color:var(--rule)">
       <div class="microlabel pt-4" data-i18n="certLabel">Certificates · verified scans</div>
-      <div class="microlabel pt-4 text-right" style="color:var(--ink-3)">15</div>
+      <div class="microlabel pt-4 text-right" style="color:var(--ink-3)">13</div>
     </div>
     <p class="text-sm" style="color:var(--ink-2)" data-i18n="certSub">Click any certificate to open the actual document.</p>
 
     <!-- Certificate filter chips -->
     <div id="certFilter" class="flex flex-wrap items-center gap-2 mt-3">
-      <button type="button" data-filter="all" class="chip" aria-pressed="true">All · 15</button>
+      <button type="button" data-filter="all" class="chip" aria-pressed="true">All · 13</button>
       <button type="button" data-filter="English" class="chip" aria-pressed="false">English · 3</button>
-      <button type="button" data-filter="Computer Science" class="chip" aria-pressed="false">Computer Science · 8</button>
+      <button type="button" data-filter="Computer Science" class="chip" aria-pressed="false">Computer Science · 6</button>
       <button type="button" data-filter="Internship" class="chip" aria-pressed="false">Internship · 2</button>
       <button type="button" data-filter="Management" class="chip" aria-pressed="false">Management · 1</button>
       <button type="button" data-filter="Other" class="chip" aria-pressed="false">Other · 1</button>
@@ -959,9 +961,76 @@ function certImgFallback(img) {
     <div id="certGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-3"></div>
   </section>
 
-  <!-- ══════════ 05 · CONTACT ══════════ -->
+  <!-- ══════════ 05 · BADGES ══════════ -->
+  <section id="badges" class="wrap pt-14 sm:pt-20 scroll-mt-24 reveal">
+    <div class="kicker">05 · Badges</div>
+    <h2 class="section-title mt-2" data-i18n="badgesTitle">Verified badges</h2>
+    <p class="mt-3 max-w-2xl text-sm leading-relaxed" style="color:var(--ink-2)" data-i18n="badgesSub">Cloud and AI credentials earned through AWS Academy, AWS Educate and Google Cloud.</p>
+
+    <div id="badgeCarousel" class="badge-carousel mt-7 max-w-3xl" role="region" aria-roledescription="carousel" aria-label="Professional badges">
+      <div class="badge-viewport">
+        <div class="badge-track" id="badgeTrack">
+
+          <div class="badge-slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
+            <div class="badge-card">
+              <a class="badge-figure" href="assets/Informatique/aws/AWS_Academy_Graduate___Cloud_Foundations___Training_Badge_Badge20261103-20-b5u0wt.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open AWS Cloud Foundations training badge PDF">
+                <img loading="lazy" decoding="async" src="assets/Informatique/aws/badge.jpg" alt="AWS Academy Graduate — Cloud Foundations badge" onerror="certImgFallback(this)">
+              </a>
+              <div>
+                <div class="badge-kicker">AWS Academy</div>
+                <h3 class="badge-name">Cloud Foundations</h3>
+                <div class="badge-issuer">AWS Academy Graduate · Trained</div>
+                <p class="badge-desc">Cloud concepts, core AWS services, security, architecture, pricing and support.</p>
+                <a class="badge-link" href="assets/Informatique/aws/AWS_Academy_Graduate___Cloud_Foundations___Training_Badge_Badge20261103-20-b5u0wt.pdf" target="_blank" rel="noopener noreferrer">Open badge credential ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="badge-slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
+            <div class="badge-card">
+              <a class="badge-figure" href="assets/Informatique/google/introduction%20to%20machine%20learning%20via%20google%20cloud.png" target="_blank" rel="noopener noreferrer" aria-label="Open Google Cloud Machine Learning badge">
+                <img loading="lazy" decoding="async" src="assets/Informatique/google/introduction%20to%20machine%20learning%20via%20google%20cloud.png" alt="Google Cloud — Introduction to Machine Learning badge" onerror="certImgFallback(this)">
+              </a>
+              <div>
+                <div class="badge-kicker">Google Cloud</div>
+                <h3 class="badge-name">Introduction to Machine Learning</h3>
+                <div class="badge-issuer">Google Cloud · Skills Boost</div>
+                <p class="badge-desc">Machine learning fundamentals, model development, and deploying models with Google Cloud's ML tooling.</p>
+                <a class="badge-link" href="assets/Informatique/google/introduction%20to%20machine%20learning%20via%20google%20cloud.png" target="_blank" rel="noopener noreferrer">Open badge ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="badge-slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
+            <div class="badge-card">
+              <a class="badge-figure" href="assets/Informatique/aws/aws-educate-introduction-to-generative-ai-training-.png" target="_blank" rel="noopener noreferrer" aria-label="Open AWS Educate Introduction to Generative AI badge">
+                <img loading="lazy" decoding="async" src="assets/Informatique/aws/aws-educate-introduction-to-generative-ai-training-.png" alt="AWS Educate — Introduction to Generative AI badge" onerror="certImgFallback(this)">
+              </a>
+              <div>
+                <div class="badge-kicker">AWS Educate</div>
+                <h3 class="badge-name">Introduction to Generative AI</h3>
+                <div class="badge-issuer">AWS Educate · Generative AI</div>
+                <p class="badge-desc">Foundations of generative AI, large language models, and responsible use of generative AI on AWS.</p>
+                <a class="badge-link" href="assets/Informatique/aws/aws-educate-introduction-to-generative-ai-training-.png" target="_blank" rel="noopener noreferrer">Open badge ↗</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <button type="button" id="badgePrev" class="badge-nav badge-nav-prev" aria-label="Previous badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button" id="badgeNext" class="badge-nav badge-nav-next" aria-label="Next badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+    <div id="badgeDots" class="badge-dots" aria-label="Badge navigation"></div>
+  </section>
+
+  <!-- ══════════ 06 · CONTACT ══════════ -->
   <section id="contact" class="wrap pt-14 sm:pt-20 scroll-mt-24 reveal">
-    <div class="kicker">05 · Contact</div>
+    <div class="kicker">06 · Contact</div>
     <h2 class="section-title mt-2">
       <span data-when="recruiter" data-i18n="contactTitleRec">Ready when you are.</span>
       <span data-when="researcher" data-i18n="contactTitleRes">Open to collaboration.</span>
@@ -1598,7 +1667,7 @@ const PROJECTS = [
 const I18N = {
   en: {
     dir: 'ltr',
-    navWork: 'Work', navExperience: 'Experience', navVenture: 'El Moultaqa', navSkills: 'Skills', navContact: 'Contact',
+    navWork: 'Work', navExperience: 'Experience', navVenture: 'El Moultaqa', navSkills: 'Skills', navBadges: 'Badges', navContact: 'Contact',
     statusRec: 'Open to engineering roles', statusRes: 'Open to research collaboration',
     heroRec1: 'Software engineer (Licence in Génie Logiciel) and Master&nbsp;2 Data Science &amp; Intelligent Systems researcher at <strong>Université Constantine 2</strong>. I ship end-to-end: a multi-tenant conference SaaS (<strong>El Moultaqa</strong>) with an automated Android CI/CD pipeline, and web-automation tooling for <strong>2G–5G radio planning</strong> at <strong>Ooredoo Algérie</strong>.',
     heroRec2: 'Everything below links to real repositories — filter by domain, open a case study, or jump straight to the code.',
@@ -1618,6 +1687,7 @@ const I18N = {
     ventureOrganizers: 'For organizers', ventureAttendees: 'For attendees', ventureArchitecture: 'Architecture &amp; CI/CD',
     skillsHeading: 'Stack, certifications &amp; teaching', skillsSub: 'Click any technology to filter the catalog above.',
     certLabel: 'Certificates · verified scans', certSub: 'Click any certificate to open the actual document.',
+    badgesTitle: 'Verified badges', badgesSub: 'Cloud and AI credentials earned through AWS Academy, AWS Educate and Google Cloud.',
     skLang: 'Languages', skAi: 'AI &amp; data', skWeb: 'Web &amp; mobile', skCloud: 'Cloud &amp; infra',
     contactTitleRec: 'Ready when you are.', contactTitleRes: 'Open to collaboration.',
     contactSubRec: 'Hiring for software engineering, data science or telecom-adjacent roles? Or evaluating El Moultaqa for your event? Reach out directly — replies within a day.',
@@ -1628,7 +1698,7 @@ const I18N = {
   },
   fr: {
     dir: 'ltr',
-    navWork: 'Travaux', navExperience: 'Parcours', navVenture: 'El Moultaqa', navSkills: 'Compétences', navContact: 'Contact',
+    navWork: 'Travaux', navExperience: 'Parcours', navVenture: 'El Moultaqa', navSkills: 'Compétences', navBadges: 'Badges', navContact: 'Contact',
     statusRec: 'Disponible pour l\u2019ingénierie', statusRes: 'Ouvert à la collaboration de recherche',
     heroRec1: 'Ingénieur logiciel (Licence Génie Logiciel) et chercheur en Master&nbsp;2 Science des Données &amp; Systèmes Intelligents à l\u2019<strong>Université Constantine 2</strong>. Je conçois de bout en bout : un SaaS de conférences multi-tenant (<strong>El Moultaqa</strong>) avec un pipeline CI/CD Android automatisé, et des outils web d\u2019automatisation pour la <strong>planification radio 2G–5G</strong> chez <strong>Ooredoo Algérie</strong>.',
     heroRec2: 'Chaque élément renvoie vers un dépôt réel — filtrez par domaine, ouvrez une étude de cas, ou allez directement au code.',
@@ -1648,6 +1718,7 @@ const I18N = {
     ventureOrganizers: 'Côté organisateurs', ventureAttendees: 'Côté participants', ventureArchitecture: 'Architecture &amp; CI/CD',
     skillsHeading: 'Stack, certifications &amp; enseignement', skillsSub: 'Cliquez une technologie pour filtrer le catalogue.',
     certLabel: 'Certificats · copies vérifiées', certSub: 'Cliquez un certificat pour ouvrir le document réel.',
+    badgesTitle: 'Badges vérifiés', badgesSub: 'Certifications cloud et IA obtenues via AWS Academy, AWS Educate et Google Cloud.',
     skLang: 'Langages', skAi: 'IA &amp; data', skWeb: 'Web &amp; mobile', skCloud: 'Cloud &amp; infra',
     contactTitleRec: 'Prêt quand vous l\u2019êtes.', contactTitleRes: 'Ouvert à la collaboration.',
     contactSubRec: 'Recrutement en ingénierie logicielle, data science ou télécoms ? Ou El Moultaqa pour votre événement ? Contactez-moi directement — réponse sous 24 h.',
@@ -1658,7 +1729,7 @@ const I18N = {
   },
   ar: {
     dir: 'rtl',
-    navWork: 'الأعمال', navExperience: 'الخبرة', navVenture: 'الملتقى', navSkills: 'المهارات', navContact: 'تواصل',
+    navWork: 'الأعمال', navExperience: 'الخبرة', navVenture: 'الملتقى', navSkills: 'المهارات', navBadges: 'الشارات', navContact: 'تواصل',
     statusRec: 'متاح لفرص هندسية', statusRes: 'متاح للتعاون البحثي',
     heroRec1: 'مهندس برمجيات (ليسانس هندسة البرمجيات) وباحث في <strong>ماستر 2 علوم البيانات والأنظمة الذكية</strong> بجامعة <strong>قسنطينة 2</strong>. أطوّر أنظمة متكاملة: منصة SaaS متعددة المستأجرين للمؤتمرات (<strong>الملتقى</strong>) مع مسار بناء أندرويد مؤتمت، وأدوات ويب لأتمتة <strong>التخطيط الراديوي 2G–5G</strong> لدى <strong>أوريدو الجزائر</strong>.',
     heroRec2: 'كل الأعمال أدناه تربط بمستودعات حقيقية — رشّح حسب المجال أو انتقل مباشرة إلى الكود.',
@@ -1678,6 +1749,7 @@ const I18N = {
     ventureOrganizers: 'للمنظّمين', ventureAttendees: 'للحضور', ventureArchitecture: 'المعمارية والـCI/CD',
     skillsHeading: 'التقنيات والشهادات والتعليم', skillsSub: 'انقر أي تقنية لتصفية الفهرس أعلاه.',
     certLabel: 'الشهادات · نسخ موثّقة', certSub: 'انقر أي شهادة لعرض الوثيقة الأصلية.',
+    badgesTitle: 'شارات موثّقة', badgesSub: 'شهادات سحابية وذكاء اصطناعي من AWS Academy وAWS Educate وGoogle Cloud.',
     skLang: 'لغات البرمجة', skAi: 'الذكاء الاصطناعي والبيانات', skWeb: 'الويب والجوال', skCloud: 'السحابة والبنية',
     contactTitleRec: 'جاهز عندما تكون جاهزًا.', contactTitleRes: 'مفتوح للتعاون.',
     contactSubRec: 'توظّف في هندسة البرمجيات أو علوم البيانات أو الاتصالات؟ أو تقيّم الملتقى لحدثك؟ راسلني مباشرة — الرد خلال يوم.',
@@ -1980,15 +2052,9 @@ const CERTS = [
   { kind: 'img', src: 'assets/Informatique/mozilla%20certif.jpg', category: 'Internship',
     title: 'Certificate of Appreciation — Databases instructor',
     meta: 'Mozilla Campus Club · Constantine · 2023/24' },
-  { kind: 'img', src: 'assets/Informatique/aws/badge.jpg', href: 'assets/Informatique/aws/AWS_Academy_Graduate___Cloud_Foundations___Training_Badge_Badge20261103-20-b5u0wt.pdf', category: 'Computer Science',
-    title: 'AWS Academy — Cloud Foundations (training badge)',
-    meta: 'Amazon Web Services · AWS Academy · Nov. 2026' },
   { kind: 'pdf', src: 'assets/Informatique/aws/Grades%20for%20Houssem%20Magra_%20AWS%20Academy%20Cloud%20Foundations%20%5B191305%5D.pdf', pages: 2, category: 'Computer Science',
     title: 'AWS Academy — Cloud Foundations (grade report)',
     meta: 'Amazon Web Services · AWS Academy · Course 191305' },
-  { kind: 'img', src: 'assets/Informatique/google/introduction%20to%20machine%20learning%20via%20google%20cloud.png', category: 'Computer Science',
-    title: 'Introduction to Machine Learning on Google Cloud',
-    meta: 'Google Cloud · Skills Boost badge' },
   { kind: 'img', src: 'assets/English/ULC%20diploma.jpg', category: 'English',
     title: 'Certificate of Achievement — English B2 (CEFR)',
     meta: 'ULC · Universal Learning Center · 2025' },
@@ -2062,6 +2128,80 @@ function openCert(i) {
   document.body.style.overflow = 'hidden';
 }
 
+/* ════════════════════════════════════════════════════════════════
+   BADGES — auto-advancing carousel (arrows, dots, keyboard, swipe;
+   pauses on hover/focus; respects reduced motion)
+   ════════════════════════════════════════════════════════════════ */
+function initBadgeCarousel() {
+  const track = $('#badgeTrack');
+  const carousel = $('#badgeCarousel');
+  const dotsWrap = $('#badgeDots');
+  if (!track || !carousel || !dotsWrap) return;
+
+  const slides = Array.from(track.children);
+  if (!slides.length) return;
+  const prevBtn = $('#badgePrev');
+  const nextBtn = $('#badgeNext');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const isRTL = () => (document.documentElement.getAttribute('dir') || 'ltr') === 'rtl';
+  let index = 0, timer = null;
+
+  const dots = slides.map((_, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'badge-dot';
+    b.setAttribute('aria-label', 'Show badge ' + (i + 1) + ' of ' + slides.length);
+    b.addEventListener('click', () => { go(i); restart(); });
+    dotsWrap.appendChild(b);
+    return b;
+  });
+
+  function render() {
+    track.style.transform = 'translateX(' + (-index * 100) + '%)';
+    dots.forEach((d, i) => d.setAttribute('aria-current', String(i === index)));
+    slides.forEach((s, i) => {
+      const active = i === index;
+      s.setAttribute('aria-hidden', String(!active));
+      s.querySelectorAll('a, button').forEach(el => { el.tabIndex = active ? 0 : -1; });
+    });
+  }
+  function go(i) { index = (i + slides.length) % slides.length; render(); }
+  function step(dir) { go(index + dir); }
+  function start() { stop(); if (reduce.matches) return; timer = setInterval(() => step(1), 5200); }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  function restart() { stop(); start(); }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => { step(-1); restart(); });
+  if (nextBtn) nextBtn.addEventListener('click', () => { step(1); restart(); });
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', start);
+  carousel.addEventListener('focusin', stop);
+  carousel.addEventListener('focusout', e => { if (!carousel.contains(e.relatedTarget)) start(); });
+  carousel.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); restart(); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); step(1); restart(); }
+  });
+
+  let x0 = null;
+  carousel.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; stop(); }, { passive: true });
+  carousel.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) {
+      const forward = isRTL() ? dx > 0 : dx < 0;
+      step(forward ? 1 : -1);
+    }
+    x0 = null;
+    start();
+  });
+
+  document.addEventListener('visibilitychange', () => { document.hidden ? stop() : start(); });
+  if (reduce.addEventListener) reduce.addEventListener('change', () => { reduce.matches ? stop() : start(); });
+
+  render();
+  start();
+}
+
 
 /* ════════════════════════════════════════════════════════════════
    INITIALIZATION
@@ -2079,6 +2219,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderWork();
   renderCerts();
+  initBadgeCarousel();
 
   /* Certificate filter chips */
   $$('#certFilter .chip').forEach(btn => btn.addEventListener('click', () => {
