@@ -214,45 +214,138 @@
   .cert-frame { background: #FFFFFF; border-radius: 14px; box-shadow: var(--shadow); animation: modalIn .3s cubic-bezier(.2, .7, .2, 1) both; }
   .cert-frame img { max-height: 76vh; max-width: 92vw; width: auto; height: auto; border-radius: 8px; }
 
-  /* ── Badge carousel ── */
-  .badge-viewport { overflow: hidden; border-radius: 16px; }
-  .badge-track { display: flex; will-change: transform; transition: transform .65s cubic-bezier(.2, .7, .2, 1); }
-  .badge-slide { flex: 0 0 100%; min-width: 100%; padding: 2px; }
+  /* ── Badge carousel — a centred credential plaque ── */
+  .badge-carousel { position: relative; }
+  .badge-viewport { overflow: hidden; border-radius: 22px; padding: 4px; margin: -4px; }
+  .badge-track { display: flex; align-items: stretch; will-change: transform; transition: transform .72s cubic-bezier(.22, .68, 0, 1); }
+  .badge-slide { flex: 0 0 100%; min-width: 100%; display: flex; }
+
   .badge-card {
-    display: grid; grid-template-columns: 1fr; gap: 20px; align-items: center;
-    background: var(--raised); border: 1px solid var(--rule); border-radius: 16px; padding: 24px;
+    position: relative; flex: 1; overflow: hidden;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    background: var(--raised); border: 1px solid var(--rule); border-radius: 20px;
+    padding: 40px 26px 34px;
+    box-shadow: var(--shadow);
+    transition: border-color .4s ease;
   }
-  @media (min-width: 640px) {
-    .badge-card { grid-template-columns: 200px 1fr; gap: 32px; padding: 30px 34px; }
+  @media (min-width: 640px) { .badge-card { padding: 46px 40px 40px; } }
+  .badge-card:hover { border-color: var(--rule-2); }
+
+  /* Technical-drawing corner ticks */
+  .badge-card::before {
+    content: ""; position: absolute; inset: 15px; pointer-events: none; opacity: .75;
+    background:
+      linear-gradient(var(--rule-2), var(--rule-2)) left top / 15px 1px no-repeat,
+      linear-gradient(var(--rule-2), var(--rule-2)) left top / 1px 15px no-repeat,
+      linear-gradient(var(--rule-2), var(--rule-2)) right top / 15px 1px no-repeat,
+      linear-gradient(var(--rule-2), var(--rule-2)) right top / 1px 15px no-repeat,
+      linear-gradient(var(--rule-2), var(--rule-2)) left bottom / 15px 1px no-repeat,
+      linear-gradient(var(--rule-2), var(--rule-2)) left bottom / 1px 15px no-repeat,
+      linear-gradient(var(--rule-2), var(--rule-2)) right bottom / 15px 1px no-repeat,
+      linear-gradient(var(--rule-2), var(--rule-2)) right bottom / 1px 15px no-repeat;
   }
+
+  /* Ghost slide number, top corner */
+  .badge-index {
+    position: absolute; top: 16px; inset-inline-end: 22px;
+    font-family: var(--font-mono); font-size: 38px; font-weight: 600; line-height: 1;
+    letter-spacing: -.04em; color: var(--ink); opacity: .07; pointer-events: none;
+  }
+
+  .badge-kicker {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+    letter-spacing: .22em; text-transform: uppercase; color: var(--ink-3);
+  }
+  .badge-kicker::before, .badge-kicker::after { content: ""; width: 26px; height: 1px; background: var(--rule-2); }
+
   .badge-figure {
+    position: relative; z-index: 1;
     display: flex; align-items: center; justify-content: center;
-    background: #FFFFFF; border: 1px solid var(--rule); border-radius: 12px;
-    padding: 14px; aspect-ratio: 1 / 1; width: 100%; max-width: 200px; margin-inline: auto;
+    width: 144px; height: 144px; margin-top: 26px; padding: 12px;
+    background: #FFFFFF; border: 1px solid var(--rule); border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: transform .5s cubic-bezier(.2, .7, .2, 1), border-color .3s ease;
   }
+  @media (min-width: 640px) { .badge-figure { width: 168px; height: 168px; margin-top: 30px; } }
+  .badge-figure::after {
+    content: ""; position: absolute; inset: -10px; border-radius: 27px;
+    border: 1px solid var(--accent-soft); pointer-events: none;
+    opacity: 0; transform: scale(.96);
+    transition: opacity .45s ease, transform .45s cubic-bezier(.2, .7, .2, 1);
+  }
+  .badge-figure:hover { transform: translateY(-2px); border-color: var(--rule-2); }
+  .badge-figure:hover::after { opacity: 1; transform: scale(1); }
   .badge-figure img { width: 100%; height: 100%; object-fit: contain; }
-  .badge-kicker { font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
-  .badge-name { font-family: var(--font-display); font-size: 21px; font-weight: 600; line-height: 1.2; color: var(--ink); margin-top: 6px; }
-  .badge-issuer { font-family: var(--font-mono); font-size: 11.5px; color: var(--accent); margin-top: 8px; }
-  .badge-desc { font-size: 13px; line-height: 1.65; color: var(--ink-2); margin-top: 10px; }
-  .badge-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-size: 12px; font-weight: 600; color: var(--accent); }
-  .badge-link:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+  .badge-name {
+    position: relative; z-index: 1;
+    font-family: var(--font-display); font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+    font-weight: 600; line-height: 1.15; letter-spacing: -.02em;
+    color: var(--ink); margin-top: 22px; text-wrap: balance;
+  }
+  .badge-issuer {
+    position: relative; z-index: 1;
+    display: inline-flex; align-items: center; gap: 7px; margin-top: 10px;
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; color: var(--accent);
+  }
+  .badge-issuer::before { content: ""; width: 5px; height: 5px; border-radius: 999px; background: currentColor; }
+  .badge-desc { position: relative; z-index: 1; margin-top: 14px; max-width: 42ch; font-size: 13px; line-height: 1.7; color: var(--ink-2); }
+  .badge-link {
+    position: relative; z-index: 1;
+    display: inline-flex; align-items: center; gap: 7px; margin-top: 20px; padding-bottom: 2px;
+    font-size: 12px; font-weight: 600; color: var(--ink);
+    border-bottom: 1px solid var(--rule-2);
+    transition: color .25s ease, border-color .25s ease, gap .25s ease;
+  }
+  .badge-link:hover { color: var(--accent); border-color: var(--accent); gap: 10px; }
+
+  /* Centred control bar: arrow · dots + counter · arrow */
+  .badge-controls { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 22px; }
+  .badge-mid { display: flex; flex-direction: column; align-items: center; gap: 9px; }
   .badge-nav {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    width: 38px; height: 38px; border-radius: 999px; display: flex; align-items: center; justify-content: center;
-    background: var(--raised); border: 1px solid var(--rule); color: var(--ink-2); cursor: pointer; z-index: 2;
-    transition: border-color .25s ease, color .25s ease, background-color .25s ease;
+    flex: none; width: 44px; height: 44px; border-radius: 999px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--raised); border: 1px solid var(--rule); color: var(--ink-2); cursor: pointer;
+    transition: background-color .3s ease, color .3s ease, border-color .3s ease, transform .2s ease;
   }
-  .badge-nav:hover { border-color: var(--rule-2); color: var(--accent); }
-  .badge-nav-prev { left: -6px; }
-  .badge-nav-next { right: -6px; }
-  @media (min-width: 768px) { .badge-nav-prev { left: -19px; } .badge-nav-next { right: -19px; } }
-  .badge-dots { display: flex; align-items: center; justify-content: center; gap: 7px; margin-top: 18px; }
+  .badge-nav:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+  .badge-nav:active { transform: scale(.94); }
+  html[dir="rtl"] .badge-nav svg { transform: scaleX(-1); }
+  .badge-dots { display: flex; align-items: center; justify-content: center; gap: 8px; }
   .badge-dot {
-    width: 7px; height: 7px; border-radius: 999px; background: var(--rule-2); border: none; padding: 0; cursor: pointer;
-    transition: width .3s ease, background-color .3s ease;
+    width: 8px; height: 8px; border-radius: 999px; background: var(--rule-2); border: none; padding: 0; cursor: pointer;
+    transition: width .35s cubic-bezier(.2, .7, .2, 1), background-color .35s ease;
   }
-  .badge-dot[aria-current="true"] { width: 24px; background: var(--accent); }
+  .badge-dot:hover { background: var(--ink-3); }
+  .badge-dot[aria-current="true"] { width: 26px; background: var(--accent); }
+  .badge-counter { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .16em; color: var(--ink-3); }
+  .badge-counter b { color: var(--ink); font-weight: 600; }
+  .badge-counter span { opacity: .55; margin: 0 4px; }
+
+  /* Autoplay progress hairline */
+  .badge-progress { width: 180px; max-width: 60%; height: 2px; margin: 16px auto 0; background: var(--rule); border-radius: 999px; overflow: hidden; }
+  .badge-progress > span { display: block; width: 100%; height: 100%; background: var(--accent); transform: scaleX(0); transform-origin: left; }
+  html[dir="rtl"] .badge-progress > span { transform-origin: right; }
+  .badge-progress.is-running > span { animation: badgeProgress 5.2s linear forwards; }
+  .badge-progress.is-paused > span { animation-play-state: paused; }
+  @keyframes badgeProgress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+  /* Content entrance for the incoming slide */
+  @keyframes badgeFade { from { opacity: 0; } }
+  .badge-slide.is-active .badge-kicker,
+  .badge-slide.is-active .badge-name,
+  .badge-slide.is-active .badge-issuer,
+  .badge-slide.is-active .badge-desc,
+  .badge-slide.is-active .badge-link { animation: riseSoft .6s cubic-bezier(.2, .7, .2, 1) both; }
+  .badge-slide.is-active .badge-figure { animation: badgeFade .6s ease both; }
+  .badge-slide.is-active .badge-kicker { animation-delay: .05s; }
+  .badge-slide.is-active .badge-figure { animation-delay: .05s; }
+  .badge-slide.is-active .badge-name { animation-delay: .11s; }
+  .badge-slide.is-active .badge-issuer { animation-delay: .16s; }
+  .badge-slide.is-active .badge-desc { animation-delay: .21s; }
+  .badge-slide.is-active .badge-link { animation-delay: .26s; }
 
   .tile { display: block; background: var(--paper-2); border: 1px solid var(--rule); border-radius: 12px; padding: 14px 16px; }
   .tile:hover { border-color: var(--rule-2); }
@@ -963,69 +1056,76 @@ function certImgFallback(img) {
 
   <!-- ══════════ 05 · BADGES ══════════ -->
   <section id="badges" class="wrap pt-14 sm:pt-20 scroll-mt-24 reveal">
-    <div class="kicker">05 · Badges</div>
-    <h2 class="section-title mt-2" data-i18n="badgesTitle">Verified badges</h2>
-    <p class="mt-3 max-w-2xl text-sm leading-relaxed" style="color:var(--ink-2)" data-i18n="badgesSub">Cloud and AI credentials earned through AWS Academy, AWS Educate and Google Cloud.</p>
+    <div class="text-center">
+      <div class="kicker">05 · Badges</div>
+      <h2 class="section-title mt-2" data-i18n="badgesTitle">Verified badges</h2>
+      <p class="mt-3 mx-auto max-w-xl text-sm leading-relaxed" style="color:var(--ink-2)" data-i18n="badgesSub">Cloud and AI credentials earned through AWS Academy, AWS Educate and Google Cloud.</p>
+    </div>
 
-    <div id="badgeCarousel" class="badge-carousel mt-7 max-w-3xl" role="region" aria-roledescription="carousel" aria-label="Professional badges">
+    <div id="badgeCarousel" class="badge-carousel mt-9 mx-auto max-w-2xl" role="region" aria-roledescription="carousel" aria-label="Professional badges">
       <div class="badge-viewport">
         <div class="badge-track" id="badgeTrack">
 
           <div class="badge-slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
             <div class="badge-card">
+              <span class="badge-index" aria-hidden="true">01</span>
+              <div class="badge-kicker">AWS Academy</div>
               <a class="badge-figure" href="assets/Informatique/aws/AWS_Academy_Graduate___Cloud_Foundations___Training_Badge_Badge20261103-20-b5u0wt.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open AWS Cloud Foundations training badge PDF">
                 <img loading="lazy" decoding="async" src="assets/Informatique/aws/badge.jpg" alt="AWS Academy Graduate — Cloud Foundations badge" onerror="certImgFallback(this)">
               </a>
-              <div>
-                <div class="badge-kicker">AWS Academy</div>
-                <h3 class="badge-name">Cloud Foundations</h3>
-                <div class="badge-issuer">AWS Academy Graduate · Trained</div>
-                <p class="badge-desc">Cloud concepts, core AWS services, security, architecture, pricing and support.</p>
-                <a class="badge-link" href="assets/Informatique/aws/AWS_Academy_Graduate___Cloud_Foundations___Training_Badge_Badge20261103-20-b5u0wt.pdf" target="_blank" rel="noopener noreferrer">Open badge credential ↗</a>
-              </div>
+              <h3 class="badge-name">Cloud Foundations</h3>
+              <div class="badge-issuer">AWS Academy Graduate · Trained</div>
+              <p class="badge-desc">Cloud concepts, core AWS services, security, architecture, pricing and support.</p>
+              <a class="badge-link" href="assets/Informatique/aws/AWS_Academy_Graduate___Cloud_Foundations___Training_Badge_Badge20261103-20-b5u0wt.pdf" target="_blank" rel="noopener noreferrer">Open badge credential <span aria-hidden="true">↗</span></a>
             </div>
           </div>
 
           <div class="badge-slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
             <div class="badge-card">
+              <span class="badge-index" aria-hidden="true">02</span>
+              <div class="badge-kicker">Google Cloud</div>
               <a class="badge-figure" href="assets/Informatique/google/introduction%20to%20machine%20learning%20via%20google%20cloud.png" target="_blank" rel="noopener noreferrer" aria-label="Open Google Cloud Machine Learning badge">
                 <img loading="lazy" decoding="async" src="assets/Informatique/google/introduction%20to%20machine%20learning%20via%20google%20cloud.png" alt="Google Cloud — Introduction to Machine Learning badge" onerror="certImgFallback(this)">
               </a>
-              <div>
-                <div class="badge-kicker">Google Cloud</div>
-                <h3 class="badge-name">Introduction to Machine Learning</h3>
-                <div class="badge-issuer">Google Cloud · Skills Boost</div>
-                <p class="badge-desc">Machine learning fundamentals, model development, and deploying models with Google Cloud's ML tooling.</p>
-                <a class="badge-link" href="assets/Informatique/google/introduction%20to%20machine%20learning%20via%20google%20cloud.png" target="_blank" rel="noopener noreferrer">Open badge ↗</a>
-              </div>
+              <h3 class="badge-name">Introduction to Machine Learning</h3>
+              <div class="badge-issuer">Google Cloud · Skills Boost</div>
+              <p class="badge-desc">Machine learning fundamentals, model development, and deploying models with Google Cloud's ML tooling.</p>
+              <a class="badge-link" href="assets/Informatique/google/introduction%20to%20machine%20learning%20via%20google%20cloud.png" target="_blank" rel="noopener noreferrer">Open badge <span aria-hidden="true">↗</span></a>
             </div>
           </div>
 
           <div class="badge-slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
             <div class="badge-card">
+              <span class="badge-index" aria-hidden="true">03</span>
+              <div class="badge-kicker">AWS Educate</div>
               <a class="badge-figure" href="assets/Informatique/aws/aws-educate-introduction-to-generative-ai-training-.png" target="_blank" rel="noopener noreferrer" aria-label="Open AWS Educate Introduction to Generative AI badge">
                 <img loading="lazy" decoding="async" src="assets/Informatique/aws/aws-educate-introduction-to-generative-ai-training-.png" alt="AWS Educate — Introduction to Generative AI badge" onerror="certImgFallback(this)">
               </a>
-              <div>
-                <div class="badge-kicker">AWS Educate</div>
-                <h3 class="badge-name">Introduction to Generative AI</h3>
-                <div class="badge-issuer">AWS Educate · Generative AI</div>
-                <p class="badge-desc">Foundations of generative AI, large language models, and responsible use of generative AI on AWS.</p>
-                <a class="badge-link" href="assets/Informatique/aws/aws-educate-introduction-to-generative-ai-training-.png" target="_blank" rel="noopener noreferrer">Open badge ↗</a>
-              </div>
+              <h3 class="badge-name">Introduction to Generative AI</h3>
+              <div class="badge-issuer">AWS Educate · Generative AI</div>
+              <p class="badge-desc">Foundations of generative AI, large language models, and responsible use of generative AI on AWS.</p>
+              <a class="badge-link" href="assets/Informatique/aws/aws-educate-introduction-to-generative-ai-training-.png" target="_blank" rel="noopener noreferrer">Open badge <span aria-hidden="true">↗</span></a>
             </div>
           </div>
 
         </div>
       </div>
-      <button type="button" id="badgePrev" class="badge-nav badge-nav-prev" aria-label="Previous badge">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
-      </button>
-      <button type="button" id="badgeNext" class="badge-nav badge-nav-next" aria-label="Next badge">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-      </button>
+
+      <div class="badge-controls">
+        <button type="button" id="badgePrev" class="badge-nav" aria-label="Previous badge">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="badge-mid">
+          <div id="badgeDots" class="badge-dots" aria-label="Badge navigation"></div>
+          <div class="badge-counter"><b id="badgeNow">01</b><span aria-hidden="true">/</span><span id="badgeTotal">03</span></div>
+        </div>
+        <button type="button" id="badgeNext" class="badge-nav" aria-label="Next badge">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+
+      <div class="badge-progress" aria-hidden="true"><span></span></div>
     </div>
-    <div id="badgeDots" class="badge-dots" aria-label="Badge navigation"></div>
   </section>
 
   <!-- ══════════ 06 · CONTACT ══════════ -->
@@ -2142,9 +2242,15 @@ function initBadgeCarousel() {
   if (!slides.length) return;
   const prevBtn = $('#badgePrev');
   const nextBtn = $('#badgeNext');
+  const nowEl = $('#badgeNow');
+  const totalEl = $('#badgeTotal');
+  const progress = carousel.querySelector('.badge-progress');
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
   const isRTL = () => (document.documentElement.getAttribute('dir') || 'ltr') === 'rtl';
+  const pad = n => String(n).padStart(2, '0');
   let index = 0, timer = null;
+
+  if (totalEl) totalEl.textContent = pad(slides.length);
 
   const dots = slides.map((_, i) => {
     const b = document.createElement('button');
@@ -2157,18 +2263,28 @@ function initBadgeCarousel() {
   });
 
   function render() {
-    track.style.transform = 'translateX(' + (-index * 100) + '%)';
+    const dir = isRTL() ? 1 : -1;
+    track.style.transform = 'translateX(' + (dir * index * 100) + '%)';
     dots.forEach((d, i) => d.setAttribute('aria-current', String(i === index)));
+    if (nowEl) nowEl.textContent = pad(index + 1);
     slides.forEach((s, i) => {
       const active = i === index;
+      s.classList.toggle('is-active', active);
       s.setAttribute('aria-hidden', String(!active));
       s.querySelectorAll('a, button').forEach(el => { el.tabIndex = active ? 0 : -1; });
     });
   }
   function go(i) { index = (i + slides.length) % slides.length; render(); }
   function step(dir) { go(index + dir); }
-  function start() { stop(); if (reduce.matches) return; timer = setInterval(() => step(1), 5200); }
-  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  function startProgress() {
+    if (!progress || reduce.matches) return;
+    progress.classList.remove('is-paused');
+    progress.classList.remove('is-running');
+    void progress.offsetWidth;
+    progress.classList.add('is-running');
+  }
+  function start() { stop(); if (reduce.matches) return; timer = setInterval(() => step(1), 5200); startProgress(); }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } if (progress) progress.classList.add('is-paused'); }
   function restart() { stop(); start(); }
 
   if (prevBtn) prevBtn.addEventListener('click', () => { step(-1); restart(); });
@@ -2178,8 +2294,8 @@ function initBadgeCarousel() {
   carousel.addEventListener('focusin', stop);
   carousel.addEventListener('focusout', e => { if (!carousel.contains(e.relatedTarget)) start(); });
   carousel.addEventListener('keydown', e => {
-    if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); restart(); }
-    else if (e.key === 'ArrowRight') { e.preventDefault(); step(1); restart(); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); step(isRTL() ? 1 : -1); restart(); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); step(isRTL() ? -1 : 1); restart(); }
   });
 
   let x0 = null;
@@ -2197,6 +2313,9 @@ function initBadgeCarousel() {
 
   document.addEventListener('visibilitychange', () => { document.hidden ? stop() : start(); });
   if (reduce.addEventListener) reduce.addEventListener('change', () => { reduce.matches ? stop() : start(); });
+
+  /* Re-align the track when the page switches between LTR and RTL */
+  new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ['dir'] });
 
   render();
   start();
